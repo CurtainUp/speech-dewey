@@ -1,0 +1,18 @@
+/*! `Custom` Bootstrap 4 theme */
+@import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
+
+$enable-grid-classes:false;
+$primary:#007bff;
+$secondary:#ff8000;
+$success:#00ff60;
+$danger:#ff0000;
+$info:#b6189a;
+$warning:#ffc107;
+$light:#f8f9fa;
+$dark:#86929d;
+$enable-gradients:false;
+$spacer:1.2rem;
+$border-width:1px;
+$btn-border-radius:.25rem;
+
+@import "../node_modules/bootstrap/scss/bootstrap"
