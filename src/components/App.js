@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Landing from './start/Landing'
 import Welcome from './start/Welcome'
+import Quiz from './quiz/Quiz'
+import Stats from './stats/Stats'
+import Create from './create/Create'
 
 
 class App extends Component {
@@ -15,7 +18,7 @@ class App extends Component {
           if (this.isAuthenticated()) {
             return <Redirect to="/welcome" />
           }
-          return <Landing {...props}/>
+          return <Landing {...props} />
         }} />
 
         <Route exact path="/welcome" render={props => {
@@ -23,6 +26,18 @@ class App extends Component {
             return <Welcome />
           }
           return <Redirect to="/" />
+        }} />
+
+        <Route exact path="/quiz" render={props => {
+          return <Quiz />
+        }} />
+
+        <Route exact path="/stats" render={props => {
+          return <Stats />
+        }} />
+
+        <Route exact path="/create" render={props => {
+          return <Create />
         }} />
 
       </Switch>
