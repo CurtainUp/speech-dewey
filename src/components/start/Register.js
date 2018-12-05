@@ -61,7 +61,7 @@ export default class Register extends Component {
     return (
       <div>
         {/* Register button. Shows form on click */}
-        <Button size="xl" onClick={() => this.show()}><i className="fa fa-user-plus" aria-hidden="true"></i></Button>
+        <Button size="xl" onClick={() => this.show()}><i className="fas fa-user-plus"></i></Button>
         {/* Checks state and shows/hides Register Form */}
         {this.state.form && <this.RegisterForm />}
       </div>
