@@ -45,11 +45,9 @@ export default class Login extends Component {
       email: this.state.email,
       password: this.state.password
     }
-    console.log(obj)
     //validate and submit
     validate.existingUser(obj)
-    console.log("Login Successful")
-    this.show()
+    .then(() => this.props.history.push("/welcome"))
   }
 
   render() {

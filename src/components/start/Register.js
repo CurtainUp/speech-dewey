@@ -54,7 +54,7 @@ export default class Register extends Component {
     }
     //validate, submit, closes form
     validate.newUser(obj)
-    this.show()
+    .then(() => this.props.history.push("/welcome"))
   }
 
   render() {

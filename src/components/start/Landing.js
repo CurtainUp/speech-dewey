@@ -27,8 +27,8 @@ export default class Landing extends Component {
           <h1 className="display-3">Speech Dewey</h1>
           <hr className="my-2" />
           <Row>
-            <Login />
-            <Register />
+            <Login {...this.props} />
+            <Register {...this.props}/>
           </Row>
         </Jumbotron>
         {/* <TestCard></TestCard> */}
