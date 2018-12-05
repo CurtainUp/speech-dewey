@@ -1,20 +1,30 @@
 import React, { Component } from 'react'
-import { Button } from 'reactstrap'
+import API from "../../modules/API/API"
 
-export default class Welcome extends Component {
+
+export default class Quiz extends Component {
+  state = {
+    words: [],
+    images: []
+  }
+
+  getWords() {
+    let newWords = {}
+    return API.getData("cards")
+      .then((words) => newWords.words = words)
+      .then(() => this.setState(newWords))
+  }
+
+  componentDidMount() {
+    this.getWords()
+  }
 
   render() {
     return (
       <div>
-        <div>
-          <h1>Choose a Category</h1>
-        </div>
-        <div>
-          <Button><i className="fas fa-utensils"></i><h3>Food & Drink</h3></Button>
-          <Button><i className="fas fa-medkit"></i><h3>Mood & Health</h3></Button>
-          <Button><i className="fas fa-home"></i><h3>Home & Clothes</h3></Button>
-          <Button><i className="fas fa-users"></i><h3>Friends & Family</h3></Button>
-        </div>
+        {this.state.words.map((card) =>
+            <li key={card.id}>{card.word}</li>
+        )}
       </div>
     )
   }

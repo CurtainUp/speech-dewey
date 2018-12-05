@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Landing from './start/Landing'
 import Welcome from './start/Welcome'
-import Quiz from './quiz/Quiz'
+import QuizSelect from './quiz/QuizSelect'
 import Stats from './stats/Stats'
 import Create from './create/Create'
 
@@ -29,7 +29,7 @@ class App extends Component {
         }} />
 
         <Route exact path="/quiz" render={props => {
-          return <Quiz />
+          return <QuizSelect />
         }} />
 
         <Route exact path="/stats" render={props => {
