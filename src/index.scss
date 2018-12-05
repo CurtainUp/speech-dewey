@@ -15,4 +15,13 @@ $spacer:1.2rem;
 $border-width:1px;
 $btn-border-radius:.25rem;
 
+i {
+font-size: 10em;
+margin: 20px;
+}
+
+.form-icon {
+  font-size: 3em;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap"
