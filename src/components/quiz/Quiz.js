@@ -8,6 +8,7 @@ export default class Quiz extends Component {
   state = {
     words: [],
     answers: [],
+    response: null,
     qCounter: 0
   }
 
@@ -56,11 +57,27 @@ export default class Quiz extends Component {
 
   handleAnswerClick = (e) => {
     let clicked = e.target
+    console.log(clicked)
     let answerId = this.state.words[this.state.qCounter].id.toString()
     if (clicked.id === answerId) {
+      this.setState({ response: "correct" })
       console.log("Correct!")
     } else {
+      this.setState({ response: "incorrect" })
       console.log("Incorrect!")
+    }
+  }
+
+  handleColor = () => {
+    if (this.state.response === "correct") {
+      console.log("correct color")
+      return "success"
+    } else if (this.state.response === "incorrect") {
+      console.log("incorrect color")
+      return "danger"
+    } else {
+      console.log("no response yet")
+      return "secondary"
     }
   }
 
@@ -89,25 +106,25 @@ export default class Quiz extends Component {
           {/* Need to refactor and add map function for all answer options below */}
           <Row className="d-flex inline">
             <Col xs>
-              <Button className="answer" id={this.state.answers[0].id} onClick={(e) => {this.handleAnswerClick(e)}
-              }>
-                  <img alt="First Answer Option" src={this.state.answers[0].image}></img>
+              <Button className="answer" id={this.state.answers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
+              } color={this.handleColor()}>
+                <img alt="First Answer Option" src={this.state.answers[0].image}></img>
               </Button>
             </Col>
             <Col xs>
-              <Button className="answer" id={this.state.answers[1].id} onClick={(e) => {this.handleAnswerClick(e)}
-              }>
-                  <img alt="Second Answer Option" src={this.state.answers[1].image}></img>
+              <Button className="answer" id={this.state.answers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
+              } color={this.handleColor()}>
+                <img alt="Second Answer Option" src={this.state.answers[1].image}></img>
               </Button>
             </Col>
             <Col xs>
-              <Button className="answer" id={this.state.answers[2].id} onClick={(e) => {this.handleAnswerClick(e)}
-              }>
-                  <img alt="Third Answer Option" src={this.state.answers[2].image}></img>
+              <Button className="answer" id={this.state.answers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
+              } color={this.handleColor()}>
+                <img alt="Third Answer Option" src={this.state.answers[2].image}></img>
               </Button>
             </Col>
           </Row>
-        </Container>
+        </Container >
 
       )
     } else {
