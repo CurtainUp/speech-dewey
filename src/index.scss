@@ -24,4 +24,15 @@ margin: 20px;
   font-size: 3em;
 }
 
+.answer {
+  width: 400px;
+  height: 400px;
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+  align-content: center;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap"

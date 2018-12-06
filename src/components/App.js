@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Landing from './start/Landing'
 import Welcome from './start/Welcome'
-import Quiz from './quiz/Quiz'
+import QuizSelect from './quiz/QuizSelect'
 import Stats from './stats/Stats'
 import Create from './create/Create'
-
+import Quiz from './quiz/Quiz'
 
 class App extends Component {
   isAuthenticated = () => sessionStorage.getItem("id") !== null
@@ -26,6 +26,10 @@ class App extends Component {
             return <Welcome />
           }
           return <Redirect to="/" />
+        }} />
+
+        <Route exact path="/quiz-select" render={props => {
+          return <QuizSelect />
         }} />
 
         <Route exact path="/quiz" render={props => {
