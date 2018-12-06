@@ -5,7 +5,7 @@ import Welcome from './start/Welcome'
 import QuizSelect from './quiz/QuizSelect'
 import Stats from './stats/Stats'
 import Create from './create/Create'
-
+import Quiz from './quiz/Quiz'
 
 class App extends Component {
   isAuthenticated = () => sessionStorage.getItem("id") !== null
@@ -28,8 +28,12 @@ class App extends Component {
           return <Redirect to="/" />
         }} />
 
-        <Route exact path="/quiz" render={props => {
+        <Route exact path="/quiz-select" render={props => {
           return <QuizSelect />
+        }} />
+
+        <Route exact path="/quiz" render={props => {
+          return <Quiz />
         }} />
 
         <Route exact path="/stats" render={props => {
