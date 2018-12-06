@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Col, Row } from 'reactstrap'
+import { Container, Col, Row, Button } from 'reactstrap'
 
 import API from "../../modules/API/API"
 
@@ -9,14 +9,6 @@ export default class Quiz extends Component {
     words: [],
     answers: [],
     qCounter: 0
-  }
-
-  // need to Fetch 1 word with matching category id from QuizSelect
-  getWords() {
-    let newWords = {}
-    return API.getData("cards")
-      .then((words) => newWords.words = words)
-      .then(() => this.setState(newWords))
   }
 
   shuffle = (array) => {
@@ -37,14 +29,39 @@ export default class Quiz extends Component {
     return array;
   }
 
+  // need to Fetch 1 word with matching category id from QuizSelect
+  getWords() {
+    let newWords = {}
+    return API.getData("cards")
+      .then((words) => newWords.words = words)
+      .then(() => this.setState(newWords))
+  }
+
   getAnswers() {
-    let wrongWords = this.state.words.slice(this.state.qCounter + 1)
+    // Creates a new array of words from state
+    let wrongWords = this.state.words.map(word => word)
+    // Creates a new away with the correct answer and removes it from possible wrong answers
+    let correct = wrongWords.splice(this.state.qCounter, 1)
+    // Randomizes wrong answer possibilities
     let wordShuffle = this.shuffle(wrongWords)
+    // Stores 2 wrong answer possibilities and puts them into answers[]
     wordShuffle = wordShuffle.slice(0, 2)
     let answers = wordShuffle.map(word => word)
-    answers.push(this.state.words[this.state.qCounter])
+    // Adds correct answer to options
+    answers.push(correct[0])
+    // Shuffles answer options and sets state
     this.shuffle(answers)
     this.setState({ answers: answers })
+  }
+
+  handleAnswerClick = (e) => {
+    let clicked = e.target
+    let answerId = this.state.words[this.state.qCounter].id.toString()
+    if (clicked.id === answerId) {
+      console.log("Correct!")
+    } else {
+      console.log("Incorrect!")
+    }
   }
 
   componentDidMount() {
@@ -55,6 +72,7 @@ export default class Quiz extends Component {
   }
 
   render() {
+    // Conditional that forces render to wait for all info to be received in state
     if (this.state.words.length !== 0 && this.state.answers.length !== 0) {
       return (
         <Container>
@@ -68,10 +86,26 @@ export default class Quiz extends Component {
               </div>
             </Col>
           </Row>
+          {/* Need to refactor and add map function for all answer options below */}
           <Row className="d-flex inline">
-            <Col xs><div className="answer"><img alt="First Answer Option" src={this.state.answers[0].image}></img></div></Col>
-            <Col xs><div className="answer"><img alt="Second Answer Option" src={this.state.answers[1].image}></img></div></Col>
-            <Col xs><div className="answer"><img alt="Third Answer Option" src={this.state.answers[2].image}></img></div></Col>
+            <Col xs>
+              <Button className="answer" id={this.state.answers[0].id} onClick={(e) => {this.handleAnswerClick(e)}
+              }>
+                  <img alt="First Answer Option" src={this.state.answers[0].image}></img>
+              </Button>
+            </Col>
+            <Col xs>
+              <Button className="answer" id={this.state.answers[1].id} onClick={(e) => {this.handleAnswerClick(e)}
+              }>
+                  <img alt="Second Answer Option" src={this.state.answers[1].image}></img>
+              </Button>
+            </Col>
+            <Col xs>
+              <Button className="answer" id={this.state.answers[2].id} onClick={(e) => {this.handleAnswerClick(e)}
+              }>
+                  <img alt="Third Answer Option" src={this.state.answers[2].image}></img>
+              </Button>
+            </Col>
           </Row>
         </Container>
 
