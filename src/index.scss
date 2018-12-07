@@ -41,4 +41,15 @@ img {
   align-content: center;
 }
 
+.card-view {
+  width: 600px;
+  height: 500px;
+  margin: 10px;
+}
+
+.card-img {
+    align-content: right;
+}
+
+
 @import "../node_modules/bootstrap/scss/bootstrap"

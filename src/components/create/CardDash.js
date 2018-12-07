@@ -12,7 +12,7 @@ export default class CardDash extends Component {
         </div>
         <div>
           <Button tag={Link} to='/create'><i className="fas fa-file-medical"></i><h3>Create</h3></Button>
-          <Button><i className="fas fa-images"></i><h3>Your Cards</h3></Button>
+          <Button tag={Link} to='/your-cards'><i className="fas fa-images"></i><h3>Your Cards</h3></Button>
         </div>
       </div>
     )

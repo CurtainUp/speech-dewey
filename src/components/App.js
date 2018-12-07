@@ -7,6 +7,7 @@ import Stats from './stats/Stats'
 import Quiz from './quiz/Quiz'
 import CardDash from './create/CardDash';
 import Create from './create/Create';
+import YourCards from './create/YourCards';
 
 class App extends Component {
   isAuthenticated = () => sessionStorage.getItem("id") !== null
@@ -47,6 +48,10 @@ class App extends Component {
 
         <Route exact path="/create" render={props => {
           return <Create />
+        }} />
+
+        <Route exact path="/your-cards" render={props => {
+          return <YourCards />
         }} />
 
       </Switch>
