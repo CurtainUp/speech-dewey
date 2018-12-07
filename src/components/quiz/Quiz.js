@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { Container, Col, Row, Button } from 'reactstrap'
 import API from "../../modules/API/API"
 
-let qNumber = 0
+// let qNumber = 0
 
 export default class Quiz extends Component {
   state = {
     words: [],
     answers: [],
     status: null,
-    // qCounter: 0,
+    qCounter: 0,
     answered: false
   }
 
@@ -32,6 +32,18 @@ export default class Quiz extends Component {
     return array;
   }
 
+  // function to delay state change
+  sleep = (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
+  increment = () => {
+    return new Promise((resolve) => {
+      let qNumber = this.state.qCounter
+      this.setState({ qCounter: qNumber + 1 }, () => resolve())
+    })
+  }
+
   // need to Fetch 1 word with matching category id from QuizSelect
   getWords() {
     let newWords = {}
@@ -41,35 +53,33 @@ export default class Quiz extends Component {
   }
 
   getAnswers() {
-    // Creates a new array of words from state
-    let wrongWords = this.state.words.map(word => word)
-    // Creates a new away with the correct answer and removes it from possible wrong answers
-    let correct = wrongWords.splice(qNumber, 1)
-    console.log(correct)
-    // Randomizes wrong answer possibilities
-    let wordShuffle = this.shuffle(wrongWords)
-    // Stores 2 wrong answer possibilities and puts them into answers[]
-    wordShuffle = wordShuffle.slice(0, 2)
-    let answers = wordShuffle.map(word => word)
-    // Adds correct answer to options
-    answers.push(correct[0])
-    // Shuffles answer options and sets state
-    this.shuffle(answers)
-    this.setState({ answers: answers })
-  }
-
-  // function to delay state change
-  sleep = (time) => {
-    return new Promise((resolve) => setTimeout(resolve, time));
+    return new Promise((resolve) => {
+      // Creates a new array of words from state
+      let wrongWords = this.state.words.map(word => word)
+      // Creates a new away with the correct answer and removes it from possible wrong answers
+      let correct = wrongWords.splice(this.state.qCounter, 1)
+      // Randomizes wrong answer possibilities
+      let wordShuffle = this.shuffle(wrongWords)
+      // Stores 2 wrong answer possibilities and puts them into answers[]
+      wordShuffle = wordShuffle.slice(0, 2)
+      let answers = wordShuffle.map(word => word)
+      // Adds correct answer to options
+      answers.push(correct[0])
+      // Shuffles answer options and sets state
+      this.shuffle(answers)
+      this.setState({ answers: answers, status: null }, () => resolve())
+    })
   }
 
   handleAnswerClick = (e) => {
     let clicked = e.target
-    let answerId = this.state.words[qNumber].id.toString()
+    let answerId = this.state.words[this.state.qCounter].id.toString()
     if (clicked.id === answerId) {
       clicked.className = "answer btn btn-success"
       this.sleep(2000)
-        .then(() => this.setState({ status: "correct", answered: true }))
+        .then(() => this.setState({ status: "correct" }, () => this.answerLog()))
+        .then(() => this.increment())
+        .then(() => this.getAnswers())
     } else {
       clicked.className = "answer btn btn-danger"
       this.sleep(2000)
@@ -80,13 +90,11 @@ export default class Quiz extends Component {
   answerLog = () => {
     let answerData = {
       timestamp: null,
-      cardId: this.state.words[qNumber].id,
+      cardId: this.state.words[this.state.qCounter].id,
       userId: `${sessionStorage.getItem("id")}`,
       status: this.state.status
     }
-    console.log(answerData)
-
-    API.saveData("cardScores", answerData)
+    return API.saveData("cardScores", answerData)
   }
 
   componentDidMount() {
@@ -97,27 +105,16 @@ export default class Quiz extends Component {
   }
 
   render() {
-
-    // Conditional that forces render to wait for all info to be received in state
-    if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status !== null) {
-      this.answerLog()
-      qNumber += 1
-      if (qNumber < 10) {
-        return <Quiz />
-      } else {
-        return (<div>Quiz Complete!</div>)
-      }
-
-    } else if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === null) {
+    if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === null) {
       return (
         <Container>
           <Row>
-            <Col><h3>Question {qNumber + 1} of 10</h3></Col>
+            <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
           </Row>
           <Row>
             <Col>
-              <div id={this.state.words[qNumber].id}>
-                <h1>{this.state.words[qNumber].word}</h1>
+              <div id={this.state.words[this.state.qCounter].id}>
+                <h1>{this.state.words[this.state.qCounter].word}</h1>
               </div>
             </Col>
           </Row>
@@ -143,9 +140,9 @@ export default class Quiz extends Component {
             </Col>
           </Row>
         </Container >
-
       )
-    } else {
+    }
+    else {
       return <h1>Loading</h1>
     }
   }
