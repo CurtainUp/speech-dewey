@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Container, Col, Row, Button } from 'reactstrap'
-
 import API from "../../modules/API/API"
 
 
@@ -9,7 +8,8 @@ export default class Quiz extends Component {
     words: [],
     answers: [],
     status: null,
-    qCounter: 0
+    qCounter: 0,
+    answered: false
   }
 
   shuffle = (array) => {
@@ -55,16 +55,35 @@ export default class Quiz extends Component {
     this.setState({ answers: answers })
   }
 
+  // function to delay state change
+  sleep = (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
   handleAnswerClick = (e) => {
     let clicked = e.target
     let answerId = this.state.words[this.state.qCounter].id.toString()
     if (clicked.id === answerId) {
       clicked.className = "answer btn btn-success"
-      this.setState({ status: "correct" })
+      this.sleep(2000)
+      .then(() => this.setState({ status: "correct", answered: true}))
     } else {
       clicked.className = "answer btn btn-danger"
-      this.setState({ status: "incorrect" })
+      this.sleep(2000)
+      .then(() => this.setState({ status: "incorrect", answered: true}))
     }
+  }
+
+  answerLog = () => {
+    let answerData = {
+      timestamp: null,
+      cardId: this.state.words[this.state.qCounter].id,
+      userId: `${sessionStorage.getItem("id")}`,
+      status: this.state.status
+    }
+    console.log(answerData)
+
+    // API.saveData("cardScores", answerData)
   }
 
   componentDidMount() {
@@ -75,8 +94,14 @@ export default class Quiz extends Component {
   }
 
   render() {
+
     // Conditional that forces render to wait for all info to be received in state
-    if (this.state.words.length !== 0 && this.state.answers.length !== 0) {
+    if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status !== null) {
+      this.answerLog()
+      return <Quiz />
+
+    } else if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === null)
+    {
       return (
         <Container>
           <Row>
