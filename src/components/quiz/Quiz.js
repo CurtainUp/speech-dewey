@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { Container, Col, Row, Button } from 'reactstrap'
 import API from "../../modules/API/API"
-
-// let qNumber = 0
+import moment from 'moment'
 
 export default class Quiz extends Component {
   state = {
     words: [],
     answers: [],
-    status: null,
+    status: "",
     qCounter: 0,
     answered: false
   }
@@ -83,13 +82,15 @@ export default class Quiz extends Component {
     } else {
       clicked.className = "answer btn btn-danger"
       this.sleep(2000)
-        .then(() => this.setState({ status: "incorrect", answered: true }))
+        .then(() => this.setState({ status: "incorrect"}, () => this.answerLog()))
+        .then(() => this.increment())
+        .then(() => this.getAnswers())
     }
   }
 
   answerLog = () => {
     let answerData = {
-      timestamp: null,
+      timestamp: moment(new Date()),
       cardId: this.state.words[this.state.qCounter].id,
       userId: parseInt(`${sessionStorage.getItem("id")}`),
       status: this.state.status
