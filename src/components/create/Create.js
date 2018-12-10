@@ -25,7 +25,7 @@ export default class Create extends Component {
       word: this.state.word,
       image: this.state.image,
       relationship: this.state.relationship,
-      audioUrl: null
+      audioUrl: ""
     }
     return newCard
   }

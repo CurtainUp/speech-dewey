@@ -32,7 +32,10 @@ class EditModal extends React.Component {
       timestamp: null,
       audioUrl: null
     }
-    API.editData("cards", cardInfo, id)
+    // Updates database
+    return API.editData("cards", cardInfo, id)
+    // Renders /your-cards upon successful update
+    .then(this.props.loadCards())
   }
 
   // Captures input fields and updates state

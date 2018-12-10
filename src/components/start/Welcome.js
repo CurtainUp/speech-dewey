@@ -27,7 +27,7 @@ export default class Welcome extends Component {
     return (
       <div>
         <div>
-          <h1>Welcome, {this.state.firstName}! You Logged In!</h1>
+          <h1>Welcome, {this.state.firstName}!</h1>
         </div>
         <div>
           <Button tag={Link} to='/quiz-select'><i className="fas fa-question-circle"></i><h3>Take Quiz</h3></Button>
