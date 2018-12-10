@@ -66,7 +66,7 @@ export default class Quiz extends Component {
       answers.push(correct[0])
       // Shuffles answer options and sets state
       this.shuffle(answers)
-      this.setState({ answers: answers, status: null }, () => resolve())
+      this.setState({ answers: answers, status: "" }, () => resolve())
     })
   }
 

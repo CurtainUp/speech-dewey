@@ -40,7 +40,15 @@ const API = {
   getUserCards(userid) {
     return fetch(`http://localhost:8088/cards?userId=${userid}`)
       .then(response => response.json())
+  },
+  // Fetches the last 10 cardScores of the current user.
+  getQuizResponses(userid) {
+    return fetch(`http://localhost:8088/cardScores?userId=${userid}&_sort=id&_order=desc&_limit=10`)
+      .then(response => response.json())
+
   }
 }
+
+
 
 export default API

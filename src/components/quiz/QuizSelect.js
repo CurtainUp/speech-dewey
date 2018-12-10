@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import QuizScore from './QuizScore'
 
 export default class QuizSelect extends Component {
   state = {
@@ -29,6 +30,7 @@ export default class QuizSelect extends Component {
           <Button><i className="fas fa-medkit"></i><h3>Mood & Health</h3></Button>
           <Button><i className="fas fa-home"></i><h3>Home & Clothes</h3></Button>
           <Button><i className="fas fa-users"></i><h3>Friends & Family</h3></Button>
+          <QuizScore />
         </div>
       </div>
     )
