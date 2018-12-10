@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Button, Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
 import DeleteModal from './DeleteModal'
+import EditModal from './EditModal'
 
 export default class YourCards extends Component {
   state = {
@@ -43,7 +44,7 @@ render() {
                   </Col>
               </Row>
               <Row className="d-flex inline">
-                <Button><i className="fas fa-edit form-icon"></i><h3>Edit</h3></Button>
+                <EditModal card={card}/>
                 <DeleteModal loadCards={this.loadCards} cardId={card.id}/>
               </Row>
             </ListGroupItem>
