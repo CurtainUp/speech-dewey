@@ -40,7 +40,15 @@ const API = {
   getUserCards(userid) {
     return fetch(`http://localhost:8088/cards?userId=${userid}`)
       .then(response => response.json())
+  },
+  // Fetches users cardScores.
+  getUserScoreData(userid) {
+    return fetch(`http://localhost:8088/cardScores?userId=${userid}`)
+      .then(response => response.json())
+
   }
 }
+
+
 
 export default API

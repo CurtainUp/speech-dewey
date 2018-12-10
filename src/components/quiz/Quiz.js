@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { Container, Col, Row, Button } from 'reactstrap'
 import API from "../../modules/API/API"
-
-// let qNumber = 0
+import moment from 'moment'
+import QuizScore from './QuizScore';
 
 export default class Quiz extends Component {
   state = {
     words: [],
     answers: [],
-    status: null,
+    status: "",
     qCounter: 0,
-    answered: false
+    answered: false,
+    correct: 0,
+    incorrect: 0,
+    skipped: 0
   }
 
 
@@ -40,7 +43,7 @@ export default class Quiz extends Component {
   increment = () => {
     return new Promise((resolve) => {
       let qNumber = this.state.qCounter
-      this.setState({ qCounter: qNumber + 1 }, () => resolve())
+      return this.setState({ qCounter: qNumber + 1 }, () => resolve())
     })
   }
 
@@ -67,29 +70,34 @@ export default class Quiz extends Component {
       answers.push(correct[0])
       // Shuffles answer options and sets state
       this.shuffle(answers)
-      this.setState({ answers: answers, status: null }, () => resolve())
+      this.setState({ answers: answers, status: "" }, () => resolve())
     })
   }
 
   handleAnswerClick = (e) => {
     let clicked = e.target
     let answerId = this.state.words[this.state.qCounter].id.toString()
+    let correct = this.state.correct
+    let incorrect = this.state.incorrect
+    let skipped = this.state.skipped
     if (clicked.id === answerId) {
       clicked.className = "answer btn btn-success"
       this.sleep(2000)
-        .then(() => this.setState({ status: "correct" }, () => this.answerLog()))
+        .then(() => this.setState({ status: "correct", correct: correct + 1 }, () => this.answerLog()))
         .then(() => this.increment())
         .then(() => this.getAnswers())
     } else {
       clicked.className = "answer btn btn-danger"
       this.sleep(2000)
-        .then(() => this.setState({ status: "incorrect", answered: true }))
+        .then(() => this.setState({ status: "incorrect", incorrect: incorrect + 1 }, () => this.answerLog()))
+        .then(() => this.increment())
+        .then(() => this.getAnswers())
     }
   }
 
   answerLog = () => {
     let answerData = {
-      timestamp: null,
+      timestamp: moment(new Date()),
       cardId: this.state.words[this.state.qCounter].id,
       userId: parseInt(`${sessionStorage.getItem("id")}`),
       status: this.state.status
@@ -105,7 +113,7 @@ export default class Quiz extends Component {
   }
 
   render() {
-    if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === null) {
+    if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
       return (
         <Container>
           <Row>
@@ -141,6 +149,10 @@ export default class Quiz extends Component {
           </Row>
         </Container >
       )
+    }
+    // Loads Quiz Score upon completing 10 questions.
+    else if (this.state.qCounter > 9) {
+      return <QuizScore state={this.state} />
     }
     else {
       return <h1>Loading</h1>
