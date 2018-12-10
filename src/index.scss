@@ -15,6 +15,11 @@ $spacer:1.2rem;
 $border-width:1px;
 $btn-border-radius:.25rem;
 
+html {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
 i {
 font-size: 10em;
 margin: 20px;
@@ -34,6 +39,20 @@ img {
   max-width: 300px;
   max-height: 300px;
   align-content: center;
+}
+
+.card-view {
+  width: 600px;
+  height: 600px;
+  margin: 10px;
+}
+
+.card-img {
+    align-content: right;
+}
+
+.modal-button {
+  flex: 50%;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap"

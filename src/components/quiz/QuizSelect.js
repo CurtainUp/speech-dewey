@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import Quiz from './Quiz'
 
 export default class QuizSelect extends Component {
   state = {

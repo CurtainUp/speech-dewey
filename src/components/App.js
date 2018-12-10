@@ -4,8 +4,10 @@ import Landing from './start/Landing'
 import Welcome from './start/Welcome'
 import QuizSelect from './quiz/QuizSelect'
 import Stats from './stats/Stats'
-import Create from './create/Create'
 import Quiz from './quiz/Quiz'
+import CardDash from './create/CardDash';
+import Create from './create/Create';
+import YourCards from './create/YourCards';
 
 class App extends Component {
   isAuthenticated = () => sessionStorage.getItem("id") !== null
@@ -40,8 +42,16 @@ class App extends Component {
           return <Stats />
         }} />
 
+        <Route exact path="/cards" render={props => {
+          return <CardDash />
+        }} />
+
         <Route exact path="/create" render={props => {
           return <Create />
+        }} />
+
+        <Route exact path="/your-cards" render={props => {
+          return <YourCards />
         }} />
 
       </Switch>

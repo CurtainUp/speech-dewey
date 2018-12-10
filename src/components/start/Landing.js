@@ -11,12 +11,11 @@ export default class Landing extends Component {
         <Jumbotron className="m-3">
           <h1 className="display-3">Speech Dewey</h1>
           <hr className="my-2" />
-          <Row>
+          <Row className="d-flex inline">
             <Login {...this.props} />
             <Register {...this.props}/>
           </Row>
         </Jumbotron>
-        {/* <TestCard></TestCard> */}
       </React.Fragment>
     )
   }

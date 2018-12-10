@@ -16,7 +16,7 @@ const API = {
       body: JSON.stringify(entryObject)
 
     })
-    .then(response => response.json())
+      .then(response => response.json())
   },
   editData(resource, entryObject, id) {
     return fetch(`http://localhost:8088/${resource}/${id}`, {
@@ -26,7 +26,7 @@ const API = {
       },
       body: JSON.stringify(entryObject)
     })
-    .then(response => response.json())
+      .then(response => response.json())
   },
   deleteData(resource, id) {
     return fetch(`http://localhost:8088/${resource}/${id}`, {
@@ -35,7 +35,11 @@ const API = {
         "Content-Type": "application/json"
       }
     })
-    .then(response => response.json())
+      .then(response => response.json())
+  },
+  getUserCards(userid) {
+    return fetch(`http://localhost:8088/cards?userId=${userid}`)
+      .then(response => response.json())
   }
 }
 

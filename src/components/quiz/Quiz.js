@@ -91,7 +91,7 @@ export default class Quiz extends Component {
     let answerData = {
       timestamp: null,
       cardId: this.state.words[this.state.qCounter].id,
-      userId: `${sessionStorage.getItem("id")}`,
+      userId: parseInt(`${sessionStorage.getItem("id")}`),
       status: this.state.status
     }
     return API.saveData("cardScores", answerData)
