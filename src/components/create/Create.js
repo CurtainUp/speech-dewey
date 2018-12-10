@@ -21,7 +21,7 @@ export default class Create extends Component {
   cardObject = () => {
     let newCard = {
       userId: UserSession.getUser(),
-      categoryId: 1,
+      categoryId: 4,
       word: this.state.word,
       image: this.state.image,
       relationship: this.state.relationship,
