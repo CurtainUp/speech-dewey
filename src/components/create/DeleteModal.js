@@ -20,9 +20,9 @@ class DeleteModal extends React.Component {
 
   // OnClick functionality to delete saved cards
   handleDelete = (id) => {
-    API.deleteData("cards", id)
-      // .then(() => this.props.loadCards())
-      .then(this.toggle())
+    return API.deleteData("cards", id)
+      .then(() => this.props.loadCards())
+      // .then(this.toggle())
   }
 
   render() {

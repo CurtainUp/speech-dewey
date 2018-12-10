@@ -45,7 +45,7 @@ render() {
               </Row>
               <Row className="d-flex inline">
                 <EditModal card={card} loadCards={this.loadCards}/>
-                <DeleteModal loadCards={this.loadCards} cardId={card.id}/>
+                <DeleteModal cardId={card.id} loadCards={this.loadCards} />
               </Row>
             </ListGroupItem>
           )
