@@ -33,8 +33,8 @@ class DeleteModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}><h2>Delete this card?</h2></ModalHeader>
           <ModalFooter>
-            <Button color="success" className="modal-button" onClick={() => { this.handleDelete(this.props.cardId) }}><i className="fas fa-check"></i><h3>Delete</h3></Button>{' '}
-            <Button color="danger" onClick={this.toggle}><i className="fas fa-ban"></i><h3>Cancel</h3></Button>
+            <Button color="success" className="modal-button" onClick={() => { this.handleDelete(this.props.cardId) }}><i className="fas fa-check form-icon"></i><h3>Delete</h3></Button>{' '}
+            <Button color="danger" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
           </ModalFooter>
         </Modal>
       </div>

@@ -53,7 +53,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <Button className="mr-1" size="xl" onClick={() => this.show()}><i className="fas fa-user"></i></Button>
+        <Button className="mr-3" size="xl" onClick={() => this.show()}><i className="fas fa-user"></i></Button>
         {this.state.form && <this.LoginForm />}
       </div>
     )

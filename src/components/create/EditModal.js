@@ -70,9 +70,9 @@ class EditModal extends React.Component {
               </FormGroup>
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" onSubmit={() => {
-              }}>Save</Button>{' '}
-              <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+              <Button color="success" onSubmit={() => {
+              }}><i className="fas fa-check form-icon"></i><h3>Save</h3></Button>{' '}
+              <Button color="danger" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
             </ModalFooter>
           </form>
         </Modal>
