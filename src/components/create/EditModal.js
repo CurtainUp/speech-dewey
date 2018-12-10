@@ -23,7 +23,6 @@ class EditModal extends React.Component {
   handleEdit = (id) => {
     // ADD TIMESTAMP
     // let timeSaved = moment(new Date())
-    // ADD USER ID ON CLICK - Currently hard coded, needs to be userSession.getUser()
     let userId = UserSession.getUser()
     let cardInfo = {
       word: this.state.word,
@@ -36,6 +35,7 @@ class EditModal extends React.Component {
     API.editData("cards", cardInfo, id)
   }
 
+  // Captures input fields and updates state
   handleFieldChange = evt => {
     const stateToChange = {}
     stateToChange[evt.target.id] = evt.target.value
@@ -49,12 +49,13 @@ class EditModal extends React.Component {
          <i className="fas fa-edit form-icon"></i><h3>Edit</h3>
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        {/* Save button click behavior */}
           <form onSubmit={(e) => {
             e.preventDefault()
             this.handleEdit(this.props.card.id)
             this.toggle()
           }}>
-            <ModalHeader toggle={this.toggle}>Edit</ModalHeader>
+            <ModalHeader toggle={this.toggle}><i className="fas fa-edit form-icon"></i></ModalHeader>
             <ModalBody>
               <FormGroup>
                 <Label for="word">Word</Label>
@@ -70,9 +71,11 @@ class EditModal extends React.Component {
               </FormGroup>
             </ModalBody>
             <ModalFooter>
-              <Button color="success" onSubmit={() => {
+              {/* Save */}
+              <Button color="success" className="modal-button" onSubmit={() => {
               }}><i className="fas fa-check form-icon"></i><h3>Save</h3></Button>{' '}
-              <Button color="danger" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
+              {/* Cancel  */}
+              <Button color="danger" className="modal-button" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
             </ModalFooter>
           </form>
         </Modal>
