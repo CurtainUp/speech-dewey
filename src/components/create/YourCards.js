@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
+import DeleteModal from './DeleteModal'
 
 export default class YourCards extends Component {
   state = {
@@ -31,7 +32,7 @@ render() {
       <ListGroup className="d-flex inline">
         {
           this.state.userCards.map((card) =>
-            <ListGroupItem  className="card-view" key={card.id}>
+            <ListGroupItem  className="card-view" key={card.id} id={card.id}>
               <Row className="d-flex inline">
                 <Col md="d-flex m-3">
                   <h3>{card.word}</h3>
@@ -41,9 +42,9 @@ render() {
                   <img className="rounded card-img" alt={card.word} src={card.image}></img>
                   </Col>
               </Row>
-              <Row>
+              <Row className="d-flex inline">
                 <Button><i className="fas fa-edit form-icon"></i><h3>Edit</h3></Button>
-                <Button><i className="fas fa-trash-alt form-icon"></i><h3>Delete</h3></Button>
+                <DeleteModal loadCards={this.loadCards} cardId={card.id}/>
               </Row>
             </ListGroupItem>
           )

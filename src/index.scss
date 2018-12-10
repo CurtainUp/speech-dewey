@@ -43,7 +43,7 @@ img {
 
 .card-view {
   width: 600px;
-  height: 500px;
+  height: 600px;
   margin: 10px;
 }
 
@@ -51,5 +51,8 @@ img {
     align-content: right;
 }
 
+.modal-button {
+  flex: 50%;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap"
