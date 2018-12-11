@@ -4,6 +4,7 @@ import API from "../../modules/API/API"
 import moment from 'moment'
 import QuizScore from './QuizScore';
 import { Link } from 'react-router-dom'
+import PeopleNeeded from './PeopleNeeded';
 
 export default class Quiz extends Component {
   state = {
@@ -83,9 +84,9 @@ export default class Quiz extends Component {
     let skipped = this.state.skipped
     if (clicked.id === "skip") {
       return this.sleep(0)
-      .then(() => this.setState({ status: "skipped", skipped: skipped + 1 }, () => this.answerLog()))
-      .then(() => this.increment())
-      .then(() => this.getAnswers())
+        .then(() => this.setState({ status: "skipped", skipped: skipped + 1 }, () => this.answerLog()))
+        .then(() => this.increment())
+        .then(() => this.getAnswers())
     } else if (clicked.id !== answerId) {
       clicked.className = "answer btn btn-danger"
       this.sleep(500)
@@ -120,7 +121,10 @@ export default class Quiz extends Component {
   }
 
   render() {
-    if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
+    if (this.state.words.length < 10) {
+      return <PeopleNeeded />
+    }
+    else if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
       return (
         <Container>
           <Row>
@@ -133,7 +137,7 @@ export default class Quiz extends Component {
               </div>
             </Col>
             <Col>
-            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
+              <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
             </Col>
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
