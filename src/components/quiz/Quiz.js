@@ -81,7 +81,7 @@ export default class Quiz extends Component {
     let incorrect = this.state.incorrect
     let skipped = this.state.skipped
     if (clicked.id === "skip") {
-      this.sleep(0)
+      return this.sleep(0)
       .then(() => this.setState({ status: "skipped", skipped: skipped + 1 }, () => this.answerLog()))
       .then(() => this.increment())
       .then(() => this.getAnswers())
@@ -132,7 +132,7 @@ export default class Quiz extends Component {
               </div>
             </Col>
             <Col>
-            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}></i></Button>
+            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
             </Col>
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
