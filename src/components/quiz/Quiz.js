@@ -96,8 +96,9 @@ export default class Quiz extends Component {
   }
 
   answerLog = () => {
+    let time = moment()
     let answerData = {
-      timestamp: moment(new Date()),
+      timestamp: time,
       cardId: this.state.words[this.state.qCounter].id,
       userId: parseInt(`${sessionStorage.getItem("id")}`),
       status: this.state.status
