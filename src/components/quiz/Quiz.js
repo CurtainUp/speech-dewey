@@ -49,10 +49,11 @@ export default class Quiz extends Component {
     })
   }
 
-  // need to Fetch 1 word with matching category id from QuizSelect
   getWords() {
     let newWords = {}
     return API.getWordsByCategory(this.props.category)
+      // Shuffle words to randomize question order
+      .then((words) => this.shuffle(words))
       .then((words) => newWords.words = words)
       .then(() => this.setState(newWords))
   }
