@@ -3,6 +3,7 @@ import { Container, Col, Row, Button } from 'reactstrap'
 import API from "../../modules/API/API"
 import moment from 'moment'
 import QuizScore from './QuizScore';
+import { Link } from 'react-router-dom'
 
 export default class Quiz extends Component {
   state = {
@@ -156,6 +157,7 @@ export default class Quiz extends Component {
               </Button>
             </Col>
           </Row>
+          <Row><Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button></Row>
         </Container >
       )
     }
