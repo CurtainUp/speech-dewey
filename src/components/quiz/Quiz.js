@@ -80,16 +80,21 @@ export default class Quiz extends Component {
     let correct = this.state.correct
     let incorrect = this.state.incorrect
     let skipped = this.state.skipped
-    if (clicked.id === answerId) {
-      clicked.className = "answer btn btn-success"
-      this.sleep(2000)
-        .then(() => this.setState({ status: "correct", correct: correct + 1 }, () => this.answerLog()))
+    if (clicked.id === "skip") {
+      this.sleep(0)
+      .then(() => this.setState({ status: "skipped", skipped: skipped + 1 }, () => this.answerLog()))
+      .then(() => this.increment())
+      .then(() => this.getAnswers())
+    } else if (clicked.id !== answerId) {
+      clicked.className = "answer btn btn-danger"
+      this.sleep(500)
+        .then(() => this.setState({ status: "incorrect", incorrect: incorrect + 1 }, () => this.answerLog()))
         .then(() => this.increment())
         .then(() => this.getAnswers())
-    } else {
-      clicked.className = "answer btn btn-danger"
-      this.sleep(2000)
-        .then(() => this.setState({ status: "incorrect", incorrect: incorrect + 1 }, () => this.answerLog()))
+    } else if (clicked.id === answerId) {
+      clicked.className = "answer btn btn-success"
+      this.sleep(500)
+        .then(() => this.setState({ status: "correct", correct: correct + 1 }, () => this.answerLog()))
         .then(() => this.increment())
         .then(() => this.getAnswers())
     }
@@ -120,11 +125,14 @@ export default class Quiz extends Component {
           <Row>
             <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
           </Row>
-          <Row>
+          <Row className="d-flex inline">
             <Col>
               <div id={this.state.words[this.state.qCounter].id}>
                 <h1>{this.state.words[this.state.qCounter].word}</h1>
               </div>
+            </Col>
+            <Col>
+            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}></i></Button>
             </Col>
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
