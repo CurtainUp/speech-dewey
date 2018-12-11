@@ -10,6 +10,13 @@ import Create from './create/Create';
 import YourCards from './create/YourCards';
 
 class App extends Component {
+  state = {
+    foodcategory: 1,
+    moodcategory: 2,
+    homecategory: 3,
+    peoplecategory: 4
+  }
+
   isAuthenticated = () => sessionStorage.getItem("id") !== null
 
   render() {
@@ -36,6 +43,22 @@ class App extends Component {
 
         <Route exact path="/quiz" render={props => {
           return <Quiz />
+        }} />
+
+        <Route exact path="/food-quiz" render={props => {
+          return <Quiz category={this.state.foodcategory} />
+        }} />
+
+        <Route exact path="/mood-quiz" render={props => {
+          return <Quiz category={this.state.moodcategory} />
+        }} />
+
+        <Route exact path="/home-quiz" render={props => {
+          return <Quiz category={this.state.homecategory} />
+        }} />
+
+        <Route exact path="/people-quiz" render={props => {
+          return <Quiz category={this.state.peoplecategory} />
         }} />
 
         <Route exact path="/stats" render={props => {

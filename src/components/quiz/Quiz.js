@@ -51,7 +51,7 @@ export default class Quiz extends Component {
   // need to Fetch 1 word with matching category id from QuizSelect
   getWords() {
     let newWords = {}
-    return API.getData("cards")
+    return API.getWordsByCategory(this.props.category)
       .then((words) => newWords.words = words)
       .then(() => this.setState(newWords))
   }
