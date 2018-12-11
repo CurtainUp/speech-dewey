@@ -1,21 +1,23 @@
-import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React from 'react'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Link } from 'react-router-dom'
+
 
 class QuizScore extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       percentCorrect: 0,
       modal: true
-    };
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
+    })
   }
 
 
@@ -41,8 +43,8 @@ class QuizScore extends React.Component {
             <h3>Skipped: {this.props.state.skipped}</h3>
           </ModalBody>
           <ModalFooter>
-            <Button color="success" className="modal-button"><i className="fas fa-check form-icon"></i><h3>Retry</h3></Button>{' '}
-            <Button color="danger" className="modal-button" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Home</h3></Button>
+            <Button tag={Link} to='/quiz-select' color="success" className="modal-button"><i className="fas fa-check form-icon"></i><h3>Retry</h3></Button>{' '}
+            <Button tag={Link} to='/welcome' color="danger" className="modal-button"><i className="fas fa-ban form-icon"></i><h3>Home</h3></Button>
           </ModalFooter>
         </Modal>
       </div>
