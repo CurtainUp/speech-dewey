@@ -34,7 +34,13 @@ export default class Stats extends Component {
         })
       })
       // .then(() => { return console.table(overall)})
-      .then(() => { return this.setState({overallCorrect: overall.overallCorrect, overallIncorrect: overall.overallIncorrect, overallSkipped: overall.overallSkipped})})
+      .then(() => { return this.setState({ overallCorrect: overall.overallCorrect, overallIncorrect: overall.overallIncorrect, overallSkipped: overall.overallSkipped }) })
+  }
+
+  // Calculates total cards answered
+  getTotalAnswered = () => {
+    let total = this.state.overallCorrect + this.state.overallIncorrect + this.state.overallSkipped
+    return total
   }
 
   // Basic function to calculate percent of correct answers
@@ -44,11 +50,13 @@ export default class Stats extends Component {
     return percentCorrect
   }
 
-componentDidMount = () => {
-  this.getOverallTally()
-}
+  componentDidMount = () => {
+    this.getOverallTally()
+  }
 
   render() {
+    let totalPercentCorrect = this.getPercentageCorrect(this.state.overallCorrect, this.getTotalAnswered())
+
     return (
       <Container>
         <Row>
@@ -60,6 +68,7 @@ componentDidMount = () => {
           </Col>
           <Col>
             <h3>Total</h3>
+            <h4>{totalPercentCorrect}</h4>
             <h4>Correct: {this.state.overallCorrect}</h4>
             <h4>Incorrect: {this.state.overallIncorrect}</h4>
             <h4>Skipped: {this.state.overallSkipped}</h4>
