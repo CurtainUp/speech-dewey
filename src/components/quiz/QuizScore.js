@@ -1,8 +1,5 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Link } from 'react-router-dom'
-import API from '../../modules/API/API'
-import UserSession from '../../modules/User/UserSession'
 
 class QuizScore extends React.Component {
   constructor(props) {
