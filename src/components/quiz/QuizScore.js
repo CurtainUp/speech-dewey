@@ -23,6 +23,7 @@ class QuizScore extends React.Component {
 
   getPercentageCorrect = () => {
     let percentCorrect = (this.props.state.correct / (10 - this.props.state.skipped)) * 100
+    percentCorrect = Math.round(percentCorrect)
     percentCorrect = percentCorrect.toString() + "%"
     this.setState({percentCorrect: percentCorrect})
   }

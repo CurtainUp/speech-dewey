@@ -52,15 +52,6 @@ export default class Stats extends Component {
     return total
   }
 
-  // Sets activity in local state
-  // checkDailyActivity = () => {
-  //   return new Promise((resolve) => {
-  //     if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
-  //       return this.setState({ activeToday: true }, () => resolve())
-  //     }
-  //   })
-  // }
-
   // Sets activity in lifted state
   setActivity = () => {
     if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
