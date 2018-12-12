@@ -6,7 +6,7 @@ import QuizScore from './QuizScore';
 import { Link } from 'react-router-dom'
 import PeopleNeeded from './PeopleNeeded';
 
-export default class Quiz extends Component {
+export default class EasyQuiz extends Component {
   state = {
     words: [],
     answers: [],
@@ -120,6 +120,11 @@ export default class Quiz extends Component {
       .then((wordArray) => this.setState({ wordArray: wordArray }))
       .then(() => this.getAnswers())
   }
+
+  componentWillUnmount() {
+    return this.props.resetDifficulty("")
+  }
+
 
   render() {
     if (this.state.words.length < 10) {
