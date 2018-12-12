@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 
 class QuizScore extends React.Component {
@@ -33,10 +33,14 @@ class QuizScore extends React.Component {
   }
 
   render() {
+
+    if(this.state.modal === false) {
+      return <Redirect to="/welcome" />
+    }
     return (
       <div>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}><h2>Your Score:</h2></ModalHeader>
+          <ModalHeader><h2>Your Score</h2></ModalHeader>
           <ModalBody>
             <p className="modal-p">{this.state.percentCorrect}</p>
             <h3>Correct: {this.props.state.correct}</h3>
