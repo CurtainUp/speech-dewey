@@ -42,7 +42,7 @@ export default class Stats extends Component {
             } return null
           })
         })
-        .then(() => { return this.setState({ dailyCorrect: daily.dailyCorrect, dailyIncorrect: daily.dailyIncorrect, dailySkipped: daily.dailySkipped }, () => resolve()) })
+        .then(() => { return this.setState({ dailyCorrect: daily.dailyCorrect, dailyIncorrect: daily.dailyIncorrect, dailySkipped: daily.dailySkipped, activeToday: true }, () => resolve()) })
     })
   }
 
@@ -53,6 +53,7 @@ export default class Stats extends Component {
     return total
   }
 
+  // Sets activity in local state
   // checkDailyActivity = () => {
   //   return new Promise((resolve) => {
   //     if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
@@ -61,30 +62,28 @@ export default class Stats extends Component {
   //   })
   // }
 
+  // Sets activity in lifted state
+  setActivity = () => {
+    if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
+      let dailyActivity = true
+      console.log(dailyActivity)
+      return this.props.resetActivity(dailyActivity)
+    }
+  }
+
   // Displays message or stats depending on if user has taken a quiz today
   dailyDisplay() {
-    if (this.props.activeToday === false) {
-      return <Col>
-        <h3>Today</h3>
-        <h4>No Quizzes Taken Today</h4>
-      </Col>
-    } else {
+    if (this.props.activeToday === true) {
       return <Col>
         <h4>{this.state.dailyPercentCorrect}</h4>
         <h4>Correct: {this.state.dailyCorrect}</h4>
         <h4>Incorrect: {this.state.dailyIncorrect}</h4>
         <h4>Skipped: {this.state.dailySkipped}</h4>
       </Col>
-    }
-
-  }
-
-  setActivity = () => {
-    this.getDailyAnswered()
-    if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
-      let dailyActivity = true
-      console.log(dailyActivity)
-      return this.props.resetActivity(dailyActivity)
+    } else {
+      return <Col>
+        <h4>No Quizzes Taken Today</h4>
+      </Col>
     }
   }
 
@@ -158,6 +157,7 @@ export default class Stats extends Component {
           <h1>Your Stats</h1>
         </Row>
         <Row>
+          <h3>Today</h3>
           {this.dailyDisplay()}
           <Col>
             <h3>Total</h3>
