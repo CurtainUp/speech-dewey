@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody } from 'reactstrap'
 import validate from '../../modules/User/Validate'
 
 export default class Login extends Component {
-  state = {
-    form: false,
-    email: "",
-    password: ""
+  constructor(props) {
+    super(props)
+    this.state = {
+      percentCorrect: 0,
+      modal: false
+    }
+
+    this.toggle = this.toggle.bind(this)
   }
 
-  show = () => {
+  toggle() {
     this.setState({
-      form: !this.state.form
+      modal: !this.state.modal
     })
   }
 
@@ -20,15 +24,15 @@ export default class Login extends Component {
       <Form onSubmit={(e) => this.submitLogin(e)}>
         <FormGroup>
           <Label for="exampleEmail"><i className="fa fa-envelope form-icon" aria-hidden="true"></i>Email</Label>
-          <Input type="email" name="email" id="email" placeholder="E-mail" required onChange={this.handleFieldChange}/>
+          <Input type="email" name="email" id="email" placeholder="E-mail" required onChange={this.handleFieldChange} />
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword"><i className="fa fa-key form-icon" aria-hidden="true"></i>
             Password</Label>
-          <Input type="password" name="password" id="password" placeholder="Password" required onChange={this.handleFieldChange}/>
+          <Input type="password" name="password" id="password" placeholder="Password" required onChange={this.handleFieldChange} />
         </FormGroup>
         <Button type="submit"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
-        <Button onClick={() => this.show()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        <Button onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
       </Form>)
   }
 
@@ -47,14 +51,18 @@ export default class Login extends Component {
     }
     //validate and submit
     validate.existingUser(obj)
-    .then(() => this.props.history.push("/welcome"))
+      .then(() => this.props.history.push("/welcome"))
   }
 
   render() {
     return (
       <div>
-        <Button className="mr-3" size="xl" onClick={() => this.show()}><i className="fas fa-user"></i></Button>
-        {this.state.form && <this.LoginForm />}
+        <Button className="mr-3" size="xl" onClick={() => this.toggle()}><i className="fas fa-user"></i></Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalBody>
+            <this.LoginForm />
+          </ModalBody>
+        </Modal>
       </div>
     )
 

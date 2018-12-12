@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody } from 'reactstrap'
 import validate from '../../modules/User/Validate'
 
 export default class Register extends Component {
-  state = {
-    form: false,
-    email: "",
-    password: "",
-    firstName: ""
+  constructor(props) {
+    super(props)
+    this.state = {
+      percentCorrect: 0,
+      modal: false
+    }
+
+    this.toggle = this.toggle.bind(this)
   }
 
-  show = () => {
+  toggle() {
     this.setState({
-      form: !this.state.form
+      modal: !this.state.modal
     })
   }
 
@@ -33,7 +36,7 @@ export default class Register extends Component {
           <Input type="text" name="firstname" id="firstName" placeholder="First Name" required onChange={this.handleFieldChange} />
         </FormGroup>
         <Button type="submit"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
-        <Button onClick={() => this.show()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        <Button onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
       </Form>)
   }
 
@@ -41,7 +44,6 @@ export default class Register extends Component {
   handleFieldChange = e => {
     const stateToChange = {}
     stateToChange[e.target.id] = e.target.value
-    console.log(stateToChange)
     this.setState(stateToChange)
   }
 
@@ -61,9 +63,12 @@ export default class Register extends Component {
     return (
       <div>
         {/* Register button. Shows form on click */}
-        <Button size="xl" onClick={() => this.show()}><i className="fas fa-user-plus"></i></Button>
-        {/* Checks state and shows/hides Register Form */}
-        {this.state.form && <this.RegisterForm />}
+        <Button size="xl" onClick={() => this.toggle()}><i className="fas fa-user-plus"></i></Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+          <ModalBody>
+            <this.RegisterForm />
+          </ModalBody>
+        </Modal>
       </div>
 
     )

@@ -26,16 +26,19 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/welcome"><i className="fas fa-home form-icon"></i></NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} onClick={() => { UserSession.logOutUser() }} to="/"><i className="fas fa-sign-out-alt form-icon"></i></NavLink>
-            </NavItem>
-          </Nav>
-        </Navbar>
+        {UserSession.getUser()
+          ? <Navbar color="light" light expand="md">
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/welcome"><i className="fas fa-home form-icon"></i></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} onClick={() => { UserSession.logOutUser() }} to="/"><i className="fas fa-sign-out-alt form-icon"></i></NavLink>
+              </NavItem>
+            </Nav>
+          </Navbar>
+          : null
+        }
       </div>
     );
   }
