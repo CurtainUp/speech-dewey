@@ -59,4 +59,15 @@ img {
   font-size: 5em
 }
 
+.stat-card {
+  background-color: $light;
+  border: none;
+  border-radius: .25rem;
+  margin-right: 3em;
+}
+
+.stat-card > i {
+  flex-basis: 20%;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap"

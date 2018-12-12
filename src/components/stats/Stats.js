@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import API from "../../modules/API/API"
 import UserSession from '../../modules/User/UserSession'
 import moment from 'moment'
-
+import { ResponsiveContainer, PieChart, Pie } from 'recharts'
 export default class Stats extends Component {
   state = {
     dailyCorrect: 0,
@@ -49,7 +49,6 @@ export default class Stats extends Component {
   // Calculates total cards answered today
   getDailyAnswered = () => {
     let total = this.state.dailyCorrect + this.state.dailyIncorrect + this.state.dailySkipped
-    console.log(total)
     return total
   }
 
@@ -66,7 +65,6 @@ export default class Stats extends Component {
   setActivity = () => {
     if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
       let dailyActivity = true
-      console.log(dailyActivity)
       return this.props.resetActivity(dailyActivity)
     }
   }
@@ -75,14 +73,27 @@ export default class Stats extends Component {
   dailyDisplay() {
     if (this.props.activeToday === true) {
       return <Col>
+        <ResponsiveContainer height={250} width="100%">
+          <PieChart width={400} height={250}>
+            <Pie data={[{ name: 'Daily Correct', value: this.state.dailyCorrect, fill: '#00ff60' }, { name: 'Daily Incorrect', value: this.state.dailyIncorrect, fill: '#ff0000' },
+            { name: 'Daily Skipped', value: this.state.dailySkipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" isAnimationActive={false} />
+          </PieChart>
+        </ResponsiveContainer>
         <h4>{this.state.dailyPercentCorrect}</h4>
-        <h4>Correct: {this.state.dailyCorrect}</h4>
-        <h4>Incorrect: {this.state.dailyIncorrect}</h4>
-        <h4>Skipped: {this.state.dailySkipped}</h4>
+        <Row className="d-flex inline">
+          <div className="d-flex inline align-items-center mx-3">
+            <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.dailyCorrect}</h4>
+            <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.state.dailyIncorrect}</h4>
+            <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.state.dailySkipped}</h4>
+          </div>
+        </Row>
       </Col>
     } else {
       return <Col>
-        <h4>No Quizzes Taken Today</h4>
+        <div className="m-3">
+
+          <h4>No Quizzes Taken Today</h4>
+        </div>
       </Col>
     }
   }
@@ -156,15 +167,29 @@ export default class Stats extends Component {
         <Row>
           <h1>Your Stats</h1>
         </Row>
-        <Row>
-          <h3>Today</h3>
-          {this.dailyDisplay()}
-          <Col>
-            <h3>Total</h3>
-            <h4>{this.state.totalPercentCorrect}</h4>
-            <h4>Correct: {this.state.overallCorrect}</h4>
-            <h4>Incorrect: {this.state.overallIncorrect}</h4>
-            <h4>Skipped: {this.state.overallSkipped}</h4>
+        <Row className="d-flex inline">
+          <Col className="stat-card">
+            <div className="m-3">
+              <h3>Today</h3>
+              {this.dailyDisplay()}
+            </div>
+          </Col>
+          <Col className="stat-card">
+            <div className="m-3">
+              <h3>Total</h3>
+              <ResponsiveContainer height={250} width="100%">
+                <PieChart width={400} height={250}>
+                  <Pie data={[{ name: 'Total Correct', value: this.state.overallCorrect, fill: '#00ff60' }, { name: 'Total Incorrect', value: this.state.overallIncorrect, fill: '#ff0000' },
+                  { name: 'Total Skipped', value: this.state.overallSkipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" />
+                </PieChart>
+              </ResponsiveContainer>
+              <h4>{this.state.totalPercentCorrect}</h4>
+              <Row className="d-flex inline align-items-center">
+                <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.overallCorrect}</h4>
+                <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.state.overallIncorrect}</h4>
+                <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.state.overallSkipped}</h4>
+              </Row>
+            </div>
           </Col>
         </Row>
       </Container>
