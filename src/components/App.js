@@ -16,12 +16,17 @@ class App extends Component {
     moodcategory: 2,
     homecategory: 3,
     peoplecategory: 4,
-    difficulty: ""
+    difficulty: "",
+    activeToday: false
   }
 
   // Passed to QuizDifficulty to set difficulty before quiz begins
   handleDifficultyChange = (level) => {
     return this.setState({ difficulty: level })
+  }
+
+  handleActivityChange = (boo) => {
+    return this.setState({ activeToday: boo })
   }
 
   // Checks if a user is currently logged in
@@ -77,7 +82,7 @@ class App extends Component {
         }} />
 
         <Route exact path="/stats" render={props => {
-          return <Stats />
+          return <Stats activeToday={this.state.activeToday} resetActivity={this.handleActivityChange} />
         }} />
 
         <Route exact path="/cards" render={props => {

@@ -11,66 +11,109 @@ export default class Stats extends Component {
     dailySkipped: 0,
     overallCorrect: 0,
     overallIncorrect: 0,
-    overallSkipped: 0
+    overallSkipped: 0,
+    totalPercentCorrect: 0,
+    dailyPercentCorrect: 0,
   }
+
+  // ------Functions for Daily Stats----------
 
   getDailyTally = () => {
-    let today = moment()
-    console.log(today.format('L'))
-    let daily = {
-      dailyCorrect: 0,
-      dailyIncorrect: 0,
-      dailySkipped: 0
-    }
-    let currentUser = UserSession.getUser()
-    return API.getUserScoreData(currentUser)
-      .then(score => {
-        let allscores = score
-        allscores.map(score => {
-          if (moment(score.timestamp).format('L') === today.format('L')) {
-            if (score.status === "correct") {
-              daily.dailyCorrect += 1
-            } else if (score.status === "incorrect") {
-              daily.dailyIncorrect += 1
-            } else {
-              daily.dailySkipped += 1
-            }
-          } return console.log(moment(score.timestamp).format('L'))
+    return new Promise((resolve) => {
+      let today = moment()
+      let daily = {
+        dailyCorrect: 0,
+        dailyIncorrect: 0,
+        dailySkipped: 0
+      }
+      let currentUser = UserSession.getUser()
+      return API.getUserScoreData(currentUser)
+        .then(score => {
+          let allscores = score
+          allscores.map(score => {
+            if (moment(score.timestamp).format('L') === today.format('L')) {
+              if (score.status === "correct") {
+                daily.dailyCorrect += 1
+              } else if (score.status === "incorrect") {
+                daily.dailyIncorrect += 1
+              } else {
+                daily.dailySkipped += 1
+              }
+            } return null
+          })
         })
-      })
-      // .then(() => { return console.table(daily)})
-      .then(() => { return this.setState({ dailyCorrect: daily.dailyCorrect, dailyIncorrect: daily.dailyIncorrect, dailySkipped: daily.dailySkipped }) })
-
-  }
-
-  getOverallTally = () => {
-    let overall = {
-      overallCorrect: 0,
-      overallIncorrect: 0,
-      overallSkipped: 0
-    }
-    let currentUser = UserSession.getUser()
-    return API.getUserScoreData(currentUser)
-      .then(score => {
-        let allscores = score
-        allscores.map(score => {
-          if (score.status === "correct") {
-            overall.overallCorrect += 1
-          } else if (score.status === "incorrect") {
-            overall.overallIncorrect += 1
-          } else {
-            overall.overallSkipped += 1
-          } return overall
-        })
-      })
-      // .then(() => { return console.table(overall)})
-      .then(() => { return this.setState({ overallCorrect: overall.overallCorrect, overallIncorrect: overall.overallIncorrect, overallSkipped: overall.overallSkipped }) })
+        .then(() => { return this.setState({ dailyCorrect: daily.dailyCorrect, dailyIncorrect: daily.dailyIncorrect, dailySkipped: daily.dailySkipped }, () => resolve()) })
+    })
   }
 
   // Calculates total cards answered today
   getDailyAnswered = () => {
     let total = this.state.dailyCorrect + this.state.dailyIncorrect + this.state.dailySkipped
+    console.log(total)
     return total
+  }
+
+  // checkDailyActivity = () => {
+  //   return new Promise((resolve) => {
+  //     if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
+  //       return this.setState({ activeToday: true }, () => resolve())
+  //     }
+  //   })
+  // }
+
+  // Displays message or stats depending on if user has taken a quiz today
+  dailyDisplay() {
+    if (this.props.activeToday === false) {
+      return <Col>
+        <h3>Today</h3>
+        <h4>No Quizzes Taken Today</h4>
+      </Col>
+    } else {
+      return <Col>
+        <h4>{this.state.dailyPercentCorrect}</h4>
+        <h4>Correct: {this.state.dailyCorrect}</h4>
+        <h4>Incorrect: {this.state.dailyIncorrect}</h4>
+        <h4>Skipped: {this.state.dailySkipped}</h4>
+      </Col>
+    }
+
+  }
+
+  setActivity = () => {
+    this.getDailyAnswered()
+    if (this.state.dailyCorrect !== 0 || this.state.dailyIncorrect !== 0 || this.state.dailySkipped !== 0) {
+      let dailyActivity = true
+      console.log(dailyActivity)
+      return this.props.resetActivity(dailyActivity)
+    }
+  }
+
+  // ------Functions for Overall Stats----------
+
+  getOverallTally = () => {
+    return new Promise((resolve) => {
+      let overall = {
+        overallCorrect: 0,
+        overallIncorrect: 0,
+        overallSkipped: 0
+      }
+      let currentUser = UserSession.getUser()
+      return API.getUserScoreData(currentUser)
+        .then(score => {
+          let allscores = score
+          allscores.map(score => {
+            if (score.status === "correct") {
+              overall.overallCorrect += 1
+            } else if (score.status === "incorrect") {
+              overall.overallIncorrect += 1
+            } else {
+              overall.overallSkipped += 1
+            } return overall
+          })
+        })
+        .then(() => { return this.setState({ overallCorrect: overall.overallCorrect, overallIncorrect: overall.overallIncorrect, overallSkipped: overall.overallSkipped }, () => resolve()) }
+        )
+    })
   }
 
   // Calculates total cards answered
@@ -79,23 +122,35 @@ export default class Stats extends Component {
     return total
   }
 
+  // ------Functions for converting stats to %----------
+
   // Basic function to calculate percent of correct answers
   getPercentageCorrect = (right, total) => {
     let percentCorrect = (right / total) * 100
-    console.log("percent", percentCorrect)
-    console.log(Math.round(percentCorrect))
+    percentCorrect = Math.round(percentCorrect)
     percentCorrect = percentCorrect.toString() + "%"
     return percentCorrect
   }
 
+  // Adds calculated percentages to state for initial render of page
+  setPercentageState = () => {
+    return new Promise((resolve) => {
+      let totalPercentCorrect = this.getPercentageCorrect(this.state.overallCorrect, this.getTotalAnswered())
+      let dailyPercentCorrect = this.getPercentageCorrect(this.state.dailyCorrect, this.getDailyAnswered())
+      return this.setState({ totalPercentCorrect: totalPercentCorrect, dailyPercentCorrect: dailyPercentCorrect }, () => resolve())
+    })
+  }
+
+  // ------Functions for displaying component----------
+
   componentDidMount = () => {
     this.getOverallTally()
-    this.getDailyTally()
+      .then(() => this.getDailyTally())
+      .then(() => this.setPercentageState())
+      .then(() => this.setActivity())
   }
 
   render() {
-    let totalPercentCorrect = this.getPercentageCorrect(this.state.overallCorrect, this.getTotalAnswered())
-    let dailyPercentCorrect = this.getPercentageCorrect(this.state.dailyCorrect, this.getDailyAnswered())
 
     return (
       <Container>
@@ -103,16 +158,10 @@ export default class Stats extends Component {
           <h1>Your Stats</h1>
         </Row>
         <Row>
-          <Col>
-            <h3>Today</h3>
-            <h4>{dailyPercentCorrect}</h4>
-            <h4>Correct: {this.state.dailyCorrect}</h4>
-            <h4>Incorrect: {this.state.dailyIncorrect}</h4>
-            <h4>Skipped: {this.state.dailySkipped}</h4>
-          </Col>
+          {this.dailyDisplay()}
           <Col>
             <h3>Total</h3>
-            <h4>{totalPercentCorrect}</h4>
+            <h4>{this.state.totalPercentCorrect}</h4>
             <h4>Correct: {this.state.overallCorrect}</h4>
             <h4>Incorrect: {this.state.overallIncorrect}</h4>
             <h4>Skipped: {this.state.overallSkipped}</h4>
