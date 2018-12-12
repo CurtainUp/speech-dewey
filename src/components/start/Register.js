@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalBody } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import validate from '../../modules/User/Validate'
 
 export default class Register extends Component {
@@ -35,8 +35,10 @@ export default class Register extends Component {
           <Label for="FirstName"><i className="fa fa-user-circle form-icon" aria-hidden="true"></i>First Name</Label>
           <Input type="text" name="firstname" id="firstName" placeholder="First Name" required onChange={this.handleFieldChange} />
         </FormGroup>
-        <Button type="submit"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
-        <Button onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        <ModalFooter>
+        <Button type="submit" color="success" className="modal-button"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
+        <Button color="danger" className="modal-button" onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        </ModalFooter>
       </Form>)
   }
 

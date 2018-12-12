@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalBody } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import validate from '../../modules/User/Validate'
 
 export default class Login extends Component {
@@ -31,8 +31,10 @@ export default class Login extends Component {
             Password</Label>
           <Input type="password" name="password" id="password" placeholder="Password" required onChange={this.handleFieldChange} />
         </FormGroup>
-        <Button type="submit"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
-        <Button onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        <ModalFooter>
+        <Button type="submit" color="success" className="modal-button"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
+        <Button color="danger" className="modal-button" onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        </ModalFooter>
       </Form>)
   }
 
