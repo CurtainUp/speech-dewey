@@ -65,20 +65,20 @@ class App extends Component {
 
         <Route exact path="/mood-quiz" render={props => {
           if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else return <MediumQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+            return <EasyQuiz category={this.state.moodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+          } else return <MediumQuiz category={this.state.moodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
         <Route exact path="/home-quiz" render={props => {
           if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else return <MediumQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+            return <EasyQuiz category={this.state.homecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+          } else return <MediumQuiz category={this.state.homecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
         <Route exact path="/people-quiz" render={props => {
           if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else return <MediumQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+            return <EasyQuiz category={this.state.peoplecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+          } else return <MediumQuiz category={this.state.peoplecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
         <Route exact path="/stats" render={props => {
