@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 export default class QuizSelect extends Component {
   state = {
     clicked: false,
-    category: ""
   }
 
   show = () => {
@@ -14,14 +13,16 @@ export default class QuizSelect extends Component {
     })
   }
 
-  quizCategory = () => {
-    this.setState()
-  }
-
   render() {
 
     return (
       <div>
+        <div>
+        </div>
+        <div>
+          <Button color="success"><i className="far fa-star form-icon"></i><h3>Easy</h3></Button>
+          <Button color="warning"><i className="far fa-star form-icon"></i><i className="far fa-star form-icon"></i><h3>Medium</h3></Button>
+        </div>
         <div>
           <h1>Choose a Category</h1>
         </div>

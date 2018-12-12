@@ -8,13 +8,19 @@ import Quiz from './quiz/Quiz'
 import CardDash from './create/CardDash';
 import Create from './create/Create';
 import YourCards from './create/YourCards';
+import QuizDifficulty from './quiz/QuizDifficulty'
 
 class App extends Component {
   state = {
     foodcategory: 1,
     moodcategory: 2,
     homecategory: 3,
-    peoplecategory: 4
+    peoplecategory: 4,
+    difficulty: ""
+  }
+
+  handleDifficultyChange = (level) => {
+    return this.setState({ difficulty: level })
   }
 
   isAuthenticated = () => sessionStorage.getItem("id") !== null
@@ -38,27 +44,29 @@ class App extends Component {
         }} />
 
         <Route exact path="/quiz-select" render={props => {
-          return <QuizSelect />
+          return <QuizDifficulty
+            onDifficultyChange={this.handleDifficultyChange}
+            difficulty={this.state.difficulty} />
         }} />
 
-        <Route exact path="/quiz" render={props => {
+        {/* <Route exact path="/quiz" render={props => {
           return <Quiz />
-        }} />
+        }} /> */}
 
         <Route exact path="/food-quiz" render={props => {
-          return <Quiz category={this.state.foodcategory} />
+          return <Quiz category={this.state.foodcategory} difficulty={this.state.difficulty} />
         }} />
 
         <Route exact path="/mood-quiz" render={props => {
-          return <Quiz category={this.state.moodcategory} />
+          return <Quiz category={this.state.moodcategory} difficulty={this.state.difficulty} />
         }} />
 
         <Route exact path="/home-quiz" render={props => {
-          return <Quiz category={this.state.homecategory} />
+          return <Quiz category={this.state.homecategory} difficulty={this.state.difficulty} />
         }} />
 
         <Route exact path="/people-quiz" render={props => {
-          return <Quiz category={this.state.peoplecategory} />
+          return <Quiz category={this.state.peoplecategory} difficulty={this.state.difficulty} />
         }} />
 
         <Route exact path="/stats" render={props => {
