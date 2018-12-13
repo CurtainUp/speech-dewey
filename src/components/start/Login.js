@@ -51,7 +51,7 @@ export default class Login extends Component {
       email: this.state.email,
       password: this.state.password
     }
-    //validate and submit
+    //validate and submit, update top level userId state
     validate.existingUser(obj)
     .then(() => this.props.handleLoginChange(UserSession.getUser()))
       .then(() => this.props.history.push("/welcome"))
