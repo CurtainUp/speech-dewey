@@ -9,6 +9,10 @@ export default class QuizDifficulty extends Component {
       return this.props.onDifficultyChange(clicked.id)
   }
 
+  componentWillUnmount() {
+    return this.props.onDifficultyChange("")
+  }
+
   render() {
 
     if (this.props.difficulty !== "") {
