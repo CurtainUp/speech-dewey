@@ -6,6 +6,7 @@ import QuizScore from './QuizScore'
 import { Link } from 'react-router-dom'
 import PeopleNeeded from './PeopleNeeded'
 import UserSession from '../../modules/User/UserSession'
+import Speak from '../speech/Speak'
 
 export default class EasyQuiz extends Component {
   state = {
@@ -214,6 +215,9 @@ export default class EasyQuiz extends Component {
             <Col>
               <div id={this.state.words[this.state.qCounter].id}>
                 <h1>{this.state.words[this.state.qCounter].word}</h1>
+              </div>
+              <div>
+                <Speak word={this.state.words[this.state.qCounter].word}/>
               </div>
             </Col>
           </Row>
