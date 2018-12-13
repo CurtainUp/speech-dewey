@@ -17,7 +17,8 @@ export default class MediumQuiz extends Component {
     answered: false,
     correct: 0,
     incorrect: 0,
-    skipped: 0
+    skipped: 0,
+    initialize: false
   }
 
 
@@ -52,13 +53,15 @@ export default class MediumQuiz extends Component {
   }
 
   getWords() {
-    let newWords = {}
-    return API.getWordsByCategory(this.props.category)
-      // Shuffle words to randomize question order
-      .then((words) => this.shuffle(words))
-      // ****MIGHT NEED TO ADD SPLICE HERE TO GET FIRST 10 WORDS ONCE DATABASE IS LARGER***
-      .then((words) => newWords.words = words)
-      .then(() => this.setState(newWords))
+    return new Promise((resolve) => {
+      let newWords = {}
+      return API.getWordsByCategory(this.props.category)
+        // Shuffle words to randomize question order
+        .then((words) => this.shuffle(words))
+        // ****MIGHT NEED TO ADD SPLICE HERE TO GET FIRST 10 WORDS ONCE DATABASE IS LARGER***
+        .then((words) => newWords.words = words)
+        .then(() => this.setState(newWords, () => resolve()))
+    })
   }
 
   getAnswers() {
@@ -74,7 +77,7 @@ export default class MediumQuiz extends Component {
       if (correct.length !== 0) {
         // Grabs ALL words in hard coded database that are not the correct answer
         return API.getAllWrongWords(correct[0].id)
-        .then((wrongWords) => {
+          .then((wrongWords) => {
             // Randomizes wrong answer possibilities
             wrongShuffle = this.shuffle(wrongWords)
             // Stores 2 wrong answer possibilities
@@ -120,7 +123,7 @@ export default class MediumQuiz extends Component {
             possibleAnswers.push(correct[0])
             // Shuffles answer options and sets state
             this.shuffle(possibleAnswers)
-            this.setState({ possibleAnswers: possibleAnswers, status: "" }, () => resolve())
+            return this.setState({ possibleAnswers: possibleAnswers, status: "" }, () => resolve())
           })
       }
     })
@@ -183,86 +186,79 @@ export default class MediumQuiz extends Component {
   }
 
   componentDidMount() {
-    this.getWords()
+    return this.getWords()
       .then(() => this.state.words.map(word => word.word))
       .then((wordArray) => this.setState({ wordArray: wordArray }))
       .then(() => {
         if (this.props.category === 4) {
-          this.getPeopleAnswers()
-          console.log("people answers ran")
+          return this.getPeopleAnswers()
         } else {
-          this.getAnswers()
-        console.log("get all answers ran")
+          return this.getAnswers()
         }
       })
+      .then(() => this.setState({ initialize: true }))
   }
+
 
   componentWillUnmount() {
     return this.props.resetDifficulty("")
   }
 
   render() {
-    if (this.state.words.length < 10) {
-      return <PeopleNeeded />
-    }
-    else if (this.state.words.length !== 0 && this.state.possibleAnswers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
-      return (
-        <Container>
-          <Row>
-            <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
-          </Row>
-          <Row className="d-flex inline justify-content-center">
-            <Col>
-              <div id={this.state.words[this.state.qCounter].id}>
-                <h1>{this.state.words[this.state.qCounter].word}</h1>
-              </div>
-              <div>
-                <Speak word={this.state.words[this.state.qCounter].word}/>
-              </div>
-            </Col>
-          </Row>
-          {/* Need to refactor and add map function for all answer options below */}
-          <Row className="d-flex justify-content-center">
-            {/* <Col xs> */}
-            <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
-            }>
-              <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
-            </Button>
-            {/* </Col> */}
-            {/* <Col xs> */}
-            <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
-            }>
-              <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
-            </Button>
-            {/* </Col> */}
-            {/* <Col xs> */}
-            <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
-            }>
-              <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
-            </Button>
-            {/* </Col> */}
-            <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
-            }>
-              <img alt="Fourth Answer Option" src={this.state.possibleAnswers[3].image}></img>
-            </Button>
-            {/* </Col> */}
-                        {/* </Col> */}
-                        <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
-            }>
-              <img alt="Fifth Answer Option" src={this.state.possibleAnswers[4].image}></img>
-            </Button>
-            {/* </Col> */}
-          </Row>
-          <Row className="d-flex justify-content-center">
-            <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
-            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
-          </Row>
-        </Container >
-      )
-    }
-    // Loads Quiz Score upon completing 10 questions.
-    else if (this.state.qCounter > 9) {
-      return <QuizScore state={this.state} />
+    if (this.state.initialize === true) {
+      if (this.state.possibleAnswers.length < 3) {
+        return <PeopleNeeded />
+      }
+      else if (this.state.words.length !== 0 && this.state.possibleAnswers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
+        return (
+          <Container>
+            <Row>
+              <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
+            </Row>
+            <Row className="d-flex inline justify-content-center">
+              <Col>
+                <div id={this.state.words[this.state.qCounter].id}>
+                  <h1>{this.state.words[this.state.qCounter].word}</h1>
+                </div>
+                <div>
+                  <Speak word={this.state.words[this.state.qCounter].word} />
+                </div>
+              </Col>
+            </Row>
+            {/* Need to refactor and add map function for all answer options below */}
+            <Row className="d-flex justify-content-center">
+              <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
+              }>
+                <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
+              </Button>
+              <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
+              }>
+                <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
+              </Button>
+              <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
+              }>
+                <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
+              </Button>
+              <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
+              }>
+                <img alt="Fourth Answer Option" src={this.state.possibleAnswers[3].image}></img>
+              </Button>
+              <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
+              }>
+                <img alt="Fifth Answer Option" src={this.state.possibleAnswers[4].image}></img>
+              </Button>
+            </Row>
+            <Row className="d-flex justify-content-center">
+              <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
+              <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
+            </Row>
+          </Container >
+        )
+      }
+      // Loads Quiz Score upon completing 10 questions.
+      else if (this.state.qCounter > 9) {
+        return <QuizScore state={this.state} />
+      } else return null
     }
     else {
       return <h1>Loading</h1>
