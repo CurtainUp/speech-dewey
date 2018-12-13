@@ -1,21 +1,21 @@
-import React from 'react';
-import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap';
+import React from 'react'
+import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap'
 import API from '../../modules/API/API'
 
 class DeleteModal extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       modal: false
-    };
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
+    })
   }
 
   // OnClick functionality to delete saved cards
@@ -37,8 +37,8 @@ class DeleteModal extends React.Component {
           </ModalFooter>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default DeleteModal;
+export default DeleteModal

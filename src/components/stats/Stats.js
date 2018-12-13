@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap'
 import API from "../../modules/API/API"
 import UserSession from '../../modules/User/UserSession'
 import moment from 'moment'

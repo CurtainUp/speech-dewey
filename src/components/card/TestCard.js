@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+  CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 const TestCard = (props) => {
   return (
@@ -14,7 +14,7 @@ const TestCard = (props) => {
         </CardBody>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default TestCard;
+export default TestCard

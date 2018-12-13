@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Landing from './start/Landing'
 import Welcome from './start/Welcome'
 import Stats from './stats/Stats'
 import EasyQuiz from './quiz/EasyQuiz'
 import MediumQuiz from './quiz/MediumQuiz'
-import CardDash from './create/CardDash';
-import Create from './create/Create';
-import YourCards from './create/YourCards';
+import CardDash from './create/CardDash'
+import YourCards from './create/YourCards'
 import QuizDifficulty from './quiz/QuizDifficulty'
 
 class App extends Component {
@@ -17,7 +16,12 @@ class App extends Component {
     homecategory: 3,
     peoplecategory: 4,
     difficulty: "",
-    activeToday: false
+    activeToday: false,
+    user: null
+  }
+
+  handleLoginChange = (userid) => {
+    return this.setState({ user: userid })
   }
 
   // Passed to QuizDifficulty to set difficulty before quiz begins
@@ -40,7 +44,7 @@ class App extends Component {
           if (this.isAuthenticated()) {
             return <Redirect to="/welcome" />
           }
-          return <Landing {...props} />
+          return <Landing {...props} handleLoginChange={this.handleLoginChange} />
         }} />
 
         <Route exact path="/welcome" render={props => {
@@ -89,10 +93,6 @@ class App extends Component {
           return <CardDash />
         }} />
 
-        <Route exact path="/create" render={props => {
-          return <Create />
-        }} />
-
         <Route exact path="/your-cards" render={props => {
           return <YourCards />
         }} />
@@ -103,4 +103,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
