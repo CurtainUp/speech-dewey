@@ -81,8 +81,7 @@ export default class Stats extends Component {
       </Col>
     } else {
       return <Col>
-        <div className="m-3">
-
+        <div className="center">
           <h4>No Quizzes Taken Today</h4>
         </div>
       </Col>
@@ -121,6 +120,40 @@ export default class Stats extends Component {
   getTotalAnswered = () => {
     let total = this.state.overallCorrect + this.state.overallIncorrect + this.state.overallSkipped
     return total
+  }
+
+  overallDisplay = () => {
+
+    if (this.state.overallCorrect === 0 && this.state.overallIncorrect === 0 && this.state.overallSkipped === 0) {
+      return (
+        <Col>
+          <div className="center">
+
+            <h4>No Quizzes Taken</h4>
+          </div>
+        </Col>
+      )
+    } else {
+      return (
+        <Col className="stat-card">
+          <div className="m-3">
+            <h3>Total</h3>
+            <ResponsiveContainer height={250} width="100%">
+              <PieChart width={400} height={250}>
+                <Pie data={[{ name: 'Total Correct', value: this.state.overallCorrect, fill: '#00ff60' }, { name: 'Total Incorrect', value: this.state.overallIncorrect, fill: '#ff0000' },
+                { name: 'Total Skipped', value: this.state.overallSkipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" />
+              </PieChart>
+            </ResponsiveContainer>
+            <h4>{this.state.totalPercentCorrect}</h4>
+            <Row className="d-flex inline align-items-center">
+              <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.overallCorrect}</h4>
+              <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.state.overallIncorrect}</h4>
+              <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.state.overallSkipped}</h4>
+            </Row>
+          </div>
+        </Col>
+      )
+    }
   }
 
   // ------Functions for converting stats to %----------
@@ -168,18 +201,7 @@ export default class Stats extends Component {
           <Col className="stat-card">
             <div className="m-3">
               <h3>Total</h3>
-              <ResponsiveContainer height={250} width="100%">
-                <PieChart width={400} height={250}>
-                  <Pie data={[{ name: 'Total Correct', value: this.state.overallCorrect, fill: '#00ff60' }, { name: 'Total Incorrect', value: this.state.overallIncorrect, fill: '#ff0000' },
-                  { name: 'Total Skipped', value: this.state.overallSkipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" />
-                </PieChart>
-              </ResponsiveContainer>
-              <h4>{this.state.totalPercentCorrect}</h4>
-              <Row className="d-flex inline align-items-center">
-                <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.overallCorrect}</h4>
-                <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.state.overallIncorrect}</h4>
-                <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.state.overallSkipped}</h4>
-              </Row>
+              {this.overallDisplay()}
             </div>
           </Col>
         </Row>

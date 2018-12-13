@@ -16,7 +16,7 @@ export default class Landing extends Component {
           {/* <Row className="d-flex inline justify-content-center"> */}
           <Row className="d-flex justify-content-around">
             <Login {...this.props} handleLoginChange={this.props.handleLoginChange} />
-            <Register {...this.props}/>
+            <Register {...this.props} handleLoginChange={this.props.handleLoginChange}/>
           </Row>
         </Jumbotron>
       </React.Fragment>

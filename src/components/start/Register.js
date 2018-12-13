@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import validate from '../../modules/User/Validate'
+import UserSession from '../../modules/User/UserSession';
+
 
 export default class Register extends Component {
   constructor(props) {
@@ -56,9 +58,11 @@ export default class Register extends Component {
       password: this.state.password,
       firstName: this.state.firstName
     }
-    //validate, submit, closes form
+    //validate and submit, update top level userId state
     validate.newUser(obj)
+    .then(() => this.props.handleLoginChange(UserSession.getUser()))
     .then(() => this.props.history.push("/welcome"))
+
   }
 
   render() {
