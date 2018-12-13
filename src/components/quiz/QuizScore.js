@@ -22,10 +22,16 @@ class QuizScore extends React.Component {
 
 
   getPercentageCorrect = () => {
-    let percentCorrect = (this.props.state.correct / (10 - this.props.state.skipped)) * 100
-    percentCorrect = Math.round(percentCorrect)
+    let percentCorrect
+    if (this.props.state.skipped === 10) {
+      percentCorrect = 0
+    } else {
+      percentCorrect = (this.props.state.correct / (10 - this.props.state.skipped)) * 100
+      percentCorrect = Math.round(percentCorrect)
+    }
+
     percentCorrect = percentCorrect.toString() + "%"
-    this.setState({percentCorrect: percentCorrect})
+    this.setState({ percentCorrect: percentCorrect })
   }
 
   componentDidMount() {
@@ -34,7 +40,7 @@ class QuizScore extends React.Component {
 
   render() {
 
-    if(this.state.modal === false) {
+    if (this.state.modal === false) {
       return <Redirect to="/welcome" />
     }
     return (
