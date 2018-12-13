@@ -11,6 +11,10 @@ const API = {
     return fetch(`http://localhost:8088/cards?categoryId=${categoryid}`)
       .then(response => response.json())
   },
+  getAllWrongWords(correctid) {
+    return fetch(`http://localhost:8088/cards?userId=0&id_ne=${correctid}`)
+      .then(response => response.json())
+  },
   saveData(resource, entryObject) {
     return fetch(`http://localhost:8088/${resource}`, {
       method: "POST",

@@ -6,10 +6,10 @@ import QuizScore from './QuizScore';
 import { Link } from 'react-router-dom'
 import PeopleNeeded from './PeopleNeeded';
 
-export default class MediumQuiz extends Component {
+export default class EasyQuiz extends Component {
   state = {
     words: [],
-    answers: [],
+    possibleAnswers: [],
     status: "",
     qCounter: 0,
     answered: false,
@@ -54,6 +54,7 @@ export default class MediumQuiz extends Component {
     return API.getWordsByCategory(this.props.category)
       // Shuffle words to randomize question order
       .then((words) => this.shuffle(words))
+      // ****WILL NEED TO ADD SPLICE HERE TO GET FIRST 10 WORDS ONCE DATABASE IS LARGER***
       .then((words) => newWords.words = words)
       .then(() => this.setState(newWords))
   }
@@ -61,21 +62,35 @@ export default class MediumQuiz extends Component {
   getAnswers() {
     return new Promise((resolve) => {
       // Creates a new array of words from state
-      let wrongWords = this.state.words.map(word => word)
-      // Creates a new away with the correct answer and removes it from possible wrong answers
-      let correct = wrongWords.splice(this.state.qCounter, 1)
-      // Randomizes wrong answer possibilities
-      let wordShuffle = this.shuffle(wrongWords)
-      // Stores 2 wrong answer possibilities and puts them into answers[]
-      wordShuffle = wordShuffle.slice(0, 4)
-      let answers = wordShuffle.map(word => word)
-      // Adds correct answer to options
-      answers.push(correct[0])
-      // Shuffles answer options and sets state
-      this.shuffle(answers)
-      this.setState({ answers: answers, status: "" }, () => resolve())
+      let words = this.state.words.map(word => word)
+      // Creates a new array with the correct answer and removes it from possible wrong answers
+      let correct = words.splice(this.state.qCounter, 1)
+      // Variable to receive promise of all possible wrong words
+      let wrongShuffle
+
+      // if statement prevents an attempt at finding answers once no correct answer is left
+      if (correct.length !== 0) {
+        // Grabs ALL words in hard coded database that are not the correct answer
+        return API.getAllWrongWords(correct[0].id)
+          .then((wrongWords) => {
+            // Randomizes wrong answer possibilities
+            wrongShuffle = this.shuffle(wrongWords)
+            // Stores 2 wrong answer possibilities
+            wrongShuffle = wrongShuffle.slice(0, 4)
+          })
+          .then(() => {
+            //  The incorrect answers are added to possibleAnswers[]
+            let possibleAnswers = wrongShuffle.map(word => word)
+            // Adds correct answer to options
+            possibleAnswers.push(correct[0])
+            // Shuffles answer options and sets state
+            this.shuffle(possibleAnswers)
+            this.setState({ possibleAnswers: possibleAnswers, status: "" }, () => resolve())
+          })
+      }
     })
   }
+
 
   handleAnswerClick = (e) => {
     let clicked = e.target
@@ -129,56 +144,46 @@ export default class MediumQuiz extends Component {
     if (this.state.words.length < 10) {
       return <PeopleNeeded />
     }
-    else if (this.state.words.length !== 0 && this.state.answers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
+    else if (this.state.words.length !== 0 && this.state.possibleAnswers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
       return (
         <Container>
           <Row>
             <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
           </Row>
-          <Row className="d-flex inline">
+          <Row className="d-flex inline justify-content-center">
             <Col>
               <div id={this.state.words[this.state.qCounter].id}>
                 <h1>{this.state.words[this.state.qCounter].word}</h1>
               </div>
             </Col>
-            <Col>
-              <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
-            </Col>
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
-          <Row className="d-flex inline">
-            <Col xs>
-              <Button className="answer" id={this.state.answers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
+          <Row className="d-flex">
+              <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
-                <img alt="First Answer Option" src={this.state.answers[0].image}></img>
+                <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
               </Button>
-            </Col>
-            <Col xs>
-              <Button className="answer" id={this.state.answers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
+              <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
-                <img alt="Second Answer Option" src={this.state.answers[1].image}></img>
+                <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
               </Button>
-            </Col>
-            <Col xs>
-              <Button className="answer" id={this.state.answers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
+              <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
-                <img alt="Third Answer Option" src={this.state.answers[2].image}></img>
+                <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
               </Button>
-            </Col>
-            <Col xs>
-              <Button className="answer" id={this.state.answers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
+              <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
-                <img alt="Third Answer Option" src={this.state.answers[3].image}></img>
+                <img alt="Third Answer Option" src={this.state.possibleAnswers[3].image}></img>
               </Button>
-            </Col>
-            <Col xs>
-              <Button className="answer" id={this.state.answers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
+              <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
-                <img alt="Third Answer Option" src={this.state.answers[4].image}></img>
+                <img alt="Third Answer Option" src={this.state.possibleAnswers[4].image}></img>
               </Button>
-            </Col>
           </Row>
-          <Row><Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button></Row>
+          <Row className="d-flex justify-content-center">
+            <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
+            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
+            </Row>
         </Container >
       )
     }
