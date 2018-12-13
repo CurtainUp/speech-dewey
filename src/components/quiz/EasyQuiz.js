@@ -148,38 +148,38 @@ export default class EasyQuiz extends Component {
           <Row>
             <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
           </Row>
-          <Row className="d-flex inline">
+          <Row className="d-flex inline justify-content-center">
             <Col>
               <div id={this.state.words[this.state.qCounter].id}>
                 <h1>{this.state.words[this.state.qCounter].word}</h1>
               </div>
             </Col>
-            <Col>
-              <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
-            </Col>
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
-          <Row className="d-flex inline">
-            <Col xs>
+          <Row className="d-flex justify-content-center">
+            {/* <Col xs> */}
               <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
                 <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
               </Button>
-            </Col>
-            <Col xs>
+            {/* </Col> */}
+            {/* <Col xs> */}
               <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
                 <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
               </Button>
-            </Col>
-            <Col xs>
+            {/* </Col> */}
+            {/* <Col xs> */}
               <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
                 <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
               </Button>
-            </Col>
+            {/* </Col> */}
           </Row>
-          <Row><Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button></Row>
+          <Row className="d-flex justify-content-center">
+            <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
+            <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
+            </Row>
         </Container >
       )
     }
