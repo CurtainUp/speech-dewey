@@ -1,22 +1,22 @@
-import React from 'react';
-import { Button, Modal, ModalHeader, ModalFooter, FormGroup, Label, Input, ModalBody } from 'reactstrap';
+import React from 'react'
+import { Button, Modal, ModalHeader, ModalFooter, FormGroup, Label, Input, ModalBody } from 'reactstrap'
 import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
 
 class EditModal extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       modal: false
-    };
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
+    })
   }
 
   // OnClick functionality to edit saved cards
@@ -83,8 +83,8 @@ class EditModal extends React.Component {
           </form>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default EditModal;
+export default EditModal

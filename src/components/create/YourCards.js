@@ -4,7 +4,7 @@ import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
 import DeleteModal from './DeleteModal'
 import EditModal from './EditModal'
-import CreateModal from './CreateModal';
+import CreateModal from './CreateModal'
 
 export default class YourCards extends Component {
   state = {
@@ -13,7 +13,6 @@ export default class YourCards extends Component {
 
 loadCards = () => {
  let currentUser = UserSession.getUser()
- console.log(currentUser)
  let userCards = {}
  return API.getUserCards(currentUser)
    .then((cards) => userCards = cards)

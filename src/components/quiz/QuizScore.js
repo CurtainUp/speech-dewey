@@ -73,8 +73,8 @@ class QuizScore extends React.Component {
           </ModalFooter>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default QuizScore;
+export default QuizScore

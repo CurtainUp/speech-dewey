@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Row, Jumbotron} from 'reactstrap'
 import Login from './Login'
 import Register from './Register'
@@ -15,7 +15,7 @@ export default class Landing extends Component {
         <Jumbotron className="m-3" style={{backgroundImage: "url(" + Background + ")"}}>
           {/* <Row className="d-flex inline justify-content-center"> */}
           <Row className="d-flex justify-content-around">
-            <Login {...this.props} />
+            <Login {...this.props} handleLoginChange={this.props.handleLoginChange} />
             <Register {...this.props}/>
           </Row>
         </Jumbotron>

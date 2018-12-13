@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { Container, Col, Row, Button } from 'reactstrap'
 import API from "../../modules/API/API"
 import moment from 'moment'
-import QuizScore from './QuizScore';
+import QuizScore from './QuizScore'
 import { Link } from 'react-router-dom'
-import PeopleNeeded from './PeopleNeeded';
+import PeopleNeeded from './PeopleNeeded'
+import UserSession from '../../modules/User/UserSession'
+
 
 export default class EasyQuiz extends Component {
   state = {
@@ -26,20 +28,20 @@ export default class EasyQuiz extends Component {
     while (m) {
 
       // Pick a remaining element…
-      i = Math.floor(Math.random() * m--);
+      i = Math.floor(Math.random() * m--)
 
       // And swap it with the current element.
-      t = array[m];
-      array[m] = array[i];
-      array[i] = t;
+      t = array[m]
+      array[m] = array[i]
+      array[i] = t
     }
 
-    return array;
+    return array
   }
 
   // function to delay state change
   sleep = (time) => {
-    return new Promise((resolve) => setTimeout(resolve, time));
+    return new Promise((resolve) => setTimeout(resolve, time))
   }
 
   increment = () => {
@@ -72,6 +74,39 @@ export default class EasyQuiz extends Component {
       if (correct.length !== 0) {
         // Grabs ALL words in hard coded database that are not the correct answer
         return API.getAllWrongWords(correct[0].id)
+          .then((wrongWords) => {
+            // Randomizes wrong answer possibilities
+            wrongShuffle = this.shuffle(wrongWords)
+            // Stores 2 wrong answer possibilities
+            wrongShuffle = wrongShuffle.slice(0, 4)
+          })
+          .then(() => {
+            //  The incorrect answers are added to possibleAnswers[]
+            let possibleAnswers = wrongShuffle.map(word => word)
+            // Adds correct answer to options
+            possibleAnswers.push(correct[0])
+            // Shuffles answer options and sets state
+            this.shuffle(possibleAnswers)
+            this.setState({ possibleAnswers: possibleAnswers, status: "" }, () => resolve())
+          })
+      }
+    })
+  }
+
+  getPeopleAnswers() {
+    return new Promise((resolve) => {
+      // Creates a new array of words from state
+      let words = this.state.words.map(word => word)
+      // Creates a new array with the correct answer and removes it from possible wrong answers
+      let correct = words.splice(this.state.qCounter, 1)
+      // Variable to receive promise of all possible wrong words
+      let wrongShuffle
+      let currentUser = UserSession.getUser()
+
+      // if statement prevents an attempt at finding answers once no correct answer is left
+      if (correct.length !== 0) {
+        // Grabs ALL words in hard coded database that are not the correct answer
+        return API.getUserCards(currentUser)
           .then((wrongWords) => {
             // Randomizes wrong answer possibilities
             wrongShuffle = this.shuffle(wrongWords)
@@ -133,7 +168,14 @@ export default class EasyQuiz extends Component {
     this.getWords()
       .then(() => this.state.words.map(word => word.word))
       .then((wordArray) => this.setState({ wordArray: wordArray }))
-      .then(() => this.getAnswers())
+      .then(() => {
+        if (this.props.category === 4) {
+          this.getPeopleAnswers()
+          console.log("people answers ran")
+        } else
+          this.getAnswers()
+        console.log("get all answers ran")
+      })
   }
 
   componentWillUnmount() {
@@ -159,31 +201,31 @@ export default class EasyQuiz extends Component {
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
           <Row className="d-flex">
-              <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Third Answer Option" src={this.state.possibleAnswers[3].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Third Answer Option" src={this.state.possibleAnswers[4].image}></img>
-              </Button>
+            <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
+            }>
+              <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
+            </Button>
+            <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
+            }>
+              <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
+            </Button>
+            <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
+            }>
+              <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
+            </Button>
+            <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
+            }>
+              <img alt="Third Answer Option" src={this.state.possibleAnswers[3].image}></img>
+            </Button>
+            <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
+            }>
+              <img alt="Third Answer Option" src={this.state.possibleAnswers[4].image}></img>
+            </Button>
           </Row>
           <Row className="d-flex justify-content-center">
             <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
             <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
-            </Row>
+          </Row>
         </Container >
       )
     }

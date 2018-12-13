@@ -1,26 +1,26 @@
-import React from 'react';
+import React from 'react'
 import {
   Navbar,
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
+} from 'reactstrap'
 import UserSession from '../modules/User/UserSession'
 import { Link } from 'react-router-dom'
 
 export default class NavBar extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
       isOpen: false
-    };
+    }
   }
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
-    });
+    })
   }
 
   render() {
@@ -40,6 +40,6 @@ export default class NavBar extends React.Component {
           : null
         }
       </div>
-    );
+    )
   }
 }

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import validate from '../../modules/User/Validate'
+import UserSession from '../../modules/User/UserSession';
 
 export default class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      percentCorrect: 0,
       modal: false
     }
 
@@ -53,6 +53,7 @@ export default class Login extends Component {
     }
     //validate and submit
     validate.existingUser(obj)
+    .then(() => this.props.handleLoginChange(UserSession.getUser()))
       .then(() => this.props.history.push("/welcome"))
   }
 

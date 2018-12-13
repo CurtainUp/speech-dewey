@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap';
+import React from 'react'
+import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap'
 import API from '../../modules/API/API'
 
 class DeleteModal extends React.Component {
@@ -37,8 +37,8 @@ class DeleteModal extends React.Component {
           </ModalFooter>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default DeleteModal;
+export default DeleteModal

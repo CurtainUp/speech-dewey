@@ -19,7 +19,7 @@ export default class CreateModal extends Component {
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
+    })
   }
 
   handleFieldChange = e => {
