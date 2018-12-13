@@ -226,27 +226,29 @@ export default class MediumQuiz extends Component {
               </Col>
             </Row>
             {/* Need to refactor and add map function for all answer options below */}
-            <Row className="d-flex justify-content-center">
-              <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Fourth Answer Option" src={this.state.possibleAnswers[3].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Fifth Answer Option" src={this.state.possibleAnswers[4].image}></img>
-              </Button>
+            <Row>
+              <div className="d-flex justify-content-center">
+                <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
+                </Button>
+                <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
+                </Button>
+                <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
+                </Button>
+                <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="Fourth Answer Option" src={this.state.possibleAnswers[3].image}></img>
+                </Button>
+                <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="Fifth Answer Option" src={this.state.possibleAnswers[4].image}></img>
+                </Button>
+              </div>
             </Row>
             <Row className="d-flex justify-content-center">
               <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
