@@ -4,18 +4,18 @@ import API from '../../modules/API/API'
 
 class DeleteModal extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       modal: false
-    };
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
+    })
   }
 
   // OnClick functionality to delete saved cards

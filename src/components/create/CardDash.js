@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Row, Container } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import CreateModal from './CreateModal'
 
 export default class CardDash extends Component {
 
@@ -11,7 +12,7 @@ export default class CardDash extends Component {
           <h1>Cards</h1>
         </Row>
         <Row className="d-flex justify-content-center">
-          <Button tag={Link} to='/create'><i className="fas fa-file-medical"></i><h3>Create</h3></Button>
+          <CreateModal />
           <Button tag={Link} to='/your-cards'><i className="fas fa-images"></i><h3>Your Cards</h3></Button>
         </Row>
       </Container>

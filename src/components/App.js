@@ -6,7 +6,6 @@ import Stats from './stats/Stats'
 import EasyQuiz from './quiz/EasyQuiz'
 import MediumQuiz from './quiz/MediumQuiz'
 import CardDash from './create/CardDash';
-import Create from './create/Create';
 import YourCards from './create/YourCards';
 import QuizDifficulty from './quiz/QuizDifficulty'
 
@@ -87,10 +86,6 @@ class App extends Component {
 
         <Route exact path="/cards" render={props => {
           return <CardDash />
-        }} />
-
-        <Route exact path="/create" render={props => {
-          return <Create />
         }} />
 
         <Route exact path="/your-cards" render={props => {
