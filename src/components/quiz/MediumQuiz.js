@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom'
 import PeopleNeeded from './PeopleNeeded'
 import UserSession from '../../modules/User/UserSession'
 
-
-export default class EasyQuiz extends Component {
+export default class MediumQuiz extends Component {
   state = {
     words: [],
     possibleAnswers: [],
@@ -56,7 +55,7 @@ export default class EasyQuiz extends Component {
     return API.getWordsByCategory(this.props.category)
       // Shuffle words to randomize question order
       .then((words) => this.shuffle(words))
-      // ****WILL NEED TO ADD SPLICE HERE TO GET FIRST 10 WORDS ONCE DATABASE IS LARGER***
+      // ****MIGHT NEED TO ADD SPLICE HERE TO GET FIRST 10 WORDS ONCE DATABASE IS LARGER***
       .then((words) => newWords.words = words)
       .then(() => this.setState(newWords))
   }
@@ -74,7 +73,7 @@ export default class EasyQuiz extends Component {
       if (correct.length !== 0) {
         // Grabs ALL words in hard coded database that are not the correct answer
         return API.getAllWrongWords(correct[0].id)
-          .then((wrongWords) => {
+        .then((wrongWords) => {
             // Randomizes wrong answer possibilities
             wrongShuffle = this.shuffle(wrongWords)
             // Stores 2 wrong answer possibilities
@@ -105,8 +104,8 @@ export default class EasyQuiz extends Component {
 
       // if statement prevents an attempt at finding answers once no correct answer is left
       if (correct.length !== 0) {
-        // Grabs ALL words in hard coded database that are not the correct answer
-        return API.getUserCards(currentUser)
+        // Grabs all user created cards that are not the correct answer
+        return API.getUserWrongWords(currentUser, correct[0].id)
           .then((wrongWords) => {
             // Randomizes wrong answer possibilities
             wrongShuffle = this.shuffle(wrongWords)
@@ -137,19 +136,37 @@ export default class EasyQuiz extends Component {
       return this.sleep(0)
         .then(() => this.setState({ status: "skipped", skipped: skipped + 1 }, () => this.answerLog()))
         .then(() => this.increment())
-        .then(() => this.getAnswers())
+        .then(() => {
+          if (this.props.category === 4) {
+            this.getPeopleAnswers()
+          } else {
+            this.getAnswers()
+          }
+        })
     } else if (clicked.id !== answerId) {
       clicked.className = "answer btn btn-danger"
       this.sleep(500)
         .then(() => this.setState({ status: "incorrect", incorrect: incorrect + 1 }, () => this.answerLog()))
         .then(() => this.increment())
-        .then(() => this.getAnswers())
+        .then(() => {
+          if (this.props.category === 4) {
+            this.getPeopleAnswers()
+          } else {
+            this.getAnswers()
+          }
+        })
     } else if (clicked.id === answerId) {
       clicked.className = "answer btn btn-success"
       this.sleep(500)
         .then(() => this.setState({ status: "correct", correct: correct + 1 }, () => this.answerLog()))
         .then(() => this.increment())
-        .then(() => this.getAnswers())
+        .then(() => {
+          if (this.props.category === 4) {
+            this.getPeopleAnswers()
+          } else {
+            this.getAnswers()
+          }
+        })
     }
   }
 
@@ -172,9 +189,10 @@ export default class EasyQuiz extends Component {
         if (this.props.category === 4) {
           this.getPeopleAnswers()
           console.log("people answers ran")
-        } else
+        } else {
           this.getAnswers()
         console.log("get all answers ran")
+        }
       })
   }
 
@@ -200,27 +218,36 @@ export default class EasyQuiz extends Component {
             </Col>
           </Row>
           {/* Need to refactor and add map function for all answer options below */}
-          <Row className="d-flex">
+          <Row className="d-flex justify-content-center">
+            {/* <Col xs> */}
             <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
             }>
               <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
             </Button>
+            {/* </Col> */}
+            {/* <Col xs> */}
             <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
             }>
               <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
             </Button>
+            {/* </Col> */}
+            {/* <Col xs> */}
             <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
             }>
               <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
             </Button>
+            {/* </Col> */}
             <Button className="answer" id={this.state.possibleAnswers[3].id} onClick={(e) => { this.handleAnswerClick(e) }
             }>
-              <img alt="Third Answer Option" src={this.state.possibleAnswers[3].image}></img>
+              <img alt="Fourth Answer Option" src={this.state.possibleAnswers[3].image}></img>
             </Button>
-            <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
+            {/* </Col> */}
+                        {/* </Col> */}
+                        <Button className="answer" id={this.state.possibleAnswers[4].id} onClick={(e) => { this.handleAnswerClick(e) }
             }>
-              <img alt="Third Answer Option" src={this.state.possibleAnswers[4].image}></img>
+              <img alt="Fifth Answer Option" src={this.state.possibleAnswers[4].image}></img>
             </Button>
+            {/* </Col> */}
           </Row>
           <Row className="d-flex justify-content-center">
             <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
