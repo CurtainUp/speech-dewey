@@ -11,26 +11,21 @@ export default class Speak extends Component {
     let synth = window.speechSynthesis
 
     if (synth.speaking) {
-        console.error('speechSynthesis.speaking');
         return;
     }
     if (word !== '') {
     let utterThis = new SpeechSynthesisUtterance(word);
     utterThis.voice = synth.getVoices()[3]
     utterThis.onend = function (event) {
-        console.log('SpeechSynthesisUtterance.onend');
     }
     utterThis.onerror = function (event) {
-        console.error('SpeechSynthesisUtterance.onerror');
     }
     synth.speak(utterThis);
   }
 }
 
 handleClick = (e) => {
-  console.log("clicked")
   this.speak(this.props.word)
-  console.log("talking")
 }
 
 componentDidMount = () => {
@@ -41,7 +36,7 @@ componentDidMount = () => {
 }
 
 render () {
-  return <Button onClick={(e) => {this.handleClick(e)}}>Play</Button>
+  return <Button onClick={(e) => {this.handleClick(e)}}><i className="fas fa-volume-up form-icon center"></i></Button>
 }
 
 }
