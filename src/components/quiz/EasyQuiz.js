@@ -226,7 +226,8 @@ export default class EasyQuiz extends Component {
               </Col>
             </Row>
             {/* Need to refactor and add map function for all answer options below */}
-            <Row className="d-flex justify-content-center">
+            <Row>
+              <div className="d-flex justify-content-center">
               <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
               }>
                 <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
@@ -239,6 +240,7 @@ export default class EasyQuiz extends Component {
               }>
                 <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
               </Button>
+              </div>
             </Row>
             <Row className="d-flex justify-content-center">
               <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
