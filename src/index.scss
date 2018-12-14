@@ -34,8 +34,14 @@ margin: 20px;
   margin: 10px;
 }
 
+.quizcat-icon {
+ flex-basis: 20%;
+}
+
 img {
   max-width: 100%;
+  // Keeps buttons from becoming very long vertically
+  max-height: 300px;
   align-content: center;
 }
 
@@ -61,7 +67,6 @@ img {
   background-color: $light;
   border: none;
   border-radius: .25rem;
-  margin-right: 3em;
 }
 
 .stat-card > i {

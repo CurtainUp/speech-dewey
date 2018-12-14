@@ -199,7 +199,6 @@ export default class EasyQuiz extends Component {
       .then(() => this.setState({ initialize: true }))
   }
 
-
   componentWillUnmount() {
     return this.props.resetDifficulty("")
   }
@@ -211,7 +210,7 @@ export default class EasyQuiz extends Component {
       }
       else if (this.state.words.length !== 0 && this.state.possibleAnswers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
         return (
-          <Container>
+          <Container ref={this.myRef}>
             <Row>
               <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
             </Row>
@@ -228,18 +227,18 @@ export default class EasyQuiz extends Component {
             {/* Need to refactor and add map function for all answer options below */}
             <Row>
               <div className="d-flex justify-content-center">
-              <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
-              </Button>
-              <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
-              }>
-                <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
-              </Button>
+                <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
+                </Button>
+                <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
+                </Button>
+                <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
+                }>
+                  <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
+                </Button>
               </div>
             </Row>
             <Row className="d-flex justify-content-center">

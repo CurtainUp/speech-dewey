@@ -28,7 +28,7 @@ class DeleteModal extends React.Component {
   render() {
     return (
       <div>
-        <Button className="card-button" onClick={this.toggle}><i className="fas fa-trash-alt form-icon"></i><h3>Delete</h3></Button>
+        <Button className="modal-button" onClick={this.toggle}><i className="fas fa-trash-alt form-icon"></i><h3>Delete</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}><i className="fas fa-trash-alt form-icon"></i><h2>Delete this card?</h2></ModalHeader>
           <ModalFooter>
