@@ -48,7 +48,7 @@ class EditModal extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle}>
+        <Button className="modal-button" onClick={this.toggle}>
          <i className="fas fa-edit form-icon"></i><h3>Edit</h3>
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>

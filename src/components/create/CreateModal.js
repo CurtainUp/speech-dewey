@@ -50,7 +50,7 @@ export default class CreateModal extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle}><i className="fas fa-file-medical"></i><h3>Create</h3></Button>
+        <Button className="mr-3" onClick={this.toggle}><i className="fas fa-file-medical"></i><h3>Create</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <Form onSubmit={(e) => {
               e.preventDefault()

@@ -70,7 +70,7 @@ export default class Stats extends Component {
             { name: 'Daily Skipped', value: this.state.dailySkipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" isAnimationActive={false} />
           </PieChart>
         </ResponsiveContainer>
-        <h4>{this.state.dailyPercentCorrect}</h4>
+        <h4 className="d-flex justify-content-center">{this.state.dailyPercentCorrect}</h4>
         <Row className="d-flex inline">
           <div className="d-flex inline align-items-center mx-3">
             <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.dailyCorrect}</h4>
@@ -137,14 +137,13 @@ export default class Stats extends Component {
       return (
         <Col className="stat-card">
           <div className="m-3">
-            <h3>Total</h3>
             <ResponsiveContainer height={250} width="100%">
               <PieChart width={400} height={250}>
                 <Pie data={[{ name: 'Total Correct', value: this.state.overallCorrect, fill: '#00ff60' }, { name: 'Total Incorrect', value: this.state.overallIncorrect, fill: '#ff0000' },
                 { name: 'Total Skipped', value: this.state.overallSkipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" />
               </PieChart>
             </ResponsiveContainer>
-            <h4>{this.state.totalPercentCorrect}</h4>
+            <h4 className="d-flex justify-content-center">{this.state.totalPercentCorrect}</h4>
             <Row className="d-flex inline align-items-center">
               <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.overallCorrect}</h4>
               <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.state.overallIncorrect}</h4>
@@ -191,7 +190,7 @@ export default class Stats extends Component {
         <Row>
           <h1>Your Stats</h1>
         </Row>
-        <Row className="d-flex inline">
+        <Row className="d-flex justify-content-around">
           <Col className="stat-card">
             <div className="m-3">
               <h3>Today</h3>

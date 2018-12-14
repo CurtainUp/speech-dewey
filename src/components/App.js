@@ -62,7 +62,7 @@ class App extends Component {
 
         <Route exact path="/food-quiz" render={props => {
           if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+            return <EasyQuiz className="full-height" category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
           } else return <MediumQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
