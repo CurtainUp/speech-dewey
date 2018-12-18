@@ -229,15 +229,15 @@ export default class EasyQuiz extends Component {
               <div className="d-flex justify-content-center">
                 <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
                 }>
-                  <img alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
+                  <img id={this.state.possibleAnswers[0].id} alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
                 </Button>
                 <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
                 }>
-                  <img alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
+                  <img id={this.state.possibleAnswers[1].id} alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
                 </Button>
                 <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
                 }>
-                  <img alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
+                  <img id={this.state.possibleAnswers[2].id} alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
                 </Button>
               </div>
             </Row>
