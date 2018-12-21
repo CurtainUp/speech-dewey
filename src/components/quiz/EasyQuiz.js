@@ -148,7 +148,7 @@ export default class EasyQuiz extends Component {
           }
         })
     } else if (clicked.id !== answerId) {
-      clicked.className = "answer btn btn-danger"
+      clicked.className += " btn btn-danger"
       this.sleep(500)
         .then(() => this.setState({ status: "incorrect", incorrect: incorrect + 1 }, () => this.answerLog()))
         .then(() => this.increment())
