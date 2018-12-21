@@ -160,7 +160,7 @@ export default class EasyQuiz extends Component {
           }
         })
     } else if (clicked.id === answerId) {
-      clicked.className = "answer btn btn-success"
+      clicked.className += " btn btn-success"
       this.sleep(500)
         .then(() => this.setState({ status: "correct", correct: correct + 1 }, () => this.answerLog()))
         .then(() => this.increment())
