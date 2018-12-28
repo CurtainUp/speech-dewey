@@ -17,7 +17,8 @@ class App extends Component {
     peoplecategory: 4,
     difficulty: "",
     activeToday: false,
-    user: null
+    user: null,
+    navText: ""
   }
 
   handleLoginChange = (userid) => {
@@ -31,6 +32,10 @@ class App extends Component {
 
   handleActivityChange = (boo) => {
     return this.setState({ activeToday: boo })
+  }
+
+  handleNavText = (text) => {
+    return this.setState({ navText: text })
   }
 
   // Checks if a user is currently logged in
@@ -49,7 +54,9 @@ class App extends Component {
 
         <Route exact path="/welcome" render={props => {
           if (this.isAuthenticated()) {
-            return <Welcome />
+            return <Welcome
+            handleNavText={this.handleNavText}
+            navText={this.state.navText}/>
           }
           return <Redirect to="/" />
         }} />
