@@ -101,11 +101,11 @@ class App extends Component {
         }} />
 
         <Route exact path="/cards" render={props => {
-          return <CardDash />
+          return <CardDash handleNavText={this.handleNavText} navText={this.state.navText} />
         }} />
 
         <Route exact path="/your-cards" render={props => {
-          return <YourCards />
+          return <YourCards handleNavText={this.handleNavText} navText={this.state.navText} />
         }} />
 
       </Switch>
