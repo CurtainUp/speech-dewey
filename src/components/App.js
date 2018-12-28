@@ -35,7 +35,9 @@ class App extends Component {
   }
 
   handleNavText = (text) => {
-    return this.setState({ navText: text })
+    return new Promise((resolve) => {
+      this.setState({ navText: text }, () => resolve())
+    })
   }
 
   // Checks if a user is currently logged in
@@ -55,8 +57,8 @@ class App extends Component {
         <Route exact path="/welcome" render={props => {
           if (this.isAuthenticated()) {
             return <Welcome
-            handleNavText={this.handleNavText}
-            navText={this.state.navText}/>
+              handleNavText={this.handleNavText}
+              navText={this.state.navText} />
           }
           return <Redirect to="/" />
         }} />
@@ -95,7 +97,7 @@ class App extends Component {
         }} />
 
         <Route exact path="/stats" render={props => {
-          return <Stats activeToday={this.state.activeToday} resetActivity={this.handleActivityChange} />
+          return <Stats activeToday={this.state.activeToday} resetActivity={this.handleActivityChange} handleNavText={this.handleNavText} navText={this.state.navText} />
         }} />
 
         <Route exact path="/cards" render={props => {
