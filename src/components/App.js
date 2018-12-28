@@ -66,7 +66,9 @@ class App extends Component {
         <Route exact path="/quiz-select" render={props => {
           return <QuizDifficulty
             onDifficultyChange={this.handleDifficultyChange}
-            difficulty={this.state.difficulty} />
+            difficulty={this.state.difficulty}
+            handleNavText={this.handleNavText}
+            navText={this.state.navText} />
         }} />
 
         <Route exact path="/food-quiz" render={props => {
