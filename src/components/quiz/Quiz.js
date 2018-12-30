@@ -123,7 +123,7 @@ export default class Quiz extends Component {
       let currentUser = UserSession.getUser()
 
       // if statement prevents an attempt at finding answers once no correct answer is left
-      if (correct.length !== 0) {
+      if (correct.length !== 0 && this.props.difficulty === "easy") {
         // Grabs all user created cards that are not the correct answer
         return API.getUserWrongWords(currentUser, correct[0].id)
           .then((wrongWords) => {
@@ -131,6 +131,23 @@ export default class Quiz extends Component {
             wrongShuffle = this.shuffle(wrongWords)
             // Stores 2 wrong answer possibilities
             wrongShuffle = wrongShuffle.slice(0, 2)
+          })
+          .then(() => {
+            //  The incorrect answers are added to possibleAnswers[]
+            let possibleAnswers = wrongShuffle.map(word => word)
+            // Adds correct answer to options
+            possibleAnswers.push(correct[0])
+            // Shuffles answer options and sets state
+            this.shuffle(possibleAnswers)
+            return this.setState({ possibleAnswers: possibleAnswers, status: "" }, () => resolve())
+          })
+      } else if (correct.length !== 0 && this.props.difficulty === "medium") {
+        return API.getUserWrongWords(currentUser, correct[0].id)
+          .then((wrongWords) => {
+            // Randomizes wrong answer possibilities
+            wrongShuffle = this.shuffle(wrongWords)
+            // Stores 2 wrong answer possibilities
+            wrongShuffle = wrongShuffle.slice(0, 4)
           })
           .then(() => {
             //  The incorrect answers are added to possibleAnswers[]
