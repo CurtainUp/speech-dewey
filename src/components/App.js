@@ -3,8 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import Landing from './start/Landing'
 import Welcome from './start/Welcome'
 import Stats from './stats/Stats'
-import EasyQuiz from './quiz/EasyQuiz'
-import MediumQuiz from './quiz/MediumQuiz'
+import Quiz from './quiz/Quiz'
 import CardDash from './create/CardDash'
 import YourCards from './create/YourCards'
 import QuizDifficulty from './quiz/QuizDifficulty'
@@ -72,30 +71,21 @@ class App extends Component {
         }} />
 
         <Route exact path="/food-quiz" render={props => {
-          if (this.state.difficulty === "easy") {
-            return <EasyQuiz className="full-height" category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else return <MediumQuiz category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+          // if (this.state.difficulty === "easy") {
+            return <Quiz className="full-height" category={this.state.foodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
 
         <Route exact path="/mood-quiz" render={props => {
-          if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.moodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else return <MediumQuiz category={this.state.moodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+            return <Quiz className="full-height" category={this.state.moodcategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
         <Route exact path="/home-quiz" render={props => {
-          if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.homecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else return <MediumQuiz category={this.state.homecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
+            return <Quiz className="full-height" category={this.state.homecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
         <Route exact path="/people-quiz" render={props => {
-          if (this.state.difficulty === "easy") {
-            return <EasyQuiz category={this.state.peoplecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          } else if (this.state.difficulty === "medium") {
-            return <MediumQuiz category={this.state.peoplecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
-          }
+            return <Quiz category={this.state.peoplecategory} difficulty={this.state.difficulty} resetDifficulty={this.handleDifficultyChange} />
         }} />
 
         <Route exact path="/stats" render={props => {

@@ -12,7 +12,7 @@ export default class QuizDifficulty extends Component {
 
   componentDidMount() {
     this.props.handleNavText("Quiz")
-    .then(() => { return this.props.onDifficultyChange("")})
+      .then(() => { return this.props.onDifficultyChange("") })
   }
 
   render() {
@@ -20,8 +20,8 @@ export default class QuizDifficulty extends Component {
     if (this.props.difficulty !== "") {
       return (
         <Container>
-        <NavBar navText={this.props.navText} />
-        <QuizSelect />
+          <NavBar navText={this.props.navText} />
+          <QuizSelect />
         </Container>)
     }
     else {
@@ -29,8 +29,18 @@ export default class QuizDifficulty extends Component {
         <Container>
           <NavBar navText={this.props.navText} />
           <Row className="d-flex justify-content-center">
-            <Button className="mr-3" color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}><i className="far fa-star form-icon"></i><h3>Easy</h3></Button>
-            <Button color="warning" id="medium" size="xl" onClick={(e) => { this.setDifficulty(e) }}><i className="far fa-star form-icon"></i><i className="far fa-star form-icon"></i><h3>Medium</h3></Button>
+            <Button className="mr-3" color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}>
+              <div id="easy" onClick={(e) => { this.setDifficulty(e) }}>
+                <i className="far fa-star form-icon" id="easy" onClick={(e) => { this.setDifficulty(e) }}></i>
+                <h3 id="easy" onClick={(e) => { this.setDifficulty(e) }}>Easy</h3>
+              </div>
+            </Button>
+            <Button color="warning" id="medium" size="xl" onClick={(e) => { this.setDifficulty(e) }}>
+              <div id="medium" onClick={(e) => { this.setDifficulty(e) }}>
+                <i className="far fa-star form-icon" id="medium" onClick={(e) => { this.setDifficulty(e) }}></i><i className="far fa-star form-icon" id="medium" onClick={(e) => { this.setDifficulty(e) }}></i>
+                <h3 id="medium" onClick={(e) => { this.setDifficulty(e) }}>Medium</h3>
+              </div>
+            </Button>
           </Row>
         </Container>)
     }
