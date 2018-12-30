@@ -4,6 +4,7 @@ import API from "../../modules/API/API"
 import UserSession from '../../modules/User/UserSession'
 import moment from 'moment'
 import { ResponsiveContainer, PieChart, Pie } from 'recharts'
+import NavBar from '../NavBar'
 export default class Stats extends Component {
   state = {
     dailyCorrect: 0,
@@ -177,7 +178,8 @@ export default class Stats extends Component {
   // ------Functions for displaying component----------
 
   componentDidMount = () => {
-    this.getOverallTally()
+    this.props.handleNavText("Your Stats")
+      .then(() => this.getOverallTally())
       .then(() => this.getDailyTally())
       .then(() => this.setPercentageState())
       .then(() => this.setActivity())
@@ -187,9 +189,7 @@ export default class Stats extends Component {
 
     return (
       <Container>
-        <Row>
-          <h1>Your Stats</h1>
-        </Row>
+        <NavBar navText={this.props.navText} />
         <Row className="d-flex justify-content-around">
           <Col className="stat-card">
             <div className="m-3">

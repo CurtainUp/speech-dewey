@@ -3,6 +3,7 @@ import { Button, Row, Container } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
+import NavBar from '../NavBar'
 
 export default class Welcome extends Component {
   state = {
@@ -10,25 +11,24 @@ export default class Welcome extends Component {
   }
 
   getName = () => {
+    return new Promise((resolve) => {
     let userId = UserSession.getUser()
     API.getData(`users?id=${userId}`)
       .then((user) => {
         return this.setState({
-          firstName: user[0].firstName,
-        })
+          firstName: user[0].firstName}, () => resolve()) })
       })
   }
 
   componentDidMount() {
     this.getName()
+    .then(() => this.props.handleNavText(`Welcome, ${this.state.firstName}`))
   }
 
   render() {
     return (
       <Container>
-        <Row>
-          <h1>Welcome, {this.state.firstName}!</h1>
-        </Row>
+        <NavBar navText={this.props.navText} />
         <Row className="d-flex justify-content-around">
           <Button tag={Link} to='/quiz-select'><i className="fas fa-question-circle"></i><h3>Take Quiz</h3></Button>
           <Button tag={Link} to='/stats'><i className="fas fa-chart-pie"></i><h3>Stats</h3></Button>

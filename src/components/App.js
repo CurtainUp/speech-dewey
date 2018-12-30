@@ -17,7 +17,8 @@ class App extends Component {
     peoplecategory: 4,
     difficulty: "",
     activeToday: false,
-    user: null
+    user: null,
+    navText: ""
   }
 
   handleLoginChange = (userid) => {
@@ -31,6 +32,12 @@ class App extends Component {
 
   handleActivityChange = (boo) => {
     return this.setState({ activeToday: boo })
+  }
+
+  handleNavText = (text) => {
+    return new Promise((resolve) => {
+      this.setState({ navText: text }, () => resolve())
+    })
   }
 
   // Checks if a user is currently logged in
@@ -49,7 +56,9 @@ class App extends Component {
 
         <Route exact path="/welcome" render={props => {
           if (this.isAuthenticated()) {
-            return <Welcome />
+            return <Welcome
+              handleNavText={this.handleNavText}
+              navText={this.state.navText} />
           }
           return <Redirect to="/" />
         }} />
@@ -57,7 +66,9 @@ class App extends Component {
         <Route exact path="/quiz-select" render={props => {
           return <QuizDifficulty
             onDifficultyChange={this.handleDifficultyChange}
-            difficulty={this.state.difficulty} />
+            difficulty={this.state.difficulty}
+            handleNavText={this.handleNavText}
+            navText={this.state.navText} />
         }} />
 
         <Route exact path="/food-quiz" render={props => {
@@ -88,15 +99,15 @@ class App extends Component {
         }} />
 
         <Route exact path="/stats" render={props => {
-          return <Stats activeToday={this.state.activeToday} resetActivity={this.handleActivityChange} />
+          return <Stats activeToday={this.state.activeToday} resetActivity={this.handleActivityChange} handleNavText={this.handleNavText} navText={this.state.navText} />
         }} />
 
         <Route exact path="/cards" render={props => {
-          return <CardDash />
+          return <CardDash handleNavText={this.handleNavText} navText={this.state.navText} />
         }} />
 
         <Route exact path="/your-cards" render={props => {
-          return <YourCards />
+          return <YourCards handleNavText={this.handleNavText} navText={this.state.navText} />
         }} />
 
       </Switch>
