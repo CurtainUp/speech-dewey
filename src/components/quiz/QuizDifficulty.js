@@ -29,8 +29,8 @@ export default class QuizDifficulty extends Component {
         <Container>
           <NavBar navText={this.props.navText} />
           <Row className="d-flex justify-content-center">
-            <Button className="mr-3" color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}><i className="far fa-star form-icon"></i><h3>Easy</h3></Button>
-            <Button color="warning" id="medium" size="xl" onClick={(e) => { this.setDifficulty(e) }}><i className="far fa-star form-icon"></i><i className="far fa-star form-icon"></i><h3>Medium</h3></Button>
+            <Button className="mr-3" color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}><i className="far fa-star form-icon" id="easy" onClick={(e) => { this.setDifficulty(e) }}></i><h3>Easy</h3></Button>
+            <Button color="warning" id="medium" size="xl" onClick={(e) => { this.setDifficulty(e) }}><i className="far fa-star form-icon" id="easy" onClick={(e) => { this.setDifficulty(e) }}></i><i className="far fa-star form-icon"></i><h3>Medium</h3></Button>
           </Row>
         </Container>)
     }
