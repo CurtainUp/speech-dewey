@@ -5,6 +5,7 @@ import UserSession from '../../modules/User/UserSession'
 import DeleteModal from './DeleteModal'
 import EditModal from './EditModal'
 import CreateModal from './CreateModal'
+import NavBar from '../NavBar'
 
 export default class YourCards extends Component {
   state = {
@@ -21,15 +22,14 @@ export default class YourCards extends Component {
   }
 
   componentDidMount() {
-    this.loadCards()
+    this.props.handleNavText("Your Cards")
+      .then(() => this.loadCards())
   }
 
   render() {
     return (
       <Container>
-        <Row>
-          <h1>Your Cards</h1>
-        </Row>
+        <NavBar navText={this.props.navText} />
         <Row className="d-flex inline justify-content-center">
           <CreateModal />
         </Row>

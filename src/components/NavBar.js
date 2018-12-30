@@ -28,6 +28,7 @@ export default class NavBar extends React.Component {
       <div>
         {UserSession.getUser()
           ? <Navbar color="light" light expand="md">
+            <h1>{this.props.navText}</h1>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/welcome"><i className="fas fa-home form-icon"></i></NavLink>
