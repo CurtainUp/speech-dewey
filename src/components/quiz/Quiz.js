@@ -8,13 +8,12 @@ import PeopleNeeded from './PeopleNeeded'
 import UserSession from '../../modules/User/UserSession'
 import Speak from '../speech/Speak'
 
-export default class EasyQuiz extends Component {
+export default class Quiz extends Component {
   state = {
     words: [],
     possibleAnswers: [],
     status: "",
     qCounter: 0,
-    answered: false,
     correct: 0,
     incorrect: 0,
     skipped: 0,
@@ -74,7 +73,7 @@ export default class EasyQuiz extends Component {
       let wrongShuffle
 
       // if statement prevents an attempt at finding answers once no correct answer is left
-      if (correct.length !== 0) {
+      if (correct.length !== 0 && this.props.difficulty === "easy") {
         // Grabs ALL words in hard coded database that are not the correct answer
         return API.getAllWrongWords(correct[0].id)
           .then((wrongWords) => {
@@ -82,6 +81,23 @@ export default class EasyQuiz extends Component {
             wrongShuffle = this.shuffle(wrongWords)
             // Stores 2 wrong answer possibilities
             wrongShuffle = wrongShuffle.slice(0, 2)
+          })
+          .then(() => {
+            //  The incorrect answers are added to possibleAnswers[]
+            let possibleAnswers = wrongShuffle.map(word => word)
+            // Adds correct answer to options
+            possibleAnswers.push(correct[0])
+            // Shuffles answer options and sets state
+            this.shuffle(possibleAnswers)
+            this.setState({ possibleAnswers: possibleAnswers, status: "" }, () => resolve())
+          })
+      } else if (correct.length !== 0 && this.props.difficulty === "medium") {
+        return API.getAllWrongWords(correct[0].id)
+          .then((wrongWords) => {
+            // Randomizes wrong answer possibilities
+            wrongShuffle = this.shuffle(wrongWords)
+            // Stores 2 wrong answer possibilities
+            wrongShuffle = wrongShuffle.slice(0, 4)
           })
           .then(() => {
             //  The incorrect answers are added to possibleAnswers[]
@@ -204,41 +220,38 @@ export default class EasyQuiz extends Component {
   }
 
   render() {
+    let currentWord = this.state.words[this.state.qCounter]
+
     if (this.state.initialize === true) {
       if (this.state.possibleAnswers.length < 3) {
         return <PeopleNeeded />
       }
       else if (this.state.words.length !== 0 && this.state.possibleAnswers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
         return (
-          <Container ref={this.myRef}>
+          <Container>
             <Row>
               <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
             </Row>
             <Row className="d-flex inline justify-content-center">
               <Col>
-                <div id={this.state.words[this.state.qCounter].id}>
-                  <h1>{this.state.words[this.state.qCounter].word}</h1>
+                <div id={currentWord.id}>
+                  <h1>{currentWord.word}</h1>
                 </div>
                 <div>
-                  <Speak word={this.state.words[this.state.qCounter].word} />
+                  <Speak word={currentWord.word} />
                 </div>
               </Col>
             </Row>
             {/* Need to refactor and add map function for all answer options below */}
             <Row>
               <div className="d-flex justify-content-center">
-                <Button className="answer" id={this.state.possibleAnswers[0].id} onClick={(e) => { this.handleAnswerClick(e) }
-                }>
-                  <img id={this.state.possibleAnswers[0].id} alt="First Answer Option" src={this.state.possibleAnswers[0].image}></img>
-                </Button>
-                <Button className="answer" id={this.state.possibleAnswers[1].id} onClick={(e) => { this.handleAnswerClick(e) }
-                }>
-                  <img id={this.state.possibleAnswers[1].id} alt="Second Answer Option" src={this.state.possibleAnswers[1].image}></img>
-                </Button>
-                <Button className="answer" id={this.state.possibleAnswers[2].id} onClick={(e) => { this.handleAnswerClick(e) }
-                }>
-                  <img id={this.state.possibleAnswers[2].id} alt="Third Answer Option" src={this.state.possibleAnswers[2].image}></img>
-                </Button>
+                {
+                  this.state.possibleAnswers.map((option) =>
+                    <Button className="answer" key={option.id} id={option.id} onClick={(e) => { this.handleAnswerClick(e) }}>
+                      <img id={option.id} alt="First Answer Option" src={option.image}></img>
+                    </Button>
+                  )
+                }
               </div>
             </Row>
             <Row className="d-flex justify-content-center">
