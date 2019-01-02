@@ -1,3 +1,5 @@
+// Main landing page for Card portion of app. Gives user access to create new cards and view their collection
+
 import React, { Component } from 'react'
 import { Button, Row, Container } from 'reactstrap'
 import { Link } from 'react-router-dom'

@@ -1,5 +1,7 @@
+// Allows user to edit Cards that have already been created.
+
 import React from 'react'
-import { Button, Modal, ModalHeader, ModalFooter, FormGroup, Label, Input, ModalBody } from 'reactstrap'
+import { Button, Modal, ModalFooter, FormGroup, Label, Input, ModalBody } from 'reactstrap'
 import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
 
@@ -58,10 +60,9 @@ class EditModal extends React.Component {
             this.handleEdit(this.props.card.id)
             this.toggle()
           }}>
-            <ModalHeader toggle={this.toggle}><i className="fas fa-edit form-icon"></i></ModalHeader>
             <ModalBody>
               <FormGroup>
-                <Label for="word">Word</Label>
+                <Label for="word">Name</Label>
                 <Input onChange={this.handleFieldChange} type="text" name="word" id="word" defaultValue={this.props.card.word} required />
               </FormGroup>
               <FormGroup>
@@ -76,7 +77,7 @@ class EditModal extends React.Component {
             <ModalFooter>
               {/* Save */}
               <Button color="success" className="modal-button" onSubmit={() => {
-              }}><i className="fas fa-check form-icon"></i><h3>Save</h3></Button>{' '}
+              }}><i className="fas fa-edit form-icon"></i><h3>Save</h3></Button>{' '}
               {/* Cancel  */}
               <Button color="danger" className="modal-button" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
             </ModalFooter>

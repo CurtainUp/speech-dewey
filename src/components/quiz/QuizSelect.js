@@ -1,3 +1,5 @@
+// Allows the user to choose the category for their quiz and alters state accordingly.
+
 import React, { Component } from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'

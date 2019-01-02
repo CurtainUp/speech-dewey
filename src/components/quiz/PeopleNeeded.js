@@ -1,3 +1,5 @@
+// Affordance for users that try to take a People quiz but have not yet created 10 Cards.
+
 import React from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'

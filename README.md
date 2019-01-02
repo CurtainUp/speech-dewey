@@ -31,5 +31,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 [Bootstrap](https://getbootstrap.com/)
 [Themestr.app](https://themestr.app/)
 [Moment.js](https://momentjs.com/)
+[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 [Recharts](https://www.npmjs.com/package/recharts)
 

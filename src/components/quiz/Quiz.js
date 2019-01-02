@@ -1,3 +1,5 @@
+// All code related to the Quiz component of Speech Dewey
+
 import React, { Component } from 'react'
 import { Container, Col, Row, Button } from 'reactstrap'
 import API from "../../modules/API/API"
@@ -165,7 +167,6 @@ export default class Quiz extends Component {
 
   handleAnswerClick = (e) => {
     let clicked = e.currentTarget
-    console.log(e.currentTarget)
     let answerId = this.state.words[this.state.qCounter].id.toString()
     let correct = this.state.correct
     let incorrect = this.state.incorrect

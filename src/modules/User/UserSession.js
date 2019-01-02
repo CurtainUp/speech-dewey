@@ -1,3 +1,5 @@
+// Handles session storage for current user
+
 const UserSession = {
   logInUser(id) {
     sessionStorage.setItem("id", id)

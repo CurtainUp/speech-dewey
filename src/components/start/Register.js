@@ -1,3 +1,5 @@
+// New user registration functionality
+
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import validate from '../../modules/User/Validate'

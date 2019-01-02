@@ -1,3 +1,5 @@
+// Reveals Quiz results after 10 questions have passed.
+
 import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row } from 'reactstrap'
 import { Link, Redirect } from 'react-router-dom'

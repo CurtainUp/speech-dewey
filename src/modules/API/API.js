@@ -1,6 +1,4 @@
-/*
-  purpose: responsible for all interactions with database.json getting, posting, patching and deleting data
-*/
+//  Responsible for all interactions with database.json getting, posting, patching and deleting data
 
 const API = {
   getData(resource) {

@@ -1,3 +1,5 @@
+// Initial view upon opening Speech Dewey
+
 import React, { Component } from 'react'
 import { Row, Jumbotron} from 'reactstrap'
 import Login from './Login'
