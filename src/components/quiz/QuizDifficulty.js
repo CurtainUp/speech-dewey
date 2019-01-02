@@ -1,3 +1,5 @@
+// Allows the user to choose the level of difficulty for their quiz and alters state accordingly.
+
 import React, { Component } from 'react'
 import { Button, Row, Container } from 'reactstrap'
 import QuizSelect from './QuizSelect'
@@ -6,7 +8,7 @@ import NavBar from '../NavBar'
 export default class QuizDifficulty extends Component {
 
   setDifficulty = (e) => {
-    let clicked = e.target
+    let clicked = e.currentTarget
     return this.props.onDifficultyChange(clicked.id)
   }
 
@@ -30,16 +32,12 @@ export default class QuizDifficulty extends Component {
           <NavBar navText={this.props.navText} />
           <Row className="d-flex justify-content-center">
             <Button className="mr-3" color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}>
-              <div id="easy" onClick={(e) => { this.setDifficulty(e) }}>
-                <i className="far fa-star form-icon" id="easy" onClick={(e) => { this.setDifficulty(e) }}></i>
-                <h3 id="easy" onClick={(e) => { this.setDifficulty(e) }}>Easy</h3>
-              </div>
+                <i className="far fa-star form-icon"></i>
+                <h3>Easy</h3>
             </Button>
             <Button color="warning" id="medium" size="xl" onClick={(e) => { this.setDifficulty(e) }}>
-              <div id="medium" onClick={(e) => { this.setDifficulty(e) }}>
-                <i className="far fa-star form-icon" id="medium" onClick={(e) => { this.setDifficulty(e) }}></i><i className="far fa-star form-icon" id="medium" onClick={(e) => { this.setDifficulty(e) }}></i>
-                <h3 id="medium" onClick={(e) => { this.setDifficulty(e) }}>Medium</h3>
-              </div>
+                <i className="far fa-star form-icon"></i><i className="far fa-star form-icon"></i>
+                <h3>Medium</h3>
             </Button>
           </Row>
         </Container>)

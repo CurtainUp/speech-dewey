@@ -1,3 +1,5 @@
+// Checks if user already exists and if login parameters are correct
+
 import API from "../API/API"
 import UserSession from "./UserSession"
 

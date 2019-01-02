@@ -1,3 +1,5 @@
+// Reveals Quiz results after 10 questions have passed.
+
 import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row } from 'reactstrap'
 import { Link, Redirect } from 'react-router-dom'
@@ -48,24 +50,20 @@ class QuizScore extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader><h2>Your Score</h2></ModalHeader>
           <ModalBody>
-            {/* <p className="modal-p">{this.state.percentCorrect}</p>
-            <h3>Correct: {this.props.state.correct}</h3>
-            <h3>Incorrect: {this.props.state.incorrect}</h3>
-            <h3>Skipped: {this.props.state.skipped}</h3> */}
             <ResponsiveContainer height={250} width="100%">
-          <PieChart width={400} height={250}>
-            <Pie data={[{ name: 'Correct', value: this.props.state.correct, fill: '#00ff60' }, { name: 'Incorrect', value: this.props.state.incorrect, fill: '#ff0000' },
-            { name: 'Skipped', value: this.props.state.skipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" isAnimationActive={true} />
-          </PieChart>
-        </ResponsiveContainer>
-        <h4>{this.state.dailyPercentCorrect}</h4>
-        <Row className="d-flex inline">
-          <div className="d-flex inline align-items-center mx-3">
-            <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.props.state.correct}</h4>
-            <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.props.state.incorrect}</h4>
-            <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.props.state.skipped}</h4>
-          </div>
-        </Row>
+              <PieChart width={400} height={250}>
+                <Pie data={[{ name: 'Correct', value: this.props.state.correct, fill: '#00ff60' }, { name: 'Incorrect', value: this.props.state.incorrect, fill: '#ff0000' },
+                { name: 'Skipped', value: this.props.state.skipped, fill: '#ffc107' }]} dataKey="value" nameKey="name" cx="50%" cy="50%" isAnimationActive={true} />
+              </PieChart>
+            </ResponsiveContainer>
+            <h4>{this.state.dailyPercentCorrect}</h4>
+            <Row className="d-flex inline">
+              <div className="d-flex inline align-items-center mx-3">
+                <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.props.state.correct}</h4>
+                <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.props.state.incorrect}</h4>
+                <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.props.state.skipped}</h4>
+              </div>
+            </Row>
           </ModalBody>
           <ModalFooter>
             <Button tag={Link} to='/quiz-select' color="success" className="modal-button"><i className="fas fa-redo-alt form-icon"></i><h3>Retry</h3></Button>{' '}

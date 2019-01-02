@@ -1,3 +1,5 @@
+// Modal that allows users to input information to create a new Card for the database.
+
 import React, { Component } from 'react'
 import { Col, Button, Form, FormGroup, Label, Input, Modal, ModalFooter, ModalBody } from 'reactstrap'
 import API from '../../modules/API/API'
@@ -59,7 +61,7 @@ export default class CreateModal extends Component {
             }}>
           <ModalBody>
               <FormGroup row>
-                <Label for="Word" sm={2}>Word or Name</Label>
+                <Label for="Word" sm={2}>Name</Label>
                 <Col sm={10}>
                   <Input type="text" name="word" id="word" required onChange={this.handleFieldChange} />
                 </Col>

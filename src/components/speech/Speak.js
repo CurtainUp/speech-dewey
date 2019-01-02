@@ -1,6 +1,7 @@
+// Integration with Web Speech API for verbal reading of the current word.
+
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
-
 
 export default class Speak extends Component {
   state = {

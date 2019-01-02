@@ -1,3 +1,5 @@
+// Lists Cards that the current user has created.
+
 import React, { Component } from 'react'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 import API from '../../modules/API/API'
@@ -47,7 +49,7 @@ export default class YourCards extends Component {
                       <img className="rounded card-img" alt={card.word} src={card.image}></img>
                     </Col>
                   </Row>
-                  <Row className="d-flex inline justify-content-center">
+                  <Row className="d-flex inline justify-content-around">
                     <EditModal card={card} loadCards={this.loadCards} />
                     <DeleteModal cardId={card.id} loadCards={this.loadCards} />
                   </Row>

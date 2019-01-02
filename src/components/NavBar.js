@@ -1,3 +1,5 @@
+// NavBar component that allows for a unique header for each page of the app.
+
 import React from 'react'
 import {
   Navbar,

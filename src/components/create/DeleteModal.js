@@ -1,3 +1,5 @@
+// Confirms that user truly wants to delete card before removing the object from the database.
+
 import React from 'react'
 import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap'
 import API from '../../modules/API/API'
@@ -30,9 +32,9 @@ class DeleteModal extends React.Component {
       <div>
         <Button className="modal-button" onClick={this.toggle}><i className="fas fa-trash-alt form-icon"></i><h3>Delete</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}><i className="fas fa-trash-alt form-icon"></i><h2>Delete this card?</h2></ModalHeader>
+          <ModalHeader toggle={this.toggle}><h2>Delete this card?</h2></ModalHeader>
           <ModalFooter>
-            <Button color="success" className="modal-button" onClick={() => { this.handleDelete(this.props.cardId) }}><i className="fas fa-check form-icon"></i><h3>Delete</h3></Button>{' '}
+            <Button color="success" className="modal-button" onClick={() => { this.handleDelete(this.props.cardId) }}><i className="fas fa-trash-alt form-icon"></i><h3>Delete</h3></Button>{' '}
             <Button color="danger" className="modal-button" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
           </ModalFooter>
         </Modal>
