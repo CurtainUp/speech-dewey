@@ -1,8 +1,8 @@
-###Speech Dewey
+## Speech Dewey
 
 This project was developed by Elyse Dawson as a capstone project marking the completion of the front-end portion of Nashville Software School's Full-Time Web Development program.
 
-###What is Speech Dewey?
+### What is Speech Dewey?
 
 Speech Dewey is a simple to use flash card app to improve language skills for those who have aphasia or other word finding problems.
 
@@ -24,13 +24,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ###
 
-## Built Using
+### Built Using
 
-[React](https://github.com/facebook/create-react-app)
-[Reactstrap](https://reactstrap.github.io/)
-[Bootstrap](https://getbootstrap.com/)
-[Themestr.app](https://themestr.app/)
-[Moment.js](https://momentjs.com/)
-[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
-[Recharts](https://www.npmjs.com/package/recharts)
+- [React](https://github.com/facebook/create-react-app)
+- [Reactstrap](https://reactstrap.github.io/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Themestr.app](https://themestr.app/)
+- [Moment.js](https://momentjs.com/)
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+- [Recharts](https://www.npmjs.com/package/recharts)
 
