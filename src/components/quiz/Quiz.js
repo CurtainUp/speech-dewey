@@ -164,7 +164,8 @@ export default class Quiz extends Component {
 
 
   handleAnswerClick = (e) => {
-    let clicked = e.target
+    let clicked = e.currentTarget
+    console.log(e.currentTarget)
     let answerId = this.state.words[this.state.qCounter].id.toString()
     let correct = this.state.correct
     let incorrect = this.state.incorrect
@@ -182,7 +183,7 @@ export default class Quiz extends Component {
         })
     } else if (clicked.id !== answerId) {
       clicked.className += " btn btn-danger"
-      this.sleep(500)
+      this.sleep(1000)
         .then(() => this.setState({ status: "incorrect", incorrect: incorrect + 1 }, () => this.answerLog()))
         .then(() => this.increment())
         .then(() => {
@@ -194,7 +195,7 @@ export default class Quiz extends Component {
         })
     } else if (clicked.id === answerId) {
       clicked.className += " btn btn-success"
-      this.sleep(500)
+      this.sleep(1000)
         .then(() => this.setState({ status: "correct", correct: correct + 1 }, () => this.answerLog()))
         .then(() => this.increment())
         .then(() => {
@@ -245,7 +246,7 @@ export default class Quiz extends Component {
       }
       else if (this.state.words.length !== 0 && this.state.possibleAnswers.length !== 0 && this.state.status === "" && this.state.qCounter <= 9) {
         return (
-          <Container>
+          <Container className="quizframe">
             <Row>
               <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
             </Row>
@@ -265,7 +266,7 @@ export default class Quiz extends Component {
                 {
                   this.state.possibleAnswers.map((option) =>
                     <Button className="answer" key={option.id} id={option.id} onClick={(e) => { this.handleAnswerClick(e) }}>
-                      <img id={option.id} alt="First Answer Option" src={option.image}></img>
+                      <img id={option.id} alt="Answer Option" src={option.image}></img>
                     </Button>
                   )
                 }
