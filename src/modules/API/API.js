@@ -2,15 +2,15 @@
 
 const API = {
   getData(resource) {
-    return fetch(`http://localhost:8088/${resource}`)
+    return fetch(`https://speech-dewey-data.herokuapp.com/${resource}`)
       .then(response => response.json())
   },
   getWordsByCategory(categoryid) {
-    return fetch(`http://localhost:8088/cards?categoryId=${categoryid}`)
+    return fetch(`https://speech-dewey-data.herokuapp.com/cards?categoryId=${categoryid}`)
       .then(response => response.json())
   },
   getAllWrongWords(correctid) {
-    return fetch(`http://localhost:8088/cards?userId=0&id_ne=${correctid}`)
+    return fetch(`https://speech-dewey-data.herokuapp.com/cards?userId=0&id_ne=${correctid}`)
       .then(response => response.json())
   },
   getUserWrongWords(userid, correctid) {
@@ -18,7 +18,7 @@ const API = {
       .then(response => response.json())
   },
   saveData(resource, entryObject) {
-    return fetch(`http://localhost:8088/${resource}`, {
+    return fetch(`https://speech-dewey-data.herokuapp.com/${resource}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -29,7 +29,7 @@ const API = {
       .then(response => response.json())
   },
   editData(resource, entryObject, id) {
-    return fetch(`http://localhost:8088/${resource}/${id}`, {
+    return fetch(`https://speech-dewey-data.herokuapp.com/${resource}/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -39,7 +39,7 @@ const API = {
       .then(response => response.json())
   },
   deleteData(resource, id) {
-    return fetch(`http://localhost:8088/${resource}/${id}`, {
+    return fetch(`https://speech-dewey-data.herokuapp.com/${resource}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -48,12 +48,12 @@ const API = {
       .then(response => response.json())
   },
   getUserCards(userid) {
-    return fetch(`http://localhost:8088/cards?userId=${userid}`)
+    return fetch(`https://speech-dewey-data.herokuapp.com/cards?userId=${userid}`)
       .then(response => response.json())
   },
   // Fetches users cardScores.
   getUserScoreData(userid) {
-    return fetch(`http://localhost:8088/cardScores?userId=${userid}`)
+    return fetch(`https://speech-dewey-data.herokuapp.com/cardScores?userId=${userid}`)
       .then(response => response.json())
 
   }
