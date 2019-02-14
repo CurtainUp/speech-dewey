@@ -33,10 +33,10 @@ export default class NavBar extends React.Component {
             <h1>{this.props.navText}</h1>
             <Nav className="ml-auto" navbar>
 
-            <NavItem>
+            <NavItem className="text-center">
                 <NavLink href="/welcome"><i className="fas fa-home form-icon"></i><h4>Home</h4></NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className="text-center">
                 <NavLink tag={Link} onClick={() => { UserSession.logOutUser() }} to="/"><i className="fas fa-sign-out-alt form-icon"></i><h4>Logout</h4></NavLink>
               </NavItem>
 

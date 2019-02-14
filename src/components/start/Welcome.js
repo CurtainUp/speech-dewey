@@ -29,9 +29,9 @@ export default class Welcome extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="d-flex flex-column">
         <NavBar navText={this.props.navText} />
-        <Row className="d-flex justify-content-around">
+        <Row className="my-auto d-flex justify-content-around">
           <Button tag={Link} to='/quiz-select'><i className="fas fa-question-circle"></i><h3>Take Quiz</h3></Button>
           <Button tag={Link} to='/stats'><i className="fas fa-chart-pie"></i><h3>Stats</h3></Button>
           <Button tag={Link} to='/cards'><i className="fas fa-edit"></i><h3>Cards</h3></Button>
