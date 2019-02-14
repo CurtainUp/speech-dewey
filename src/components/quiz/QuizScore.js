@@ -66,8 +66,8 @@ class QuizScore extends React.Component {
             </Row>
           </ModalBody>
           <ModalFooter>
+            <Button tag={Link} to='/welcome' color="danger" className="modal-button"><i className="fas fa-home form-icon"></i><h3>Home</h3></Button>
             <Button tag={Link} to='/quiz-select' color="success" className="modal-button"><i className="fas fa-redo-alt form-icon"></i><h3>Retry</h3></Button>{' '}
-            <Button tag={Link} to='/welcome' color="danger" className="modal-button"><i className="fas fa-ban form-icon"></i><h3>Home</h3></Button>
           </ModalFooter>
         </Modal>
       </div>
