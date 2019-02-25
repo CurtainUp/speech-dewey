@@ -37,7 +37,7 @@ componentDidMount = () => {
 }
 
 render () {
-  return <Button onClick={(e) => {this.handleClick(e)}}><i className="fas fa-volume-up form-icon center"></i></Button>
+  return <Button onClick={(e) => {this.handleClick(e)}}><i className="fas fa-volume-up quiz-icon center"></i></Button>
 }
 
 }
