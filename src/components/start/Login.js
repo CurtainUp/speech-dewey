@@ -34,8 +34,8 @@ export default class Login extends Component {
           <Input type="password" name="password" id="password" placeholder="Password" required onChange={this.handleFieldChange} />
         </FormGroup>
         <ModalFooter>
-        <Button type="submit" color="success" className="modal-button"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
-        <Button color="danger" className="modal-button" onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        <Button color="danger" className="modal-button" onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i><h3>Cancel</h3></Button>
+        <Button type="submit" color="success" className="modal-button"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i><h3>Login</h3></Button>
         </ModalFooter>
       </Form>)
   }
@@ -62,7 +62,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <Button className="mr-3" size="xl" onClick={() => this.toggle()}><i className="fas fa-user"></i></Button>
+        <Button className="mr-3" size="xl" onClick={() => this.toggle()}><i className="fas fa-user"></i><h3>Login</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalBody>
             <this.LoginForm />

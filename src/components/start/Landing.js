@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import { Row, Jumbotron} from 'reactstrap'
 import Login from './Login'
 import Register from './Register'
-// import Background from '../Book_Banner.jpg'
 import Background from '../Book_Row.jpg'
 
 export default class Landing extends Component {

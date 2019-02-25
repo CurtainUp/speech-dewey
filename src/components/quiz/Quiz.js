@@ -251,7 +251,7 @@ export default class Quiz extends Component {
             <Row>
               <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
             </Row>
-            <Row className="d-flex inline justify-content-center">
+            <Row className="d-flex justify-content-center text-center">
               <Col>
                 <div id={currentWord.id}>
                   <h1>{currentWord.word}</h1>

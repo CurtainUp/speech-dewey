@@ -18,7 +18,7 @@ export default class QuizSelect extends Component {
   render() {
 
     return (
-      <Container>
+      <Container className="d-flex flex-column">
         <Row>
         <div className="d-flex justify-content-around">
           <Button tag={Link} to='/food-quiz'><i className="fas fa-utensils"></i><h3>Food & Drink</h3></Button>

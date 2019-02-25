@@ -40,8 +40,8 @@ export default class Register extends Component {
           <Input type="text" name="firstname" id="firstName" placeholder="First Name" required onChange={this.handleFieldChange} />
         </FormGroup>
         <ModalFooter>
-        <Button type="submit" color="success" className="modal-button"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i></Button>
-        <Button color="danger" className="modal-button" onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i></Button>
+        <Button color="danger" className="modal-button" onClick={() => this.toggle()}><i className="fa fa-times-circle form-icon" aria-hidden="true"></i><h3>Cancel</h3></Button>
+        <Button type="submit" color="success" className="modal-button"><i className="fa fa-arrow-circle-right form-icon" aria-hidden="true"></i><h3>Register</h3></Button>
         </ModalFooter>
       </Form>)
   }
@@ -71,7 +71,7 @@ export default class Register extends Component {
     return (
       <div>
         {/* Register button. Shows form on click */}
-        <Button size="xl" onClick={() => this.toggle()}><i className="fas fa-user-plus"></i></Button>
+        <Button size="xl" onClick={() => this.toggle()}><i className="fas fa-user-plus"></i><h3>Register</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalBody>
             <this.RegisterForm />
