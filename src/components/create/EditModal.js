@@ -37,7 +37,7 @@ class EditModal extends React.Component {
     // Updates database
     return API.editData("cards", cardInfo, id)
     // Renders /your-cards upon successful update
-    .then(this.props.loadCards())
+    .then(() => this.props.loadCards())
   }
 
   // Captures input fields and updates state
@@ -50,7 +50,7 @@ class EditModal extends React.Component {
   render() {
     return (
       <div>
-        <Button className="modal-button" onClick={this.toggle}>
+        <Button className="modal-button mr-2" onClick={this.toggle}>
          <i className="fas fa-edit form-icon"></i><h3>Edit</h3>
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>

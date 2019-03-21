@@ -147,7 +147,7 @@ export default class Stats extends Component {
               </PieChart>
             </ResponsiveContainer>
             <h4 className="d-flex justify-content-center">{this.state.totalPercentCorrect}</h4>
-            <Row className="d-flex inline align-items-center">
+            <Row className="d-flex align-items-center justify-content-between">
               <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.state.overallCorrect}</h4>
               <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.state.overallIncorrect}</h4>
               <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.state.overallSkipped}</h4>

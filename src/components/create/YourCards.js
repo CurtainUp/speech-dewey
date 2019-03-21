@@ -1,7 +1,7 @@
 // Lists Cards that the current user has created.
 
 import React, { Component } from 'react'
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
+import { Container, Row, Col, CardDeck, Card, CardImg, CardBody, CardText, ListGroup, ListGroupItem } from 'reactstrap'
 import API from '../../modules/API/API'
 import UserSession from '../../modules/User/UserSession'
 import DeleteModal from './DeleteModal'
@@ -19,7 +19,6 @@ export default class YourCards extends Component {
     let userCards = {}
     return API.getUserCards(currentUser)
       .then((cards) => userCards = cards)
-      .then(() => console.log(userCards))
       .then(() => this.setState({ userCards: userCards }))
   }
 
@@ -30,34 +29,33 @@ export default class YourCards extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="d-flex flex-column">
         <NavBar navText={this.props.navText} />
-        <Row className="d-flex inline justify-content-center">
-          <CreateModal />
+        <Row className="my-auto d-flex justify-content-center">
+          <CreateModal loadCards={this.loadCards} />
         </Row>
-        <Col className="d-flex inline justify-content-center">
-          <ListGroup>
-            {
-              this.state.userCards.map((card) =>
-                <ListGroupItem className="card-view" key={card.id} id={card.id}>
-                  <Row className="d-flex inline">
-                    <Col md="d-flex m-3">
-                      <h3>{card.word}</h3>
-                      <h3>{card.relationship}</h3>
-                    </Col>
-                    <Col lg="d-flex m-3">
-                      <img className="rounded card-img" alt={card.word} src={card.image}></img>
-                    </Col>
-                  </Row>
-                  <Row className="d-flex inline justify-content-around">
-                    <EditModal card={card} loadCards={this.loadCards} />
-                    <DeleteModal cardId={card.id} loadCards={this.loadCards} />
-                  </Row>
-                </ListGroupItem>
-              )
-            }
-          </ListGroup>
-        </Col>
+          <br />
+        <CardDeck className="card-deck">
+          {
+            this.state.userCards.map((card) =>
+              <Col sm="3">
+                <Card className="rounded card-view" key={card.id} id={card.id}>
+                  <CardImg className="rounded img-fluid card-img" alt={card.word} src={card.image}></CardImg>
+                  <CardBody>
+                    <h5>{card.word}</h5>
+                    <h6>{card.relationship}</h6>
+                    <Row className="d-flex inline justify-content-around">
+                      <EditModal card={card} loadCards={this.loadCards} />
+                      <DeleteModal cardId={card.id} loadCards={this.loadCards} />
+                    </Row>
+                  </CardBody>
+                </Card>
+              </Col>
+            )
+          }
+        </CardDeck>
+        {/* </Col> */}
+
       </Container>
     )
   }

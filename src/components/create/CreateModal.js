@@ -27,7 +27,6 @@ export default class CreateModal extends Component {
   handleFieldChange = e => {
     const stateToChange = {}
     stateToChange[e.target.id] = e.target.value
-    console.log(stateToChange)
     this.setState(stateToChange)
   }
 
@@ -46,20 +45,21 @@ export default class CreateModal extends Component {
   saveCard = (e) => {
     e.preventDefault()
     let newCard = this.cardObject()
-    API.saveData("cards", newCard)
+    return API.saveData("cards", newCard)
+      .then(() => this.props.loadCards())
   }
 
   render() {
     return (
       <div>
-        <Button className="mr-3" onClick={this.toggle}><i className="fas fa-file-medical"></i><h3>Create</h3></Button>
+        <Button className="mr-3 big-button" onClick={this.toggle}><i className="fas fa-file-medical"></i><h3>Create</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-            <Form onSubmit={(e) => {
-              e.preventDefault()
-              this.saveCard(e)
-              this.toggle()
-            }}>
-          <ModalBody>
+          <Form onSubmit={(e) => {
+            e.preventDefault()
+            this.saveCard(e)
+            this.toggle()
+          }}>
+            <ModalBody>
               <FormGroup row>
                 <Label for="Word" sm={2}>Name</Label>
                 <Col sm={10}>
@@ -76,12 +76,12 @@ export default class CreateModal extends Component {
                 <Label for="Image">Image Url</Label>
                 <Input type="url" name="image" id="image" onChange={this.handleFieldChange} />
               </FormGroup>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="success" className="modal-button" type="submit" onClick={()=> {}}><i className="fas fa-arrow-circle-right form-icon"></i><h3>Save</h3></Button>
-            <Button color="danger" className="modal-button" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
-          </ModalFooter>
-            </Form>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="success" className="modal-button" type="submit" onClick={() => { }}><i className="fas fa-arrow-circle-right form-icon"></i><h3>Save</h3></Button>
+              <Button color="danger" className="modal-button" onClick={this.toggle}><i className="fas fa-ban form-icon"></i><h3>Cancel</h3></Button>
+            </ModalFooter>
+          </Form>
         </Modal>
       </div>
     )
