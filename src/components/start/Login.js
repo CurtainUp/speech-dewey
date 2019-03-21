@@ -62,7 +62,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <Button className="mr-3" size="xl" onClick={() => this.toggle()}><i className="fas fa-user"></i><h3>Login</h3></Button>
+        <Button className="mr-3 big-button" size="xl" onClick={() => this.toggle()}><i className="fas fa-user"></i><h3>Login</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalBody>
             <this.LoginForm />

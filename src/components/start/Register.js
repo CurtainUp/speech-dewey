@@ -71,7 +71,7 @@ export default class Register extends Component {
     return (
       <div>
         {/* Register button. Shows form on click */}
-        <Button size="xl" onClick={() => this.toggle()}><i className="fas fa-user-plus"></i><h3>Register</h3></Button>
+        <Button size="xl" onClick={() => this.toggle()} className="big-button"><i className="fas fa-user-plus"></i><h3>Register</h3></Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalBody>
             <this.RegisterForm />

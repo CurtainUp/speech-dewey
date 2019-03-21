@@ -15,6 +15,8 @@ $spacer:1.2rem;
 $border-width:1px;
 $btn-border-radius:.25rem;
 
+// General styling
+
 html {
   font-size: 1.5em;
   line-height: 1.5;
@@ -30,9 +32,15 @@ font-size: 10em;
 margin: 10px;
 }
 
+.big-button {
+  width: 358px;
+}
+
 .form-icon {
   font-size: 3em;
 }
+
+// Quiz styling
 
 .quiz-icon {
   font-size: 2em;
@@ -57,15 +65,28 @@ img {
   align-content: center;
 }
 
+// Your Cards styling
+
+.card-deck {
+  justify-content: center;
+  flex-flow: row wrap;
+  display: flex;
+}
+
 .card-view {
-  width: 600px;
-  height: 600px;
-  margin: 10px;
+  width: 358px;
 }
 
 .card-img {
-    align-content: right;
+    max-width: 100%;
+    object-fit: cover;
 }
+
+.card-button {
+  max-width: 25%;
+}
+
+// Modal styling
 
 .modal-button {
   flex: 50%;
@@ -74,6 +95,8 @@ img {
 .modal-p {
   font-size: 5em;
 }
+
+// Stat styling
 
 .stat-card {
   background-color: $light;

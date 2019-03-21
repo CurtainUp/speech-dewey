@@ -57,8 +57,8 @@ class QuizScore extends React.Component {
               </PieChart>
             </ResponsiveContainer>
             <h4>{this.state.dailyPercentCorrect}</h4>
-            <Row className="d-flex inline">
-              <div className="d-flex inline align-items-center mx-3">
+            <Row>
+              <div className="d-flex align-items-center justify-content-between mx-3">
                 <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.props.state.correct}</h4>
                 <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.props.state.incorrect}</h4>
                 <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.props.state.skipped}</h4>
