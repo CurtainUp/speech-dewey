@@ -355,7 +355,7 @@
       "userId": 2,
       "categoryId": 4,
       "word": "Sebastian",
-      "image": "https://i.kym-cdn.com/entries/icons/original/000/027/475/Screen_Shot_2018-10-25_at_11.02.15_AM.png",
+      "image": "https://nss-day-cohort-28.github.io/Class-Website/images/classmates/SebastianCivarolo.jpg",
       "relationship": "Friend",
       "audioUrl": null,
       "id": 34,
@@ -364,17 +364,8 @@
     {
       "userId": 2,
       "categoryId": 4,
-      "word": "Ousama",
-      "image": "https://i.imgur.com/JvqIaoe.jpg",
-      "relationship": "Friend",
-      "audioUrl": "",
-      "id": 35
-    },
-    {
-      "userId": 2,
-      "categoryId": 4,
       "word": "Kelly",
-      "image": "https://i.imgur.com/6QP3O8q.jpg",
+      "image": "https://nss-day-cohort-28.github.io/Class-Website/images/classmates/KellyMorin.jpg",
       "relationship": "Friend",
       "audioUrl": null,
       "id": 36,
@@ -384,29 +375,11 @@
       "userId": 2,
       "categoryId": 4,
       "word": "Brendan",
-      "image": "https://pmcvariety.files.wordpress.com/2018/06/rocket-league.jpg?w=1000&h=563&crop=1",
+      "image": "https://nss-day-cohort-28.github.io/Class-Website/images/classmates/BrendanMcCray.jpg",
       "relationship": "Friend",
-      "audioUrl": "",
-      "id": 37
-    },
-    {
-      "userId": 2,
-      "categoryId": 4,
-      "word": "Joe",
-      "image": "http://www.freakingnews.com/pictures/62500/Broccoli-Head-Man--62639.jpg",
-      "relationship": "Teacher",
       "audioUrl": null,
-      "id": 38,
+      "id": 37,
       "timestamp": null
-    },
-    {
-      "userId": 2,
-      "categoryId": 4,
-      "word": "Zac",
-      "image": "https://www.rainierflightservice.com/sectionimages/matt-kistner-commercial-pilot.jpg",
-      "relationship": "Friend",
-      "audioUrl": "",
-      "id": 39
     },
     {
       "userId": 2,
@@ -421,10 +394,11 @@
       "userId": 2,
       "categoryId": 4,
       "word": "Ashley",
-      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/45252627_10212010004195607_9065358695386316800_n.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=f52310822f562683c1451c21c7f12676&oe=5CACDE48",
-      "relationship": "BFF 4E",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/50758864_10106446544485178_2191054098353094656_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=7447a7475ed303d92b2f0e34118822f5&oe=5D494ED3",
+      "relationship": "Best Friend",
       "audioUrl": null,
-      "id": 41
+      "id": 41,
+      "timestamp": null
     },
     {
       "userId": 0,
@@ -718,10 +692,48 @@
       "userId": 2,
       "categoryId": 4,
       "word": "Kim",
-      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/45567720_10102730196975657_2104019931879178240_n.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=b36ee0d73eaf5dce8c1923ba15891375&oe=5CCBCDD1",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/51934373_10102838580918367_7182310209501528064_n.jpg?_nc_cat=105&_nc_ht=scontent-atl3-1.xx&oh=4a6d350b00259e29aef4a949b1ad8314&oe=5D4A75B6",
       "relationship": "Friend",
+      "audioUrl": null,
+      "id": 74,
+      "timestamp": null
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Colleen",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/12670756_10207414150725225_2681675237450220371_n.jpg?_nc_cat=110&_nc_ht=scontent-atl3-1.xx&oh=4c1aade5b54e42ac85d108f1048ce413&oe=5D088B54",
+      "relationship": "Sister-in-law",
       "audioUrl": "",
-      "id": 74
+      "id": 75
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Meghan",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/15284955_10209382823140805_7952929604151645526_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=2aeb8a7023c3d0cb1b97c5a209d5c491&oe=5D0A2807",
+      "relationship": "Niece",
+      "audioUrl": "",
+      "id": 76
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Rachel",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/33248932_10215303976089183_7391066631067140096_n.jpg?_nc_cat=101&_nc_ht=scontent-atl3-1.xx&oh=d446ee1953c03d470d7d7969eacb6389&oe=5D1E2831",
+      "relationship": "Sister-in-law",
+      "audioUrl": "",
+      "id": 77
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Faith",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/32464494_10215249953698657_8567841125610553344_n.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=9f76815da55a43e5196a6795d3657be7&oe=5D09A5D5",
+      "relationship": "Niece",
+      "audioUrl": null,
+      "id": 78,
+      "timestamp": null
     }
   ],
   "cardScores": [
@@ -1580,13 +1592,6 @@
       "id": 122
     },
     {
-      "timestamp": "2019-02-25T06:34:35.659Z",
-      "cardId": 39,
-      "userId": 2,
-      "status": "incorrect",
-      "id": 123
-    },
-    {
       "timestamp": "2019-02-25T06:51:58.298Z",
       "cardId": 7,
       "userId": 2,
@@ -1732,6 +1737,356 @@
       "userId": 2,
       "status": "incorrect",
       "id": 144
+    },
+    {
+      "timestamp": "2019-03-21T00:56:05.381Z",
+      "cardId": 30,
+      "userId": 2,
+      "status": "skipped",
+      "id": 145
+    },
+    {
+      "timestamp": "2019-03-21T00:56:11.553Z",
+      "cardId": 26,
+      "userId": 2,
+      "status": "skipped",
+      "id": 146
+    },
+    {
+      "timestamp": "2019-03-21T00:56:14.479Z",
+      "cardId": 24,
+      "userId": 2,
+      "status": "skipped",
+      "id": 147
+    },
+    {
+      "timestamp": "2019-03-21T00:56:16.712Z",
+      "cardId": 65,
+      "userId": 2,
+      "status": "skipped",
+      "id": 148
+    },
+    {
+      "timestamp": "2019-03-21T00:56:18.452Z",
+      "cardId": 66,
+      "userId": 2,
+      "status": "skipped",
+      "id": 149
+    },
+    {
+      "timestamp": "2019-03-21T00:56:19.712Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "skipped",
+      "id": 150
+    },
+    {
+      "timestamp": "2019-03-21T00:56:21.036Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "skipped",
+      "id": 151
+    },
+    {
+      "timestamp": "2019-03-21T00:56:22.363Z",
+      "cardId": 29,
+      "userId": 2,
+      "status": "skipped",
+      "id": 152
+    },
+    {
+      "timestamp": "2019-03-21T00:56:23.385Z",
+      "cardId": 68,
+      "userId": 2,
+      "status": "skipped",
+      "id": 153
+    },
+    {
+      "timestamp": "2019-03-21T00:56:24.468Z",
+      "cardId": 27,
+      "userId": 2,
+      "status": "skipped",
+      "id": 154
+    },
+    {
+      "timestamp": "2019-03-21T16:29:13.035Z",
+      "cardId": 75,
+      "userId": 2,
+      "status": "skipped",
+      "id": 155
+    },
+    {
+      "timestamp": "2019-03-21T16:29:16.190Z",
+      "cardId": 76,
+      "userId": 2,
+      "status": "skipped",
+      "id": 156
+    },
+    {
+      "timestamp": "2019-03-21T16:29:17.655Z",
+      "cardId": 77,
+      "userId": 2,
+      "status": "skipped",
+      "id": 157
+    },
+    {
+      "timestamp": "2019-03-21T16:29:21.017Z",
+      "cardId": 74,
+      "userId": 2,
+      "status": "correct",
+      "id": 158
+    },
+    {
+      "timestamp": "2019-03-21T16:29:23.597Z",
+      "cardId": 12,
+      "userId": 2,
+      "status": "correct",
+      "id": 159
+    },
+    {
+      "timestamp": "2019-03-21T16:29:25.908Z",
+      "cardId": 41,
+      "userId": 2,
+      "status": "correct",
+      "id": 160
+    },
+    {
+      "timestamp": "2019-03-21T16:29:28.654Z",
+      "cardId": 36,
+      "userId": 2,
+      "status": "correct",
+      "id": 161
+    },
+    {
+      "timestamp": "2019-03-21T16:29:31.265Z",
+      "cardId": 40,
+      "userId": 2,
+      "status": "correct",
+      "id": 162
+    },
+    {
+      "timestamp": "2019-03-21T16:29:33.918Z",
+      "cardId": 37,
+      "userId": 2,
+      "status": "correct",
+      "id": 163
+    },
+    {
+      "timestamp": "2019-03-21T16:29:36.696Z",
+      "cardId": 13,
+      "userId": 2,
+      "status": "correct",
+      "id": 164
+    },
+    {
+      "timestamp": "2019-03-21T16:30:21.354Z",
+      "cardId": 58,
+      "userId": 2,
+      "status": "skipped",
+      "id": 165
+    },
+    {
+      "timestamp": "2019-03-21T16:30:22.678Z",
+      "cardId": 62,
+      "userId": 2,
+      "status": "skipped",
+      "id": 166
+    },
+    {
+      "timestamp": "2019-03-21T16:30:23.394Z",
+      "cardId": 57,
+      "userId": 2,
+      "status": "skipped",
+      "id": 167
+    },
+    {
+      "timestamp": "2019-03-21T16:30:23.934Z",
+      "cardId": 16,
+      "userId": 2,
+      "status": "skipped",
+      "id": 168
+    },
+    {
+      "timestamp": "2019-03-21T16:30:24.585Z",
+      "cardId": 63,
+      "userId": 2,
+      "status": "skipped",
+      "id": 169
+    },
+    {
+      "timestamp": "2019-03-21T16:30:25.200Z",
+      "cardId": 15,
+      "userId": 2,
+      "status": "skipped",
+      "id": 170
+    },
+    {
+      "timestamp": "2019-03-21T16:30:25.785Z",
+      "cardId": 19,
+      "userId": 2,
+      "status": "skipped",
+      "id": 171
+    },
+    {
+      "timestamp": "2019-03-21T16:30:26.454Z",
+      "cardId": 21,
+      "userId": 2,
+      "status": "skipped",
+      "id": 172
+    },
+    {
+      "timestamp": "2019-03-21T16:30:27.374Z",
+      "cardId": 22,
+      "userId": 2,
+      "status": "skipped",
+      "id": 173
+    },
+    {
+      "timestamp": "2019-03-21T16:30:28.223Z",
+      "cardId": 59,
+      "userId": 2,
+      "status": "skipped",
+      "id": 174
+    },
+    {
+      "timestamp": "2019-03-21T16:31:23.496Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "skipped",
+      "id": 175
+    },
+    {
+      "timestamp": "2019-03-21T16:31:24.880Z",
+      "cardId": 27,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 176
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.047Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 177
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.210Z",
+      "cardId": 30,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 178
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.403Z",
+      "cardId": 66,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 179
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.574Z",
+      "cardId": 73,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 180
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.797Z",
+      "cardId": 68,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 181
+    },
+    {
+      "timestamp": "2019-03-21T16:31:27.724Z",
+      "cardId": 28,
+      "userId": 2,
+      "status": "correct",
+      "id": 182
+    },
+    {
+      "timestamp": "2019-03-21T16:31:29.651Z",
+      "cardId": 69,
+      "userId": 2,
+      "status": "correct",
+      "id": 183
+    },
+    {
+      "timestamp": "2019-03-21T16:31:30.373Z",
+      "cardId": 71,
+      "userId": 2,
+      "status": "correct",
+      "id": 184
+    },
+    {
+      "timestamp": "2019-03-21T16:33:59.547Z",
+      "cardId": 66,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 185
+    },
+    {
+      "timestamp": "2019-03-21T16:34:01.396Z",
+      "cardId": 33,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 186
+    },
+    {
+      "timestamp": "2019-03-21T16:34:03.006Z",
+      "cardId": 69,
+      "userId": 2,
+      "status": "correct",
+      "id": 187
+    },
+    {
+      "timestamp": "2019-03-21T16:34:04.829Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "correct",
+      "id": 188
+    },
+    {
+      "timestamp": "2019-03-21T16:34:06.528Z",
+      "cardId": 26,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 189
+    },
+    {
+      "timestamp": "2019-03-21T16:34:08.134Z",
+      "cardId": 71,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 190
+    },
+    {
+      "timestamp": "2019-03-21T16:34:09.814Z",
+      "cardId": 25,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 191
+    },
+    {
+      "timestamp": "2019-03-21T16:34:11.565Z",
+      "cardId": 73,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 192
+    },
+    {
+      "timestamp": "2019-03-21T16:34:13.238Z",
+      "cardId": 29,
+      "userId": 2,
+      "status": "correct",
+      "id": 193
+    },
+    {
+      "timestamp": "2019-03-21T16:34:14.932Z",
+      "cardId": 32,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 194
     }
   ]
 }
