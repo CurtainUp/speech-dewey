@@ -1,0 +1,2092 @@
+{
+  "users": [
+    {
+      "id": 0
+    },
+    {
+      "id": 1,
+      "email": "user@speechdewey.com",
+      "password": "vocab",
+      "firstName": "Lana"
+    },
+    {
+      "email": "newuser@gmail.com",
+      "password": "1",
+      "firstName": "Elyse",
+      "id": 2
+    },
+    {
+      "email": "mom@gmail.com",
+      "password": "1",
+      "firstName": "Sharon",
+      "id": 3
+    },
+    {
+      "email": "mom@dewey.com",
+      "password": "1",
+      "firstName": "Sharon",
+      "id": 4
+    },
+    {
+      "email": "aphasia@dewey.com",
+      "password": "1",
+      "firstName": "Delores",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Food & Drink"
+    },
+    {
+      "id": 2,
+      "name": "Mood & Health"
+    },
+    {
+      "id": 3,
+      "name": "Home & Clothes"
+    },
+    {
+      "id": 4,
+      "name": "Friends & Family"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "water",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Glass-of-water.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 2,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "apple",
+      "image": "https://ak9.picdn.net/shutterstock/videos/16031959/thumb/7.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 3,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "bacon",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/CookedBacon.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 4,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "banana",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 5,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "beer",
+      "image": "http://pngimg.com/uploads/beer/beer_PNG2376.png",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 6,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "blender",
+      "image": "https://c1.staticflickr.com/9/8770/29272491705_d10f2185a3_b.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 7,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "blueberries",
+      "image": "http://goods4u.co.nz/home/wp-content/uploads/2017/07/Blueberry-7.png",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 8,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "bowl",
+      "image": "https://fr.chatelaine.com/wp-content/uploads/2015/05/bol-porcelaine.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 9,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "bread",
+      "image": "http://www.gastrolieferdienst.ch/images/product_images/original_images/28515_rustikales_bauernbrot_1000g.png",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "id": 10,
+      "userId": 0,
+      "categoryId": 1,
+      "word": "breakfast",
+      "image": "https://www.maxpixel.net/static/photo/1x/Food-Bebe-Fruit-Breakfast-Plate-3137152.jpg",
+      "relationship": "",
+      "audioUrl": ""
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Greg",
+      "image": "https://scontent.fmkc1-1.fna.fbcdn.net/v/t1.0-9/13061974_10207577820736873_4125880340516110432_n.jpg?_nc_cat=102&_nc_ht=scontent.fmkc1-1.fna&oh=e3aab966b9136cc0c230c8b539c0245f&oe=5CA2BC63",
+      "relationship": "Brother",
+      "audioUrl": "",
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Scott",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/15697769_1000998783339307_4715224538854410731_n.jpg?_nc_cat=100&_nc_ht=scontent-atl3-1.xx&oh=4385df31e2aa1a3c8ad73a6ee9e39e86&oe=5CA6E754",
+      "relationship": "Oldest Brother",
+      "audioUrl": null,
+      "id": 12,
+      "timestamp": null
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Sharon",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/1601572_1535326760086441_8269218669479741701_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=0af032126244993c665ae02c6e87d886&oe=5C9EA28D",
+      "relationship": "Mom",
+      "audioUrl": "",
+      "id": 13
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "angry",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Gnome-face-angry.svg/2000px-Gnome-face-angry.svg.png",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 14
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "sad",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Sadness.png",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 15
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "happy",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Smiley_head_happy.svg/2000px-Smiley_head_happy.svg.png",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 16
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "brain",
+      "image": "https://c1.staticflickr.com/9/8055/8376271918_0ca57957fa_b.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 17
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "cold",
+      "image": "https://us.123rf.com/450wm/arcady31/arcady311710/arcady31171000137/88450086-low-temperature-vector-pictogram.jpg?ver=6",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 18
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "hot",
+      "image": "https://totalstoragesolutions.com/wp-content/uploads/2015/04/sun_temp-e1429883477713.png",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 19
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "hungry",
+      "image": "http://fromabirdseyeview.com/wp-content/uploads/2015/05/woman-with-food.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 20
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "heart",
+      "image": "https://www.heartfoundation.org.au/images/uploads/main/Animated_Images/how-heart-works.png",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 21
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "headache",
+      "image": "https://images.theconversation.com/files/175523/original/file-20170626-4492-mqyzj3.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 22
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "hand",
+      "image": "http://www.montageafrica.com/wp-content/uploads/2015/11/human-hand-front.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 23
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "bed",
+      "image": "http://cdn.shopify.com/s/files/1/2660/5202/products/hjnlgkoig1gnbl964gc9_11ca8117-1670-4b04-83e6-2eb5e7ac7c58_800x.jpg?v=1536593838",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 24
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "kitchen",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Modular_Kitchen.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 25
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "jeans",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Jeans.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 26
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "shirt",
+      "image": "https://5.imimg.com/data5/HA/OO/MY-691100/maroon-round-neck-t-shirt-500x500.png",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 27
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "shoes",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Black_Converse_sneakers.JPG",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 28
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "table",
+      "image": "http://cdn2.hubspot.net/hub/67369/file-17372411-jpg/images/under-the-table.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 29
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "bathroom",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Pink_and_black_bathroom.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 30
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "chair",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Chair_%28AM_2005.67.1-1%29.jpg/600px-Chair_%28AM_2005.67.1-1%29.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 31
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "house",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/2008-08-03_Simple_white_house.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 32
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "door",
+      "image": "http://we-get-hitched.com/shop/images/door.jpg",
+      "relationship": "",
+      "audioUrl": "",
+      "id": 33
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Sebastian",
+      "image": "https://nss-day-cohort-28.github.io/Class-Website/images/classmates/SebastianCivarolo.jpg",
+      "relationship": "Friend",
+      "audioUrl": null,
+      "id": 34,
+      "timestamp": null
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Kelly",
+      "image": "https://nss-day-cohort-28.github.io/Class-Website/images/classmates/KellyMorin.jpg",
+      "relationship": "Friend",
+      "audioUrl": null,
+      "id": 36,
+      "timestamp": null
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Brendan",
+      "image": "https://nss-day-cohort-28.github.io/Class-Website/images/classmates/BrendanMcCray.jpg",
+      "relationship": "Friend",
+      "audioUrl": null,
+      "id": 37,
+      "timestamp": null
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Newman",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/10407145_10205129627902346_2212111152380371115_n.jpg?_nc_cat=100&_nc_ht=scontent-atl3-1.xx&oh=0ca12f0b8d1a190fae914e84110857c9&oe=5CA84AD7",
+      "relationship": "Friend",
+      "audioUrl": "",
+      "id": 40
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Ashley",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/50758864_10106446544485178_2191054098353094656_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=7447a7475ed303d92b2f0e34118822f5&oe=5D494ED3",
+      "relationship": "Best Friend",
+      "audioUrl": null,
+      "id": 41,
+      "timestamp": null
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "hamburger",
+      "image": "http://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4114.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 42
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "chocolate",
+      "image": "http://pngimg.com/uploads/chocolate/chocolate_PNG38.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 43
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "fork",
+      "image": "http://pngimg.com/uploads/fork/fork_PNG3053.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 44
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "pan",
+      "image": "http://pngimg.com/uploads/frying_pan/frying_pan_PNG8340.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 45
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "milk",
+      "image": "http://pngimg.com/uploads/milk/milk_PNG12725.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 46
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "pizza",
+      "image": "http://pngimg.com/uploads/pizza/pizza_PNG43991.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 47
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "spoon",
+      "image": "http://pngimg.com/uploads/spoon/spoon_PNG3039.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 48
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "stove",
+      "image": "http://pngimg.com/uploads/stove/stove_PNG14023.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 49
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "salad",
+      "image": "http://www.picserver.org/pictures/salad01-lg.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 50
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "chicken",
+      "image": "http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-Grill-Chicken-PNG-Transparent-Image-1-500x578.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 51
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "egg",
+      "image": "https://pngimg.com/uploads/fried_egg/fried_egg_PNG3.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 52
+    },
+    {
+      "userId": 0,
+      "categoryId": 1,
+      "word": "cheese",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/WFromage.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 53
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "medicine",
+      "image": "http://pluspng.com/img-png/pill-png-hd-scan-the-barcode-max-100-in-the-text-box-medication-hd-png-351.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 54
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "doctor",
+      "image": "https://baucemag.com/wp-content/uploads/2012/01/african-american-female-doctor.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 55
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "cane",
+      "image": "https://cdns.webareacontrol.com/prodimages/1000-X-1000/3/L/30112015736Drive-Foam-Grip-Offset-Handle-Walking-Cane-With-Foam-Rubber-Grip-L-L.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 56
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "glasses",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Reading-Glasses.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 57
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "sick",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Emojione_1F922.svg/2000px-Emojione_1F922.svg.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 58
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "confused",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/SMirC-what.svg/2000px-SMirC-what.svg.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 59
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "foot",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Foot_on_white_background.jpg/1200px-Foot_on_white_background.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 60
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "arm",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Extended_arm.jpg/640px-Extended_arm.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 61
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "sleepy",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/PEO-smiley_sleeping.svg/2000px-PEO-smiley_sleeping.svg.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 62
+    },
+    {
+      "userId": 0,
+      "categoryId": 2,
+      "word": "handicapped",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Handicapped_Accessible_sign.svg/2000px-Handicapped_Accessible_sign.svg.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 63
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "raincoat",
+      "image": "http://bossgloves.com/wp-content/uploads/2014/07/3PR0202Y_New_Jacket-copy-857x1200.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 64
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "dress",
+      "image": "http://pluspng.com/img-png/dress-png-women-dress-png-transparent-image-1350.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 65
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "couch",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Sofa3800ppx.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 66
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "flashlight",
+      "image": "http://pngimg.com/uploads/flashlight/flashlight_PNG55988.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 67
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "outlet",
+      "image": "http://res.publicdomainfiles.com/pdf_view/69/13927977023951.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 68
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "keys",
+      "image": "http://www.stickpng.com/assets/images/580b585b2edbce24c47b284a.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 69
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "stairs",
+      "image": "https://oldtexaswood.com/eng/wp-content/uploads/2015/02/photo-33.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 70
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "scarf",
+      "image": "https://toppng.com/public/uploads/preview/red-scarf-11530963189hbg2ctif4k.png",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 71
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "pocket",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Jeans_pocket_front.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 72
+    },
+    {
+      "userId": 0,
+      "categoryId": 3,
+      "word": "window",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Listed_house%2C_window._-_5_Szabads%C3%A1g_Street%2C_Bia%2C_Biatorb%C3%A1gy%2C_Hungary.jpg",
+      "relationship": "",
+      "audioUrl": null,
+      "id": 73
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Kim",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/51934373_10102838580918367_7182310209501528064_n.jpg?_nc_cat=105&_nc_ht=scontent-atl3-1.xx&oh=4a6d350b00259e29aef4a949b1ad8314&oe=5D4A75B6",
+      "relationship": "Friend",
+      "audioUrl": null,
+      "id": 74,
+      "timestamp": null
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Colleen",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/12670756_10207414150725225_2681675237450220371_n.jpg?_nc_cat=110&_nc_ht=scontent-atl3-1.xx&oh=4c1aade5b54e42ac85d108f1048ce413&oe=5D088B54",
+      "relationship": "Sister-in-law",
+      "audioUrl": "",
+      "id": 75
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Meghan",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/15284955_10209382823140805_7952929604151645526_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=2aeb8a7023c3d0cb1b97c5a209d5c491&oe=5D0A2807",
+      "relationship": "Niece",
+      "audioUrl": "",
+      "id": 76
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Rachel",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/33248932_10215303976089183_7391066631067140096_n.jpg?_nc_cat=101&_nc_ht=scontent-atl3-1.xx&oh=d446ee1953c03d470d7d7969eacb6389&oe=5D1E2831",
+      "relationship": "Sister-in-law",
+      "audioUrl": "",
+      "id": 77
+    },
+    {
+      "userId": 2,
+      "categoryId": 4,
+      "word": "Faith",
+      "image": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/32464494_10215249953698657_8567841125610553344_n.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=9f76815da55a43e5196a6795d3657be7&oe=5D09A5D5",
+      "relationship": "Niece",
+      "audioUrl": null,
+      "id": 78,
+      "timestamp": null
+    }
+  ],
+  "cardScores": [
+    {
+      "id": 1,
+      "timestamp": null,
+      "cardId": 1,
+      "userId": 1,
+      "status": "correct"
+    },
+    {
+      "timestamp": "2018-12-09T19:01:33.508Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "correct",
+      "id": 2
+    },
+    {
+      "timestamp": "2018-12-10T19:01:37.748Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 3
+    },
+    {
+      "timestamp": "2018-12-10T19:01:42.256Z",
+      "cardId": 3,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 4
+    },
+    {
+      "timestamp": "2018-12-10T19:01:46.160Z",
+      "cardId": 4,
+      "userId": 2,
+      "status": "correct",
+      "id": 5
+    },
+    {
+      "timestamp": "2018-12-10T19:01:49.721Z",
+      "cardId": 5,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 6
+    },
+    {
+      "timestamp": "2018-12-10T19:01:55.519Z",
+      "cardId": 6,
+      "userId": 2,
+      "status": "correct",
+      "id": 7
+    },
+    {
+      "timestamp": "2018-12-10T19:01:59.566Z",
+      "cardId": 7,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 8
+    },
+    {
+      "timestamp": "2018-12-10T19:02:04.476Z",
+      "cardId": 8,
+      "userId": 2,
+      "status": "correct",
+      "id": 9
+    },
+    {
+      "timestamp": "2018-12-10T19:02:10.660Z",
+      "cardId": 9,
+      "userId": 2,
+      "status": "correct",
+      "id": 10
+    },
+    {
+      "timestamp": "2018-12-10T19:02:14.964Z",
+      "cardId": 10,
+      "userId": 2,
+      "status": "correct",
+      "id": 11
+    },
+    {
+      "timestamp": "2018-12-11T02:25:46.156Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 12
+    },
+    {
+      "timestamp": "2018-12-11T02:26:08.899Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 13
+    },
+    {
+      "timestamp": "2018-12-11T02:31:09.276Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "correct",
+      "id": 14
+    },
+    {
+      "timestamp": "2018-12-11T15:29:47.634Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 15
+    },
+    {
+      "timestamp": "2018-12-11T15:30:33.698Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "skipped",
+      "id": 16
+    },
+    {
+      "timestamp": "2018-12-11T15:30:35.356Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "skipped",
+      "id": 17
+    },
+    {
+      "timestamp": "2018-12-11T15:31:21.325Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 18
+    },
+    {
+      "timestamp": "2018-12-11T15:31:24.771Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "skipped",
+      "id": 19
+    },
+    {
+      "timestamp": "2018-12-11T15:35:39.953Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "correct",
+      "id": 20
+    },
+    {
+      "timestamp": "2018-12-11T15:35:41.930Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 21
+    },
+    {
+      "timestamp": "2018-12-11T15:35:44.200Z",
+      "cardId": 3,
+      "userId": 2,
+      "status": "skipped",
+      "id": 22
+    },
+    {
+      "timestamp": "2018-12-11T15:35:47.409Z",
+      "cardId": 4,
+      "userId": 2,
+      "status": "correct",
+      "id": 23
+    },
+    {
+      "timestamp": "2018-12-11T15:35:49.658Z",
+      "cardId": 5,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 24
+    },
+    {
+      "timestamp": "2018-12-11T15:35:51.308Z",
+      "cardId": 6,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 25
+    },
+    {
+      "timestamp": "2018-12-11T15:35:53.344Z",
+      "cardId": 7,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 26
+    },
+    {
+      "timestamp": "2018-12-11T15:35:56.388Z",
+      "cardId": 8,
+      "userId": 2,
+      "status": "correct",
+      "id": 27
+    },
+    {
+      "timestamp": "2018-12-11T15:35:58.454Z",
+      "cardId": 9,
+      "userId": 2,
+      "status": "correct",
+      "id": 28
+    },
+    {
+      "timestamp": "2018-12-11T15:36:01.767Z",
+      "cardId": 10,
+      "userId": 2,
+      "status": "correct",
+      "id": 29
+    },
+    {
+      "timestamp": "2018-12-11T15:39:22.311Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 30
+    },
+    {
+      "timestamp": "2018-12-11T15:39:25.201Z",
+      "cardId": 3,
+      "userId": 2,
+      "status": "skipped",
+      "id": 31
+    },
+    {
+      "timestamp": "2018-12-11T15:39:47.428Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "skipped",
+      "id": 32
+    },
+    {
+      "timestamp": "2018-12-11T15:39:47.492Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "skipped",
+      "id": 33
+    },
+    {
+      "timestamp": "2018-12-11T15:39:49.821Z",
+      "cardId": 3,
+      "userId": 2,
+      "status": "correct",
+      "id": 34
+    },
+    {
+      "timestamp": "2018-12-11T15:39:53.093Z",
+      "cardId": 4,
+      "userId": 2,
+      "status": "correct",
+      "id": 35
+    },
+    {
+      "timestamp": "2018-12-11T15:39:55.685Z",
+      "cardId": 5,
+      "userId": 2,
+      "status": "correct",
+      "id": 36
+    },
+    {
+      "timestamp": "2018-12-11T15:39:57.671Z",
+      "cardId": 6,
+      "userId": 2,
+      "status": "correct",
+      "id": 37
+    },
+    {
+      "timestamp": "2018-12-11T15:39:59.435Z",
+      "cardId": 7,
+      "userId": 2,
+      "status": "correct",
+      "id": 38
+    },
+    {
+      "timestamp": "2018-12-11T15:40:01.351Z",
+      "cardId": 8,
+      "userId": 2,
+      "status": "correct",
+      "id": 39
+    },
+    {
+      "timestamp": "2018-12-11T15:40:03.261Z",
+      "cardId": 9,
+      "userId": 2,
+      "status": "correct",
+      "id": 40
+    },
+    {
+      "timestamp": "2018-12-11T15:40:05.189Z",
+      "cardId": 10,
+      "userId": 2,
+      "status": "correct",
+      "id": 41
+    },
+    {
+      "timestamp": "2018-12-11T15:41:22.304Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 42
+    },
+    {
+      "timestamp": "2018-12-11T15:41:46.985Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "skipped",
+      "id": 43
+    },
+    {
+      "timestamp": "2018-12-11T15:41:48.023Z",
+      "cardId": 3,
+      "userId": 2,
+      "status": "skipped",
+      "id": 44
+    },
+    {
+      "timestamp": "2018-12-11T15:41:48.068Z",
+      "cardId": 4,
+      "userId": 2,
+      "status": "skipped",
+      "id": 45
+    },
+    {
+      "timestamp": "2018-12-11T15:41:48.455Z",
+      "cardId": 5,
+      "userId": 2,
+      "status": "skipped",
+      "id": 46
+    },
+    {
+      "timestamp": "2018-12-11T15:41:48.895Z",
+      "cardId": 6,
+      "userId": 2,
+      "status": "skipped",
+      "id": 47
+    },
+    {
+      "timestamp": "2018-12-11T15:41:48.906Z",
+      "cardId": 7,
+      "userId": 2,
+      "status": "skipped",
+      "id": 48
+    },
+    {
+      "timestamp": "2018-12-11T15:41:49.344Z",
+      "cardId": 8,
+      "userId": 2,
+      "status": "skipped",
+      "id": 49
+    },
+    {
+      "timestamp": "2018-12-11T15:41:50.084Z",
+      "cardId": 9,
+      "userId": 2,
+      "status": "skipped",
+      "id": 50
+    },
+    {
+      "timestamp": "2018-12-11T15:41:50.132Z",
+      "cardId": 10,
+      "userId": 2,
+      "status": "skipped",
+      "id": 51
+    },
+    {
+      "timestamp": "2018-12-11T15:42:06.858Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "skipped",
+      "id": 52
+    },
+    {
+      "timestamp": "2018-12-11T15:42:07.732Z",
+      "cardId": 2,
+      "userId": 2,
+      "status": "skipped",
+      "id": 53
+    },
+    {
+      "timestamp": "2018-12-11T15:42:08.547Z",
+      "cardId": 3,
+      "userId": 2,
+      "status": "skipped",
+      "id": 54
+    },
+    {
+      "timestamp": "2018-12-11T15:42:08.598Z",
+      "cardId": 4,
+      "userId": 2,
+      "status": "skipped",
+      "id": 55
+    },
+    {
+      "timestamp": "2018-12-11T15:42:10.532Z",
+      "cardId": 5,
+      "userId": 2,
+      "status": "skipped",
+      "id": 56
+    },
+    {
+      "timestamp": "2019-02-14T02:04:46.438Z",
+      "cardId": 15,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 57
+    },
+    {
+      "timestamp": "2019-02-14T02:04:47.130Z",
+      "cardId": 63,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 58
+    },
+    {
+      "timestamp": "2019-02-14T02:04:48.992Z",
+      "cardId": 57,
+      "userId": 2,
+      "status": "correct",
+      "id": 59
+    },
+    {
+      "timestamp": "2019-02-14T02:04:50.873Z",
+      "cardId": 61,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 60
+    },
+    {
+      "timestamp": "2019-02-14T02:04:52.576Z",
+      "cardId": 14,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 61
+    },
+    {
+      "timestamp": "2019-02-14T02:04:54.877Z",
+      "cardId": 23,
+      "userId": 2,
+      "status": "correct",
+      "id": 62
+    },
+    {
+      "timestamp": "2019-02-14T02:04:56.897Z",
+      "cardId": 58,
+      "userId": 2,
+      "status": "correct",
+      "id": 63
+    },
+    {
+      "timestamp": "2019-02-14T02:04:58.043Z",
+      "cardId": 16,
+      "userId": 2,
+      "status": "skipped",
+      "id": 64
+    },
+    {
+      "timestamp": "2019-02-14T02:05:00.966Z",
+      "cardId": 20,
+      "userId": 2,
+      "status": "correct",
+      "id": 65
+    },
+    {
+      "timestamp": "2019-02-14T02:05:04.908Z",
+      "cardId": 22,
+      "userId": 2,
+      "status": "correct",
+      "id": 66
+    },
+    {
+      "timestamp": "2019-02-14T02:06:18.131Z",
+      "cardId": 56,
+      "userId": 2,
+      "status": "correct",
+      "id": 67
+    },
+    {
+      "timestamp": "2019-02-14T02:06:20.161Z",
+      "cardId": 58,
+      "userId": 2,
+      "status": "correct",
+      "id": 68
+    },
+    {
+      "timestamp": "2019-02-14T02:06:23.639Z",
+      "cardId": 63,
+      "userId": 2,
+      "status": "correct",
+      "id": 69
+    },
+    {
+      "timestamp": "2019-02-14T02:06:27.246Z",
+      "cardId": 20,
+      "userId": 2,
+      "status": "correct",
+      "id": 70
+    },
+    {
+      "timestamp": "2019-02-14T02:06:29.534Z",
+      "cardId": 18,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 71
+    },
+    {
+      "timestamp": "2019-02-14T02:06:31.277Z",
+      "cardId": 15,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 72
+    },
+    {
+      "timestamp": "2019-02-14T02:06:35.536Z",
+      "cardId": 54,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 73
+    },
+    {
+      "timestamp": "2019-02-14T02:06:37.642Z",
+      "cardId": 23,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 74
+    },
+    {
+      "timestamp": "2019-02-14T02:06:39.336Z",
+      "cardId": 59,
+      "userId": 2,
+      "status": "correct",
+      "id": 75
+    },
+    {
+      "timestamp": "2019-02-14T02:06:41.424Z",
+      "cardId": 62,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 76
+    },
+    {
+      "timestamp": "2019-02-14T02:13:16.780Z",
+      "cardId": 70,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 77
+    },
+    {
+      "timestamp": "2019-02-14T02:13:17.363Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 78
+    },
+    {
+      "timestamp": "2019-02-14T02:13:18.704Z",
+      "cardId": 65,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 79
+    },
+    {
+      "timestamp": "2019-02-14T02:13:19.361Z",
+      "cardId": 26,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 80
+    },
+    {
+      "timestamp": "2019-02-14T02:13:20.868Z",
+      "cardId": 32,
+      "userId": 2,
+      "status": "correct",
+      "id": 81
+    },
+    {
+      "timestamp": "2019-02-14T02:13:21.728Z",
+      "cardId": 29,
+      "userId": 2,
+      "status": "correct",
+      "id": 82
+    },
+    {
+      "timestamp": "2019-02-14T02:13:22.310Z",
+      "cardId": 24,
+      "userId": 2,
+      "status": "correct",
+      "id": 83
+    },
+    {
+      "timestamp": "2019-02-14T02:13:23.118Z",
+      "cardId": 30,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 84
+    },
+    {
+      "timestamp": "2019-02-14T02:13:23.916Z",
+      "cardId": 68,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 85
+    },
+    {
+      "timestamp": "2019-02-14T02:13:29.958Z",
+      "cardId": 31,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 86
+    },
+    {
+      "timestamp": "2019-02-14T03:34:52.930Z",
+      "cardId": 65,
+      "userId": 2,
+      "status": "correct",
+      "id": 87
+    },
+    {
+      "timestamp": "2019-02-14T03:34:53.731Z",
+      "cardId": 33,
+      "userId": 2,
+      "status": "correct",
+      "id": 88
+    },
+    {
+      "timestamp": "2019-02-14T03:34:54.591Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 89
+    },
+    {
+      "timestamp": "2019-02-14T03:34:56.680Z",
+      "cardId": 64,
+      "userId": 2,
+      "status": "correct",
+      "id": 90
+    },
+    {
+      "timestamp": "2019-02-14T03:34:58.268Z",
+      "cardId": 24,
+      "userId": 2,
+      "status": "correct",
+      "id": 91
+    },
+    {
+      "timestamp": "2019-02-14T03:35:00.177Z",
+      "cardId": 25,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 92
+    },
+    {
+      "timestamp": "2019-02-14T03:35:10.409Z",
+      "cardId": 28,
+      "userId": 2,
+      "status": "correct",
+      "id": 93
+    },
+    {
+      "timestamp": "2019-02-14T03:36:24.860Z",
+      "cardId": 4,
+      "userId": 2,
+      "status": "skipped",
+      "id": 94
+    },
+    {
+      "timestamp": "2019-02-14T03:36:26.214Z",
+      "cardId": 8,
+      "userId": 2,
+      "status": "skipped",
+      "id": 95
+    },
+    {
+      "timestamp": "2019-02-14T03:36:27.312Z",
+      "cardId": 47,
+      "userId": 2,
+      "status": "skipped",
+      "id": 96
+    },
+    {
+      "timestamp": "2019-02-14T03:36:28.276Z",
+      "cardId": 51,
+      "userId": 2,
+      "status": "skipped",
+      "id": 97
+    },
+    {
+      "timestamp": "2019-02-14T03:36:29.313Z",
+      "cardId": 50,
+      "userId": 2,
+      "status": "skipped",
+      "id": 98
+    },
+    {
+      "timestamp": "2019-02-14T03:36:31.003Z",
+      "cardId": 10,
+      "userId": 2,
+      "status": "skipped",
+      "id": 99
+    },
+    {
+      "timestamp": "2019-02-14T03:36:32.327Z",
+      "cardId": 46,
+      "userId": 2,
+      "status": "skipped",
+      "id": 100
+    },
+    {
+      "timestamp": "2019-02-14T03:36:41.279Z",
+      "cardId": 52,
+      "userId": 2,
+      "status": "skipped",
+      "id": 101
+    },
+    {
+      "timestamp": "2019-02-14T03:36:42.823Z",
+      "cardId": 1,
+      "userId": 2,
+      "status": "skipped",
+      "id": 102
+    },
+    {
+      "timestamp": "2019-02-14T03:36:44.141Z",
+      "cardId": 5,
+      "userId": 2,
+      "status": "skipped",
+      "id": 103
+    },
+    {
+      "timestamp": "2019-02-14T17:17:02.678Z",
+      "cardId": 61,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 104
+    },
+    {
+      "timestamp": "2019-02-14T17:17:05.459Z",
+      "cardId": 23,
+      "userId": 2,
+      "status": "correct",
+      "id": 105
+    },
+    {
+      "timestamp": "2019-02-14T17:17:07.344Z",
+      "cardId": 56,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 106
+    },
+    {
+      "timestamp": "2019-02-14T17:17:10.674Z",
+      "cardId": 63,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 107
+    },
+    {
+      "timestamp": "2019-02-14T17:17:16.534Z",
+      "cardId": 60,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 108
+    },
+    {
+      "timestamp": "2019-02-14T17:17:18.944Z",
+      "cardId": 17,
+      "userId": 2,
+      "status": "correct",
+      "id": 109
+    },
+    {
+      "timestamp": "2019-02-14T17:17:21.568Z",
+      "cardId": 14,
+      "userId": 2,
+      "status": "correct",
+      "id": 110
+    },
+    {
+      "timestamp": "2019-02-14T17:18:22.453Z",
+      "cardId": 25,
+      "userId": 2,
+      "status": "correct",
+      "id": 111
+    },
+    {
+      "timestamp": "2019-02-14T17:18:24.389Z",
+      "cardId": 27,
+      "userId": 2,
+      "status": "correct",
+      "id": 112
+    },
+    {
+      "timestamp": "2019-02-14T17:18:26.662Z",
+      "cardId": 26,
+      "userId": 2,
+      "status": "correct",
+      "id": 113
+    },
+    {
+      "timestamp": "2019-02-14T17:18:28.876Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "correct",
+      "id": 114
+    },
+    {
+      "timestamp": "2019-02-14T17:20:35.845Z",
+      "cardId": 73,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 115
+    },
+    {
+      "timestamp": "2019-02-14T17:20:41.345Z",
+      "cardId": 64,
+      "userId": 2,
+      "status": "correct",
+      "id": 116
+    },
+    {
+      "timestamp": "2019-02-14T17:34:06.678Z",
+      "cardId": 15,
+      "userId": 2,
+      "status": "correct",
+      "id": 117
+    },
+    {
+      "timestamp": "2019-02-14T17:34:09.232Z",
+      "cardId": 63,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 118
+    },
+    {
+      "timestamp": "2019-02-14T17:34:11.470Z",
+      "cardId": 14,
+      "userId": 2,
+      "status": "correct",
+      "id": 119
+    },
+    {
+      "timestamp": "2019-02-14T17:34:15.640Z",
+      "cardId": 21,
+      "userId": 2,
+      "status": "correct",
+      "id": 120
+    },
+    {
+      "timestamp": "2019-02-25T06:34:26.679Z",
+      "cardId": 34,
+      "userId": 2,
+      "status": "skipped",
+      "id": 121
+    },
+    {
+      "timestamp": "2019-02-25T06:34:33.547Z",
+      "cardId": 40,
+      "userId": 2,
+      "status": "correct",
+      "id": 122
+    },
+    {
+      "timestamp": "2019-02-25T06:51:58.298Z",
+      "cardId": 7,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 124
+    },
+    {
+      "timestamp": "2019-02-25T06:56:09.617Z",
+      "cardId": 62,
+      "userId": 2,
+      "status": "correct",
+      "id": 125
+    },
+    {
+      "timestamp": "2019-02-25T06:56:12.115Z",
+      "cardId": 56,
+      "userId": 2,
+      "status": "correct",
+      "id": 126
+    },
+    {
+      "timestamp": "2019-02-25T06:56:50.325Z",
+      "cardId": 16,
+      "userId": 2,
+      "status": "correct",
+      "id": 127
+    },
+    {
+      "timestamp": "2019-02-25T07:01:47.853Z",
+      "cardId": 14,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 128
+    },
+    {
+      "timestamp": "2019-02-25T07:01:50.408Z",
+      "cardId": 19,
+      "userId": 2,
+      "status": "correct",
+      "id": 129
+    },
+    {
+      "timestamp": "2019-02-25T07:01:53.819Z",
+      "cardId": 61,
+      "userId": 2,
+      "status": "correct",
+      "id": 130
+    },
+    {
+      "timestamp": "2019-02-25T07:01:57.094Z",
+      "cardId": 57,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 131
+    },
+    {
+      "timestamp": "2019-02-25T07:03:10.344Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "correct",
+      "id": 132
+    },
+    {
+      "timestamp": "2019-02-25T07:03:17.226Z",
+      "cardId": 71,
+      "userId": 2,
+      "status": "correct",
+      "id": 133
+    },
+    {
+      "timestamp": "2019-02-25T07:19:37.645Z",
+      "cardId": 25,
+      "userId": 2,
+      "status": "skipped",
+      "id": 134
+    },
+    {
+      "timestamp": "2019-02-25T07:21:12.427Z",
+      "cardId": 59,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 135
+    },
+    {
+      "timestamp": "2019-02-25T07:21:15.210Z",
+      "cardId": 56,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 136
+    },
+    {
+      "timestamp": "2019-02-25T07:21:17.546Z",
+      "cardId": 20,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 137
+    },
+    {
+      "timestamp": "2019-02-25T07:21:19.568Z",
+      "cardId": 19,
+      "userId": 2,
+      "status": "correct",
+      "id": 138
+    },
+    {
+      "timestamp": "2019-02-25T07:21:21.492Z",
+      "cardId": 14,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 139
+    },
+    {
+      "timestamp": "2019-02-25T07:21:23.221Z",
+      "cardId": 17,
+      "userId": 2,
+      "status": "correct",
+      "id": 140
+    },
+    {
+      "timestamp": "2019-02-25T07:21:25.496Z",
+      "cardId": 21,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 141
+    },
+    {
+      "timestamp": "2019-02-25T07:21:27.206Z",
+      "cardId": 15,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 142
+    },
+    {
+      "timestamp": "2019-02-25T07:21:28.846Z",
+      "cardId": 61,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 143
+    },
+    {
+      "timestamp": "2019-02-25T07:21:30.555Z",
+      "cardId": 57,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 144
+    },
+    {
+      "timestamp": "2019-03-21T00:56:05.381Z",
+      "cardId": 30,
+      "userId": 2,
+      "status": "skipped",
+      "id": 145
+    },
+    {
+      "timestamp": "2019-03-21T00:56:11.553Z",
+      "cardId": 26,
+      "userId": 2,
+      "status": "skipped",
+      "id": 146
+    },
+    {
+      "timestamp": "2019-03-21T00:56:14.479Z",
+      "cardId": 24,
+      "userId": 2,
+      "status": "skipped",
+      "id": 147
+    },
+    {
+      "timestamp": "2019-03-21T00:56:16.712Z",
+      "cardId": 65,
+      "userId": 2,
+      "status": "skipped",
+      "id": 148
+    },
+    {
+      "timestamp": "2019-03-21T00:56:18.452Z",
+      "cardId": 66,
+      "userId": 2,
+      "status": "skipped",
+      "id": 149
+    },
+    {
+      "timestamp": "2019-03-21T00:56:19.712Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "skipped",
+      "id": 150
+    },
+    {
+      "timestamp": "2019-03-21T00:56:21.036Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "skipped",
+      "id": 151
+    },
+    {
+      "timestamp": "2019-03-21T00:56:22.363Z",
+      "cardId": 29,
+      "userId": 2,
+      "status": "skipped",
+      "id": 152
+    },
+    {
+      "timestamp": "2019-03-21T00:56:23.385Z",
+      "cardId": 68,
+      "userId": 2,
+      "status": "skipped",
+      "id": 153
+    },
+    {
+      "timestamp": "2019-03-21T00:56:24.468Z",
+      "cardId": 27,
+      "userId": 2,
+      "status": "skipped",
+      "id": 154
+    },
+    {
+      "timestamp": "2019-03-21T16:29:13.035Z",
+      "cardId": 75,
+      "userId": 2,
+      "status": "skipped",
+      "id": 155
+    },
+    {
+      "timestamp": "2019-03-21T16:29:16.190Z",
+      "cardId": 76,
+      "userId": 2,
+      "status": "skipped",
+      "id": 156
+    },
+    {
+      "timestamp": "2019-03-21T16:29:17.655Z",
+      "cardId": 77,
+      "userId": 2,
+      "status": "skipped",
+      "id": 157
+    },
+    {
+      "timestamp": "2019-03-21T16:29:21.017Z",
+      "cardId": 74,
+      "userId": 2,
+      "status": "correct",
+      "id": 158
+    },
+    {
+      "timestamp": "2019-03-21T16:29:23.597Z",
+      "cardId": 12,
+      "userId": 2,
+      "status": "correct",
+      "id": 159
+    },
+    {
+      "timestamp": "2019-03-21T16:29:25.908Z",
+      "cardId": 41,
+      "userId": 2,
+      "status": "correct",
+      "id": 160
+    },
+    {
+      "timestamp": "2019-03-21T16:29:28.654Z",
+      "cardId": 36,
+      "userId": 2,
+      "status": "correct",
+      "id": 161
+    },
+    {
+      "timestamp": "2019-03-21T16:29:31.265Z",
+      "cardId": 40,
+      "userId": 2,
+      "status": "correct",
+      "id": 162
+    },
+    {
+      "timestamp": "2019-03-21T16:29:33.918Z",
+      "cardId": 37,
+      "userId": 2,
+      "status": "correct",
+      "id": 163
+    },
+    {
+      "timestamp": "2019-03-21T16:29:36.696Z",
+      "cardId": 13,
+      "userId": 2,
+      "status": "correct",
+      "id": 164
+    },
+    {
+      "timestamp": "2019-03-21T16:30:21.354Z",
+      "cardId": 58,
+      "userId": 2,
+      "status": "skipped",
+      "id": 165
+    },
+    {
+      "timestamp": "2019-03-21T16:30:22.678Z",
+      "cardId": 62,
+      "userId": 2,
+      "status": "skipped",
+      "id": 166
+    },
+    {
+      "timestamp": "2019-03-21T16:30:23.394Z",
+      "cardId": 57,
+      "userId": 2,
+      "status": "skipped",
+      "id": 167
+    },
+    {
+      "timestamp": "2019-03-21T16:30:23.934Z",
+      "cardId": 16,
+      "userId": 2,
+      "status": "skipped",
+      "id": 168
+    },
+    {
+      "timestamp": "2019-03-21T16:30:24.585Z",
+      "cardId": 63,
+      "userId": 2,
+      "status": "skipped",
+      "id": 169
+    },
+    {
+      "timestamp": "2019-03-21T16:30:25.200Z",
+      "cardId": 15,
+      "userId": 2,
+      "status": "skipped",
+      "id": 170
+    },
+    {
+      "timestamp": "2019-03-21T16:30:25.785Z",
+      "cardId": 19,
+      "userId": 2,
+      "status": "skipped",
+      "id": 171
+    },
+    {
+      "timestamp": "2019-03-21T16:30:26.454Z",
+      "cardId": 21,
+      "userId": 2,
+      "status": "skipped",
+      "id": 172
+    },
+    {
+      "timestamp": "2019-03-21T16:30:27.374Z",
+      "cardId": 22,
+      "userId": 2,
+      "status": "skipped",
+      "id": 173
+    },
+    {
+      "timestamp": "2019-03-21T16:30:28.223Z",
+      "cardId": 59,
+      "userId": 2,
+      "status": "skipped",
+      "id": 174
+    },
+    {
+      "timestamp": "2019-03-21T16:31:23.496Z",
+      "cardId": 72,
+      "userId": 2,
+      "status": "skipped",
+      "id": 175
+    },
+    {
+      "timestamp": "2019-03-21T16:31:24.880Z",
+      "cardId": 27,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 176
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.047Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 177
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.210Z",
+      "cardId": 30,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 178
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.403Z",
+      "cardId": 66,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 179
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.574Z",
+      "cardId": 73,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 180
+    },
+    {
+      "timestamp": "2019-03-21T16:31:25.797Z",
+      "cardId": 68,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 181
+    },
+    {
+      "timestamp": "2019-03-21T16:31:27.724Z",
+      "cardId": 28,
+      "userId": 2,
+      "status": "correct",
+      "id": 182
+    },
+    {
+      "timestamp": "2019-03-21T16:31:29.651Z",
+      "cardId": 69,
+      "userId": 2,
+      "status": "correct",
+      "id": 183
+    },
+    {
+      "timestamp": "2019-03-21T16:31:30.373Z",
+      "cardId": 71,
+      "userId": 2,
+      "status": "correct",
+      "id": 184
+    },
+    {
+      "timestamp": "2019-03-21T16:33:59.547Z",
+      "cardId": 66,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 185
+    },
+    {
+      "timestamp": "2019-03-21T16:34:01.396Z",
+      "cardId": 33,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 186
+    },
+    {
+      "timestamp": "2019-03-21T16:34:03.006Z",
+      "cardId": 69,
+      "userId": 2,
+      "status": "correct",
+      "id": 187
+    },
+    {
+      "timestamp": "2019-03-21T16:34:04.829Z",
+      "cardId": 67,
+      "userId": 2,
+      "status": "correct",
+      "id": 188
+    },
+    {
+      "timestamp": "2019-03-21T16:34:06.528Z",
+      "cardId": 26,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 189
+    },
+    {
+      "timestamp": "2019-03-21T16:34:08.134Z",
+      "cardId": 71,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 190
+    },
+    {
+      "timestamp": "2019-03-21T16:34:09.814Z",
+      "cardId": 25,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 191
+    },
+    {
+      "timestamp": "2019-03-21T16:34:11.565Z",
+      "cardId": 73,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 192
+    },
+    {
+      "timestamp": "2019-03-21T16:34:13.238Z",
+      "cardId": 29,
+      "userId": 2,
+      "status": "correct",
+      "id": 193
+    },
+    {
+      "timestamp": "2019-03-21T16:34:14.932Z",
+      "cardId": 32,
+      "userId": 2,
+      "status": "incorrect",
+      "id": 194
+    }
+  ]
+}

@@ -21,17 +21,17 @@ export default class QuizDifficulty extends Component {
 
     if (this.props.difficulty !== "") {
       return (
-        <Container>
+        <Container className="d-flex flex-column">
           <NavBar navText={this.props.navText} />
           <QuizSelect />
         </Container>)
     }
     else {
       return (
-        <Container>
+        <Container className="d-flex flex-column">
           <NavBar navText={this.props.navText} />
-          <Row className="d-flex justify-content-center">
-            <Button className="mr-3" color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}>
+          <Row className="my-auto d-flex justify-content-center">
+            <Button className="mr-3" style={{width: "240px"}} color="success" id="easy" size="xl" onClick={(e) => { this.setDifficulty(e) }}>
                 <i className="far fa-star form-icon"></i>
                 <h3>Easy</h3>
             </Button>

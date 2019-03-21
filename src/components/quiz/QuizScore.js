@@ -57,8 +57,8 @@ class QuizScore extends React.Component {
               </PieChart>
             </ResponsiveContainer>
             <h4>{this.state.dailyPercentCorrect}</h4>
-            <Row className="d-flex inline">
-              <div className="d-flex inline align-items-center mx-3">
+            <Row>
+              <div className="d-flex align-items-center justify-content-between mx-3">
                 <i className="fas fa-check form-icon" style={{ color: "#00ff60" }}></i> <h4>{this.props.state.correct}</h4>
                 <i className="fas fa-times form-icon" style={{ color: "#ff0000" }}></i> <h4>{this.props.state.incorrect}</h4>
                 <i className="fas fa-forward form-icon" style={{ color: "#ffc107" }}></i> <h4>{this.props.state.skipped}</h4>
@@ -66,8 +66,8 @@ class QuizScore extends React.Component {
             </Row>
           </ModalBody>
           <ModalFooter>
+            <Button tag={Link} to='/welcome' color="danger" className="modal-button"><i className="fas fa-home form-icon"></i><h3>Home</h3></Button>
             <Button tag={Link} to='/quiz-select' color="success" className="modal-button"><i className="fas fa-redo-alt form-icon"></i><h3>Retry</h3></Button>{' '}
-            <Button tag={Link} to='/welcome' color="danger" className="modal-button"><i className="fas fa-ban form-icon"></i><h3>Home</h3></Button>
           </ModalFooter>
         </Modal>
       </div>

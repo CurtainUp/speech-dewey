@@ -14,11 +14,11 @@ export default class CardDash extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="d-flex flex-column">
         <NavBar navText={this.props.navText} />
-        <Row className="d-flex justify-content-center">
+        <Row className="my-auto d-flex justify-content-center">
           <CreateModal />
-          <Button tag={Link} to='/your-cards'><i className="fas fa-images"></i><h3>Your Cards</h3></Button>
+          <Button tag={Link} to='/your-cards' className="big-button"><i className="fas fa-images"></i><h3>Your Cards</h3></Button>
         </Row>
       </Container>
     )

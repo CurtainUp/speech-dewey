@@ -251,14 +251,12 @@ export default class Quiz extends Component {
             <Row>
               <Col><h3>Question {this.state.qCounter + 1} of 10</h3></Col>
             </Row>
-            <Row className="d-flex inline justify-content-center">
+            <Row className="d-flex justify-content-center text-center">
               <Col>
                 <div id={currentWord.id}>
                   <h1>{currentWord.word}</h1>
                 </div>
-                <div>
                   <Speak word={currentWord.word} />
-                </div>
               </Col>
             </Row>
             {/* Need to refactor and add map function for all answer options below */}
@@ -274,8 +272,8 @@ export default class Quiz extends Component {
               </div>
             </Row>
             <Row className="d-flex justify-content-center">
-              <Button tag={Link} to='/welcome' color="danger"><i className="fas fa-ban form-icon"></i></Button>
-              <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward form-icon" id="skip"></i></Button>
+              <Button className="mr-3" tag={Link} to='/welcome' color="danger"><i className="fas fa-ban quiz-icon"></i><h5>Quit</h5></Button>
+              <Button className="skip" id="skip" onClick={(e) => { this.handleAnswerClick(e) }}><i className="fas fa-forward quiz-icon" id="skip"></i><h5>Next</h5></Button>
             </Row>
           </Container >
         )
